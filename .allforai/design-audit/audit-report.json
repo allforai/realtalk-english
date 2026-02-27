@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-02-27T19:25:39Z",
+  "mode": "full",
+  "role_filter": null,
+  "available_layers": [
+    "product-map",
+    "screen-map",
+    "use-case",
+    "feature-gap",
+    "feature-prune",
+    "ui-design"
+  ],
+  "summary": {
+    "trace": {
+      "total": 136,
+      "pass": 136,
+      "orphan": 0
+    },
+    "coverage": {
+      "total": 180,
+      "covered": 180,
+      "gap": 0,
+      "rate": "100%"
+    },
+    "cross": {
+      "total": 60,
+      "ok": 43,
+      "conflict": 16,
+      "warning": 1,
+      "broken_ref": 0
+    },
+    "fidelity": {
+      "traceability_rate": "100%",
+      "traceability_status": "PASS",
+      "viewpoint_coverage_rate": "100%",
+      "viewpoint_status": "PASS"
+    }
+  },
+  "trace_issues": [],
+  "coverage_issues": [],
+  "cross_issues": [
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T041",
+      "task_name": "重置密码",
+      "detail": "feature-gap 报 T041 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T024",
+      "task_name": "购买场景包",
+      "detail": "feature-gap 报 T024 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T016",
+      "task_name": "分享学习成果",
+      "detail": "feature-gap 报 T016 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T022",
+      "task_name": "订阅付费方案",
+      "detail": "feature-gap 报 T022 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T043",
+      "task_name": "完成新手引导",
+      "detail": "feature-gap 报 T043 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T036",
+      "task_name": "管理权限角色",
+      "detail": "feature-gap 报 T036 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T040",
+      "task_name": "管理个人设置",
+      "detail": "feature-gap 报 T040 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T023",
+      "task_name": "管理订阅",
+      "detail": "feature-gap 报 T023 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T042",
+      "task_name": "注销账户",
+      "detail": "feature-gap 报 T042 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T019",
+      "task_name": "设置角色偏好",
+      "detail": "feature-gap 报 T019 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T038",
+      "task_name": "注册账户",
+      "detail": "feature-gap 报 T038 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T035",
+      "task_name": "配置系统参数",
+      "detail": "feature-gap 报 T035 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T045",
+      "task_name": "提交意见反馈",
+      "detail": "feature-gap 报 T045 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X1",
+      "type": "CONFLICT",
+      "task_id": "T032",
+      "task_name": "调整发音评估参数",
+      "detail": "feature-gap 报 T032 有缺口，但 feature-prune 标为 CUT — 矛盾"
+    },
+    {
+      "check_id": "X2",
+      "type": "CONFLICT",
+      "task_id": "T024",
+      "task_name": "购买场景包",
+      "detail": "CUT 任务 T024 (购买场景包) 仍出现在 ui-design-spec.md 中"
+    },
+    {
+      "check_id": "X2",
+      "type": "CONFLICT",
+      "task_id": "T041",
+      "task_name": "重置密码",
+      "detail": "CUT 任务 T041 (重置密码) 仍出现在 ui-design-spec.md 中"
+    },
+    {
+      "check_id": "X3",
+      "type": "WARNING",
+      "task_id": "T009",
+      "task_name": "创建场景对话脚本",
+      "detail": "高频任务 T009 的操作 '预览场景对话' click_depth=3 ≥ 3（被埋深）"
+    }
+  ]
+}
