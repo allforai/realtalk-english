@@ -1,6 +1,53 @@
 [
   {
-    "id": "GAP-076",
+    "id": "GAP-070",
+    "title": "AI对话页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T002",
+      "T005"
+    ],
+    "affected_screens": [
+      "S003"
+    ],
+    "description": "操作 '语音输入' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-071",
+    "title": "AI对话页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T002",
+      "T005"
+    ],
+    "affected_screens": [
+      "S003"
+    ],
+    "description": "操作 '文字输入' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-077",
+    "title": "记忆曲线复习页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T007"
+    ],
+    "affected_screens": [
+      "S007"
+    ],
+    "description": "操作 '标记已记住/未记住' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-080",
     "title": "场景脚本编辑器 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -15,7 +62,22 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-077",
+    "id": "GAP-081",
+    "title": "场景脚本编辑器 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T009"
+    ],
+    "affected_screens": [
+      "S009"
+    ],
+    "description": "操作 '编辑对话节点' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-082",
     "title": "场景脚本编辑器 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -30,9 +92,85 @@
     "frequency_impact": "高频相关"
   },
   {
+    "id": "GAP-084",
+    "title": "审核队列页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T010"
+    ],
+    "affected_screens": [
+      "S010"
+    ],
+    "description": "操作 '审核通过' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-085",
+    "title": "审核队列页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T010"
+    ],
+    "affected_screens": [
+      "S010"
+    ],
+    "description": "操作 '驳回并备注' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-091",
+    "title": "学习连胜与成就页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T013"
+    ],
+    "affected_screens": [
+      "S012"
+    ],
+    "description": "操作 '领取连胜奖励' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-115",
+    "title": "关键指标看板 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T025"
+    ],
+    "affected_screens": [
+      "S023"
+    ],
+    "description": "操作 '设置指标告警' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
+    "id": "GAP-134",
+    "title": "用户管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T033"
+    ],
+    "affected_screens": [
+      "S031"
+    ],
+    "description": "操作 '封禁/解禁用户' 无失败反馈定义",
+    "frequency_impact": "高频相关"
+  },
+  {
     "id": "GAP-003",
     "title": "查看实时发音纠正 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -50,6 +188,7 @@
     "id": "GAP-007",
     "title": "完成记忆曲线复习 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -67,6 +206,7 @@
     "id": "GAP-011",
     "title": "创建场景对话脚本 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "内容运营"
@@ -84,6 +224,7 @@
     "id": "GAP-017",
     "title": "查看学习连胜与成就 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -101,6 +242,7 @@
     "id": "GAP-030",
     "title": "查看个性化推荐 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -118,6 +260,7 @@
     "id": "GAP-036",
     "title": "查看关键指标看板 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "数据运营"
@@ -135,6 +278,7 @@
     "id": "GAP-044",
     "title": "查看AI对话质量评分 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "AI 训练师"
@@ -152,6 +296,7 @@
     "id": "GAP-051",
     "title": "管理用户账户 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "basic",
     "priority": "高",
     "affected_roles": [
       "系统管理员"
@@ -169,6 +314,7 @@
     "id": "GAP-001",
     "title": "查看对话报告 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -186,6 +332,7 @@
     "id": "GAP-004",
     "title": "查看实时发音纠正 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -203,6 +350,7 @@
     "id": "GAP-031",
     "title": "查看个性化推荐 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -220,6 +368,7 @@
     "id": "GAP-037",
     "title": "查看关键指标看板 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "数据运营"
@@ -237,6 +386,7 @@
     "id": "GAP-045",
     "title": "查看AI对话质量评分 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "高",
     "affected_roles": [
       "AI 训练师"
@@ -254,6 +404,7 @@
     "id": "GAP-050",
     "title": "管理用户账户 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "高",
     "affected_roles": [
       "系统管理员"
@@ -271,6 +422,7 @@
     "id": "GAP-056",
     "title": "登录账户 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "高",
     "affected_roles": [
       "职场人士"
@@ -332,7 +484,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-070",
+    "id": "GAP-072",
     "title": "对话报告页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -347,7 +499,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-073",
+    "id": "GAP-076",
     "title": "记忆曲线复习页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -362,7 +514,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-075",
+    "id": "GAP-079",
     "title": "场景脚本编辑器 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -377,7 +529,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-078",
+    "id": "GAP-083",
     "title": "审核队列页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -392,7 +544,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-080",
+    "id": "GAP-090",
     "title": "学习连胜与成就页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -407,7 +559,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-092",
+    "id": "GAP-114",
     "title": "关键指标看板 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -422,7 +574,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-098",
+    "id": "GAP-123",
     "title": "AI对话质量评分页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -437,7 +589,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-105",
+    "id": "GAP-133",
     "title": "用户管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -452,7 +604,7 @@
     "frequency_impact": "高频相关"
   },
   {
-    "id": "GAP-115",
+    "id": "GAP-150",
     "title": "登录页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -467,7 +619,115 @@
     "frequency_impact": "高频相关"
   },
   {
+    "id": "GAP-074",
+    "title": "自由对话页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T004"
+    ],
+    "affected_screens": [
+      "S005"
+    ],
+    "description": "操作 '自由语音/文字输入' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-087",
+    "title": "场景包管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T011",
+      "T012"
+    ],
+    "affected_screens": [
+      "S011"
+    ],
+    "description": "操作 '上架场景包' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-088",
+    "title": "场景包管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T011",
+      "T012"
+    ],
+    "affected_screens": [
+      "S011"
+    ],
+    "description": "操作 '下架场景包' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-089",
+    "title": "场景包管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T011",
+      "T012"
+    ],
+    "affected_screens": [
+      "S011"
+    ],
+    "description": "操作 '编辑标签和关键词' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
     "id": "GAP-094",
+    "title": "积分商城页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T015"
+    ],
+    "affected_screens": [
+      "S014"
+    ],
+    "description": "操作 '兑换奖品' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-104",
+    "title": "紧急场景速学页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T021"
+    ],
+    "affected_screens": [
+      "S019"
+    ],
+    "description": "操作 '跟读练习' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-105",
+    "title": "紧急场景速学页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T021"
+    ],
+    "affected_screens": [
+      "S019"
+    ],
+    "description": "操作 '收藏到词汇本' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-117",
     "title": "用户行为分析页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -482,7 +742,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-096",
+    "id": "GAP-119",
     "title": "A/B测试管理页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -497,7 +757,52 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-100",
+    "id": "GAP-120",
+    "title": "A/B测试管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T027"
+    ],
+    "affected_screens": [
+      "S025"
+    ],
+    "description": "操作 '停止/启动测试' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-122",
+    "title": "运营报告生成页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T028"
+    ],
+    "affected_screens": [
+      "S026"
+    ],
+    "description": "操作 '生成运营报告' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-125",
+    "title": "异常对话标注页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T030"
+    ],
+    "affected_screens": [
+      "S028"
+    ],
+    "description": "操作 '标注异常类型' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-126",
     "title": "异常对话标注页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -512,7 +817,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-102",
+    "id": "GAP-128",
     "title": "Prompt模板管理页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -527,7 +832,22 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-103",
+    "id": "GAP-129",
+    "title": "Prompt模板管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T031"
+    ],
+    "affected_screens": [
+      "S029"
+    ],
+    "description": "操作 '编辑Prompt模板' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-130",
     "title": "Prompt模板管理页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -542,7 +862,67 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-107",
+    "id": "GAP-137",
+    "title": "订阅与退款管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T034"
+    ],
+    "affected_screens": [
+      "S032"
+    ],
+    "description": "操作 '处理退款申请' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-145",
+    "title": "投诉处理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T037"
+    ],
+    "affected_screens": [
+      "S035"
+    ],
+    "description": "操作 '处理投诉' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-146",
+    "title": "投诉处理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T037"
+    ],
+    "affected_screens": [
+      "S035"
+    ],
+    "description": "操作 '回复用户' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-163",
+    "title": "通知中心页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T044"
+    ],
+    "affected_screens": [
+      "S041"
+    ],
+    "description": "操作 '管理通知设置' 无失败反馈定义",
+    "frequency_impact": "中频相关"
+  },
+  {
+    "id": "GAP-136",
     "title": "订阅与退款管理页 — HIGH_RISK_NO_CONFIRM",
     "type": "HIGH_RISK_NO_CONFIRM",
     "priority": "高",
@@ -560,6 +940,7 @@
     "id": "GAP-005",
     "title": "查看发音详细报告 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -577,6 +958,7 @@
     "id": "GAP-008",
     "title": "管理词汇本 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -594,6 +976,7 @@
     "id": "GAP-010",
     "title": "管理词汇本 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -611,6 +994,7 @@
     "id": "GAP-012",
     "title": "管理场景包 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "内容运营"
@@ -628,6 +1012,7 @@
     "id": "GAP-014",
     "title": "管理场景标签 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "内容运营"
@@ -645,6 +1030,7 @@
     "id": "GAP-016",
     "title": "管理场景标签 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "内容运营"
@@ -662,6 +1048,7 @@
     "id": "GAP-018",
     "title": "查看排行榜 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -679,6 +1066,7 @@
     "id": "GAP-020",
     "title": "兑换积分商品 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -696,6 +1084,7 @@
     "id": "GAP-024",
     "title": "查看个人学习档案 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -713,6 +1102,7 @@
     "id": "GAP-026",
     "title": "查看学习统计报告 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -730,6 +1120,7 @@
     "id": "GAP-038",
     "title": "分析用户行为 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -747,6 +1138,7 @@
     "id": "GAP-040",
     "title": "管理A/B测试 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -764,6 +1156,7 @@
     "id": "GAP-041",
     "title": "管理A/B测试 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -781,6 +1174,7 @@
     "id": "GAP-042",
     "title": "生成运营报告 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -798,6 +1192,7 @@
     "id": "GAP-046",
     "title": "标注异常对话 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "AI 训练师"
@@ -815,6 +1210,7 @@
     "id": "GAP-048",
     "title": "管理Prompt模板 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "AI 训练师"
@@ -832,6 +1228,7 @@
     "id": "GAP-055",
     "title": "处理用户投诉 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "中",
     "affected_roles": [
       "系统管理员"
@@ -849,6 +1246,7 @@
     "id": "GAP-063",
     "title": "管理通知中心 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -866,6 +1264,7 @@
     "id": "GAP-065",
     "title": "管理通知中心 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "basic",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -883,6 +1282,7 @@
     "id": "GAP-002",
     "title": "进行自由对话 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -900,6 +1300,7 @@
     "id": "GAP-006",
     "title": "查看发音详细报告 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -917,6 +1318,7 @@
     "id": "GAP-009",
     "title": "管理词汇本 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -934,6 +1336,7 @@
     "id": "GAP-013",
     "title": "管理场景包 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "内容运营"
@@ -951,6 +1354,7 @@
     "id": "GAP-015",
     "title": "管理场景标签 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "内容运营"
@@ -968,6 +1372,7 @@
     "id": "GAP-019",
     "title": "查看排行榜 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -985,6 +1390,7 @@
     "id": "GAP-021",
     "title": "兑换积分商品 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -1002,6 +1408,7 @@
     "id": "GAP-025",
     "title": "查看个人学习档案 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -1019,6 +1426,7 @@
     "id": "GAP-027",
     "title": "查看学习统计报告 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -1036,6 +1444,7 @@
     "id": "GAP-032",
     "title": "使用紧急场景速学 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "新移民"
@@ -1053,6 +1462,7 @@
     "id": "GAP-039",
     "title": "分析用户行为 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -1070,6 +1480,7 @@
     "id": "GAP-043",
     "title": "生成运营报告 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "数据运营"
@@ -1087,6 +1498,7 @@
     "id": "GAP-047",
     "title": "管理Prompt模板 — NO_RULES",
     "type": "NO_RULES",
+    "category": "core",
     "priority": "中",
     "affected_roles": [
       "AI 训练师"
@@ -1104,6 +1516,7 @@
     "id": "GAP-064",
     "title": "管理通知中心 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "中",
     "affected_roles": [
       "职场人士"
@@ -1118,7 +1531,7 @@
     "frequency_impact": "中频任务"
   },
   {
-    "id": "GAP-071",
+    "id": "GAP-073",
     "title": "自由对话页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1133,7 +1546,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-072",
+    "id": "GAP-075",
     "title": "发音详细报告页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1148,7 +1561,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-074",
+    "id": "GAP-078",
     "title": "词汇本页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1163,7 +1576,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-079",
+    "id": "GAP-086",
     "title": "场景包管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1179,7 +1592,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-081",
+    "id": "GAP-092",
     "title": "排行榜页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1194,7 +1607,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-082",
+    "id": "GAP-093",
     "title": "积分商城页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1209,7 +1622,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-084",
+    "id": "GAP-097",
     "title": "个人学习档案页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1224,7 +1637,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-085",
+    "id": "GAP-098",
     "title": "学习统计报告页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1239,7 +1652,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-087",
+    "id": "GAP-103",
     "title": "紧急场景速学页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1254,7 +1667,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-093",
+    "id": "GAP-116",
     "title": "用户行为分析页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1269,7 +1682,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-095",
+    "id": "GAP-118",
     "title": "A/B测试管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1284,7 +1697,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-097",
+    "id": "GAP-121",
     "title": "运营报告生成页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1299,7 +1712,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-099",
+    "id": "GAP-124",
     "title": "异常对话标注页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1314,7 +1727,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-101",
+    "id": "GAP-127",
     "title": "Prompt模板管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1329,7 +1742,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-106",
+    "id": "GAP-135",
     "title": "订阅与退款管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1344,7 +1757,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-113",
+    "id": "GAP-144",
     "title": "投诉处理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1359,7 +1772,7 @@
     "frequency_impact": "中频相关"
   },
   {
-    "id": "GAP-123",
+    "id": "GAP-162",
     "title": "通知中心页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1374,7 +1787,142 @@
     "frequency_impact": "中频相关"
   },
   {
+    "id": "GAP-096",
+    "title": "分享成果页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T016"
+    ],
+    "affected_screens": [
+      "S015"
+    ],
+    "description": "操作 '分享到社交媒体' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-100",
+    "title": "角色偏好设置页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T019"
+    ],
+    "affected_screens": [
+      "S018"
+    ],
+    "description": "操作 '选择角色类型' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-101",
+    "title": "角色偏好设置页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T019"
+    ],
+    "affected_screens": [
+      "S018"
+    ],
+    "description": "操作 '设置学习目标' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-102",
+    "title": "角色偏好设置页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T019"
+    ],
+    "affected_screens": [
+      "S018"
+    ],
+    "description": "操作 '选择感兴趣场景' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-108",
+    "title": "订阅方案页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T022"
+    ],
+    "affected_screens": [
+      "S020"
+    ],
+    "description": "操作 '选择方案并支付' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
     "id": "GAP-110",
+    "title": "订阅管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T023"
+    ],
+    "affected_screens": [
+      "S021"
+    ],
+    "description": "操作 '续费/升级' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-111",
+    "title": "订阅管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T023"
+    ],
+    "affected_screens": [
+      "S021"
+    ],
+    "description": "操作 '取消订阅' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-113",
+    "title": "场景包购买页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T024"
+    ],
+    "affected_screens": [
+      "S022"
+    ],
+    "description": "操作 '购买场景包' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-132",
+    "title": "发音评估参数页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T032"
+    ],
+    "affected_screens": [
+      "S030"
+    ],
+    "description": "操作 '调整音素阈值' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-140",
     "title": "系统配置页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1389,7 +1937,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-112",
+    "id": "GAP-142",
     "title": "权限角色管理页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1404,7 +1952,52 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-118",
+    "id": "GAP-143",
+    "title": "权限角色管理页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T036"
+    ],
+    "affected_screens": [
+      "S034"
+    ],
+    "description": "操作 '分配用户角色' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-148",
+    "title": "注册页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T038"
+    ],
+    "affected_screens": [
+      "S036"
+    ],
+    "description": "操作 '手机号/邮箱注册' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-149",
+    "title": "注册页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T038"
+    ],
+    "affected_screens": [
+      "S036"
+    ],
+    "description": "操作 '第三方登录注册' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-153",
     "title": "个人设置页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1420,7 +2013,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-119",
+    "id": "GAP-154",
     "title": "个人设置页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1436,7 +2029,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-120",
+    "id": "GAP-155",
     "title": "个人设置页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1452,7 +2045,98 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-125",
+    "id": "GAP-156",
+    "title": "个人设置页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T040",
+      "T042"
+    ],
+    "affected_screens": [
+      "S038"
+    ],
+    "description": "操作 '注销账户' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-158",
+    "title": "重置密码页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T041"
+    ],
+    "affected_screens": [
+      "S039"
+    ],
+    "description": "操作 '设置新密码' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-160",
+    "title": "新手引导页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T043"
+    ],
+    "affected_screens": [
+      "S040"
+    ],
+    "description": "操作 '选择学习目的' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-161",
+    "title": "新手引导页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T043"
+    ],
+    "affected_screens": [
+      "S040"
+    ],
+    "description": "操作 '选择当前水平' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-165",
+    "title": "意见反馈页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T045"
+    ],
+    "affected_screens": [
+      "S042"
+    ],
+    "description": "操作 '填写反馈内容' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-166",
+    "title": "意见反馈页 — SILENT_FAILURE",
+    "type": "SILENT_FAILURE",
+    "priority": "高",
+    "affected_roles": [],
+    "affected_tasks": [
+      "T045"
+    ],
+    "affected_screens": [
+      "S042"
+    ],
+    "description": "操作 '上传截图' 无失败反馈定义",
+    "frequency_impact": "低频相关"
+  },
+  {
+    "id": "GAP-167",
     "title": "意见反馈页 — SILENT_FAILURE",
     "type": "SILENT_FAILURE",
     "priority": "高",
@@ -1467,7 +2151,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-089",
+    "id": "GAP-107",
     "title": "订阅方案页 — HIGH_RISK_NO_CONFIRM",
     "type": "HIGH_RISK_NO_CONFIRM",
     "priority": "高",
@@ -1482,7 +2166,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-109",
+    "id": "GAP-139",
     "title": "系统配置页 — HIGH_RISK_NO_CONFIRM",
     "type": "HIGH_RISK_NO_CONFIRM",
     "priority": "高",
@@ -1497,7 +2181,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-117",
+    "id": "GAP-152",
     "title": "个人设置页 — HIGH_RISK_NO_CONFIRM",
     "type": "HIGH_RISK_NO_CONFIRM",
     "priority": "高",
@@ -1515,7 +2199,8 @@
     "id": "GAP-022",
     "title": "分享学习成果 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
-    "priority": "低",
+    "category": "core",
+    "priority": "中",
     "affected_roles": [
       "职场人士"
     ],
@@ -1532,7 +2217,8 @@
     "id": "GAP-028",
     "title": "设置角色偏好 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
-    "priority": "低",
+    "category": "core",
+    "priority": "中",
     "affected_roles": [
       "职场人士"
     ],
@@ -1549,6 +2235,7 @@
     "id": "GAP-034",
     "title": "管理订阅 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1566,7 +2253,8 @@
     "id": "GAP-049",
     "title": "调整发音评估参数 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
-    "priority": "低",
+    "category": "core",
+    "priority": "中",
     "affected_roles": [
       "AI 训练师"
     ],
@@ -1583,6 +2271,7 @@
     "id": "GAP-052",
     "title": "管理权限角色 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "系统管理员"
@@ -1600,6 +2289,7 @@
     "id": "GAP-054",
     "title": "管理权限角色 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "系统管理员"
@@ -1617,6 +2307,7 @@
     "id": "GAP-057",
     "title": "管理个人设置 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1634,6 +2325,7 @@
     "id": "GAP-059",
     "title": "管理个人设置 — CRUD_INCOMPLETE",
     "type": "CRUD_INCOMPLETE",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1651,6 +2343,7 @@
     "id": "GAP-060",
     "title": "重置密码 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1668,6 +2361,7 @@
     "id": "GAP-061",
     "title": "完成新手引导 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1685,6 +2379,7 @@
     "id": "GAP-066",
     "title": "提交意见反馈 — NO_EXCEPTIONS",
     "type": "NO_EXCEPTIONS",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1702,7 +2397,8 @@
     "id": "GAP-023",
     "title": "分享学习成果 — NO_RULES",
     "type": "NO_RULES",
-    "priority": "低",
+    "category": "core",
+    "priority": "中",
     "affected_roles": [
       "职场人士"
     ],
@@ -1719,7 +2415,8 @@
     "id": "GAP-029",
     "title": "设置角色偏好 — NO_RULES",
     "type": "NO_RULES",
-    "priority": "低",
+    "category": "core",
+    "priority": "中",
     "affected_roles": [
       "职场人士"
     ],
@@ -1736,6 +2433,7 @@
     "id": "GAP-033",
     "title": "管理订阅 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1753,6 +2451,7 @@
     "id": "GAP-035",
     "title": "购买场景包 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1770,6 +2469,7 @@
     "id": "GAP-053",
     "title": "管理权限角色 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "系统管理员"
@@ -1787,6 +2487,7 @@
     "id": "GAP-058",
     "title": "管理个人设置 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1804,6 +2505,7 @@
     "id": "GAP-062",
     "title": "完成新手引导 — NO_RULES",
     "type": "NO_RULES",
+    "category": "basic",
     "priority": "低",
     "affected_roles": [
       "职场人士"
@@ -1818,7 +2520,7 @@
     "frequency_impact": "低频任务"
   },
   {
-    "id": "GAP-083",
+    "id": "GAP-095",
     "title": "分享成果页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1833,7 +2535,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-086",
+    "id": "GAP-099",
     "title": "角色偏好设置页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1848,7 +2550,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-088",
+    "id": "GAP-106",
     "title": "订阅方案页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1863,7 +2565,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-090",
+    "id": "GAP-109",
     "title": "订阅管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1878,7 +2580,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-091",
+    "id": "GAP-112",
     "title": "场景包购买页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1893,7 +2595,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-104",
+    "id": "GAP-131",
     "title": "发音评估参数页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1908,7 +2610,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-108",
+    "id": "GAP-138",
     "title": "系统配置页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1923,7 +2625,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-111",
+    "id": "GAP-141",
     "title": "权限角色管理页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1938,7 +2640,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-114",
+    "id": "GAP-147",
     "title": "注册页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1953,7 +2655,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-116",
+    "id": "GAP-151",
     "title": "个人设置页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1969,7 +2671,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-121",
+    "id": "GAP-157",
     "title": "重置密码页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1984,7 +2686,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-122",
+    "id": "GAP-159",
     "title": "新手引导页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",
@@ -1999,7 +2701,7 @@
     "frequency_impact": "低频相关"
   },
   {
-    "id": "GAP-124",
+    "id": "GAP-164",
     "title": "意见反馈页 — NO_PRIMARY",
     "type": "NO_PRIMARY",
     "priority": "中",

@@ -1,0 +1,714 @@
+{
+  "generated_at": "2026-02-28T16:00:00Z",
+  "credentials": {
+    "universal_password": "SeedForge2024!",
+    "login_field": "email"
+  },
+  "time_config": {
+    "lookback_days": 90,
+    "distribution": {
+      "last_7_days_pct": 30,
+      "last_30_days_pct": 60,
+      "older_pct": 10
+    },
+    "working_hours": {
+      "peak_range": "09:00-18:00",
+      "peak_pct": 80,
+      "off_hours_pct": 15,
+      "late_night_pct": 5
+    },
+    "weekday_density_multiplier": 3
+  },
+  "behavior_distribution": {
+    "heavy_users_pct": 10,
+    "heavy_users_data_pct": 50,
+    "normal_users_pct": 30,
+    "normal_users_data_pct": 35,
+    "light_users_pct": 60,
+    "light_users_data_pct": 15
+  },
+  "accounts": [
+    {
+      "id": "SEED-U001",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "Alex Chen",
+      "email": "alex.chen@realtalk-demo.com",
+      "english_level": "intermediate",
+      "learning_goal": "Prepare for English meetings and presentations",
+      "subscription_tier": "premium",
+      "activity_level": "heavy",
+      "created_days_ago": 75,
+      "notes": "Power user. 50+ conversations, long streak."
+    },
+    {
+      "id": "SEED-U002",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "Sophie Wang",
+      "email": "sophie.wang@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Pass job interviews in English",
+      "subscription_tier": "free",
+      "activity_level": "heavy",
+      "created_days_ago": 60,
+      "notes": "Free tier hitting daily limits. Paywall conversion candidate."
+    },
+    {
+      "id": "SEED-U003",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "Michael Liu",
+      "email": "michael.liu@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": "Write better emails to international clients",
+      "subscription_tier": "pro",
+      "activity_level": "normal",
+      "created_days_ago": 45,
+      "notes": "Pro subscriber, moderate usage."
+    },
+    {
+      "id": "SEED-U004",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "Jenny Zhao",
+      "email": "jenny.zhao@realtalk-demo.com",
+      "english_level": "intermediate",
+      "learning_goal": "Communicate with overseas team",
+      "subscription_tier": "monthly",
+      "activity_level": "normal",
+      "created_days_ago": 30,
+      "notes": "Monthly subscriber, consistent learner."
+    },
+    {
+      "id": "SEED-U005",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "David Xu",
+      "email": "david.xu@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Basic English for daily work",
+      "subscription_tier": "free",
+      "activity_level": "light",
+      "created_days_ago": 15,
+      "notes": "New user, only tried a few conversations."
+    },
+    {
+      "id": "SEED-U006",
+      "role": "R001",
+      "role_name": "职场人士",
+      "display_name": "Lisa Huang",
+      "email": "lisa.huang@realtalk-demo.com",
+      "english_level": "intermediate",
+      "learning_goal": "Negotiate with suppliers in English",
+      "subscription_tier": "free",
+      "activity_level": "light",
+      "created_days_ago": 7,
+      "notes": "Very new user, registered but barely active."
+    },
+    {
+      "id": "SEED-U007",
+      "role": "R002",
+      "role_name": "英语爱好者/旅行者",
+      "display_name": "Tom Zhang",
+      "email": "tom.zhang@realtalk-demo.com",
+      "english_level": "intermediate",
+      "learning_goal": "Travel conversations in English",
+      "subscription_tier": "yearly",
+      "activity_level": "heavy",
+      "created_days_ago": 85,
+      "notes": "Yearly subscriber, travel scenario enthusiast."
+    },
+    {
+      "id": "SEED-U008",
+      "role": "R002",
+      "role_name": "英语爱好者/旅行者",
+      "display_name": "Amy Lin",
+      "email": "amy.lin@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Watch movies without subtitles",
+      "subscription_tier": "free",
+      "activity_level": "normal",
+      "created_days_ago": 40,
+      "notes": "Free user, casual learner."
+    },
+    {
+      "id": "SEED-U009",
+      "role": "R002",
+      "role_name": "英语爱好者/旅行者",
+      "display_name": "Kevin Wu",
+      "email": "kevin.wu@realtalk-demo.com",
+      "english_level": "intermediate",
+      "learning_goal": "Chat with foreign friends",
+      "subscription_tier": "free",
+      "activity_level": "light",
+      "created_days_ago": 20,
+      "notes": "Light user, occasional practice."
+    },
+    {
+      "id": "SEED-U010",
+      "role": "R002",
+      "role_name": "英语爱好者/旅行者",
+      "display_name": "Grace Feng",
+      "email": "grace.feng@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": "Maintain English fluency",
+      "subscription_tier": "free",
+      "activity_level": "light",
+      "created_days_ago": 10,
+      "notes": "Light user, already fluent."
+    },
+    {
+      "id": "SEED-U011",
+      "role": "R003",
+      "role_name": "新移民",
+      "display_name": "Wei Li",
+      "email": "wei.li@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Survive daily life in the US",
+      "subscription_tier": "premium",
+      "activity_level": "heavy",
+      "created_days_ago": 50,
+      "notes": "Heavy user, emergency scenario focused."
+    },
+    {
+      "id": "SEED-U012",
+      "role": "R003",
+      "role_name": "新移民",
+      "display_name": "Min Yang",
+      "email": "min.yang@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Parent-teacher meetings, doctor visits",
+      "subscription_tier": "monthly",
+      "activity_level": "normal",
+      "created_days_ago": 35,
+      "notes": "Monthly subscriber, life scenario focus."
+    },
+    {
+      "id": "SEED-U013",
+      "role": "R003",
+      "role_name": "新移民",
+      "display_name": "Jing Ma",
+      "email": "jing.ma@realtalk-demo.com",
+      "english_level": "beginner",
+      "learning_goal": "Bank and grocery shopping conversations",
+      "subscription_tier": "free",
+      "activity_level": "light",
+      "created_days_ago": 5,
+      "notes": "Very new, just started."
+    },
+    {
+      "id": "SEED-U014",
+      "role": "R004",
+      "role_name": "内容运营",
+      "display_name": "Rachel Guo",
+      "email": "rachel.guo@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": null,
+      "subscription_tier": "free",
+      "activity_level": "heavy",
+      "created_days_ago": 88,
+      "notes": "Primary content creator. Authors most scenarios."
+    },
+    {
+      "id": "SEED-U015",
+      "role": "R004",
+      "role_name": "内容运营",
+      "display_name": "Eric Sun",
+      "email": "eric.sun@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": null,
+      "subscription_tier": "free",
+      "activity_level": "normal",
+      "created_days_ago": 80,
+      "notes": "Content reviewer. Reviews and approves scenarios."
+    },
+    {
+      "id": "SEED-U016",
+      "role": "R005",
+      "role_name": "AI 训练师",
+      "display_name": "Dr. Fang Zhou",
+      "email": "fang.zhou@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": null,
+      "subscription_tier": "free",
+      "activity_level": "normal",
+      "created_days_ago": 85,
+      "notes": "AI quality monitor. Manages prompts and pronunciation thresholds."
+    },
+    {
+      "id": "SEED-U017",
+      "role": "R006",
+      "role_name": "数据运营",
+      "display_name": "Olivia Jiang",
+      "email": "olivia.jiang@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": null,
+      "subscription_tier": "free",
+      "activity_level": "normal",
+      "created_days_ago": 85,
+      "notes": "Data analyst. Monitors dashboard and runs experiments."
+    },
+    {
+      "id": "SEED-U018",
+      "role": "R007",
+      "role_name": "系统管理员",
+      "display_name": "Admin",
+      "email": "admin@realtalk-demo.com",
+      "english_level": "advanced",
+      "learning_goal": null,
+      "subscription_tier": "free",
+      "activity_level": "normal",
+      "created_days_ago": 90,
+      "notes": "Super admin. First account created."
+    }
+  ],
+  "accounts_summary": {
+    "total": 18,
+    "by_role": {
+      "R001_职场人士": 6,
+      "R002_英语爱好者": 4,
+      "R003_新移民": 3,
+      "R004_内容运营": 2,
+      "R005_AI训练师": 1,
+      "R006_数据运营": 1,
+      "R007_系统管理员": 1
+    },
+    "by_activity": {
+      "heavy": 4,
+      "normal": 8,
+      "light": 6
+    },
+    "by_subscription": {
+      "free": 10,
+      "monthly": 2,
+      "yearly": 1,
+      "premium": 2,
+      "pro": 1
+    }
+  },
+  "banned_user": {
+    "id": "SEED-U019",
+    "display_name": "Banned User",
+    "email": "banned@realtalk-demo.com",
+    "is_banned": true,
+    "ban_reason": "Repeated abusive content in conversations",
+    "notes": "CN008: banned user for admin ban/unban demo."
+  },
+  "deactivated_user": {
+    "id": "SEED-U020",
+    "display_name": "Deactivated User",
+    "email": "deactivated@realtalk-demo.com",
+    "is_active": false,
+    "deactivated_at_days_ago": 15,
+    "notes": "CN003: deactivated within 30-day retention window."
+  },
+  "data_volumes": {
+    "high_frequency": {
+      "scenarios": {
+        "total": 22,
+        "by_status": {
+          "published": 15,
+          "draft": 3,
+          "review": 2,
+          "rejected": 1,
+          "archived": 1
+        },
+        "by_difficulty": {
+          "beginner": 7,
+          "intermediate": 9,
+          "advanced": 6
+        },
+        "task_refs": ["T001", "T009", "T010"]
+      },
+      "conversations": {
+        "total": 80,
+        "by_status": {
+          "completed": 60,
+          "active": 12,
+          "abandoned": 8
+        },
+        "by_user_activity": {
+          "heavy_users_4_accounts": 40,
+          "normal_users_5_accounts": 28,
+          "light_users_4_accounts": 12
+        },
+        "task_refs": ["T002", "T003"]
+      },
+      "conversation_messages": {
+        "total": 800,
+        "avg_per_conversation": 10,
+        "role_distribution": {
+          "user": 400,
+          "ai": 390,
+          "system": 10
+        },
+        "voice_messages_pct": 20,
+        "task_refs": ["T002"]
+      },
+      "pronunciation_scores": {
+        "total": 160,
+        "linked_to": "voice conversation_messages (20% of 800)",
+        "task_refs": ["T005"]
+      },
+      "review_cards": {
+        "total": 200,
+        "by_state": {
+          "new": 40,
+          "learning": 60,
+          "review": 80,
+          "relearning": 20
+        },
+        "task_refs": ["T007"]
+      },
+      "vocabulary_items": {
+        "total": 300,
+        "by_mastery": {
+          "new": 90,
+          "learning": 120,
+          "mastered": 90
+        },
+        "by_source": {
+          "auto_collected": 250,
+          "manual": 50
+        },
+        "task_refs": ["T008"]
+      }
+    },
+    "medium_frequency": {
+      "scenario_packs": {
+        "total": 4,
+        "by_status": { "published": 3, "unpublished": 1 },
+        "task_refs": ["T011"]
+      },
+      "scenario_tags": {
+        "total": 12,
+        "categories": ["topic", "industry", "skill"],
+        "task_refs": ["T012"]
+      },
+      "notifications": {
+        "total": 60,
+        "by_type": {
+          "review_reminder": 25,
+          "achievement": 15,
+          "system": 15,
+          "escalation": 5
+        },
+        "read_pct": 70,
+        "task_refs": ["T044"]
+      },
+      "feedback": {
+        "total": 8,
+        "by_type": {
+          "bug": 2,
+          "feature": 3,
+          "complaint": 2,
+          "other": 1
+        },
+        "by_status": {
+          "pending": 2,
+          "in_progress": 2,
+          "resolved": 3,
+          "closed": 1
+        },
+        "task_refs": ["T045", "T037"]
+      },
+      "daily_conversation_counts": {
+        "total": 250,
+        "span_days": 90,
+        "notes": "Historical daily counts for dashboard trends",
+        "task_refs": []
+      }
+    },
+    "low_frequency": {
+      "prompt_templates": {
+        "total": 3,
+        "by_status": { "active": 1, "inactive": 2 },
+        "task_refs": ["T031"]
+      },
+      "system_configs": {
+        "total": 8,
+        "keys": [
+          "free_daily_limit",
+          "round_timeout_sec",
+          "pronunciation_threshold",
+          "max_streak_restorations",
+          "conversation_history_max_turns",
+          "ai_content_filter_enabled",
+          "refund_cumulative_cap_enabled",
+          "data_retention_days"
+        ],
+        "task_refs": ["T035"]
+      },
+      "audit_logs": {
+        "total": 20,
+        "by_action": {
+          "subscription.webhook": 8,
+          "user.ban": 2,
+          "user.unban": 1,
+          "subscription.refund": 3,
+          "system.config_change": 4,
+          "scenario.review": 2
+        },
+        "task_refs": [],
+        "constraint_refs": ["CN005", "CN008"]
+      }
+    },
+    "config_tables": {
+      "roles": {
+        "total": 5,
+        "values": ["consumer", "operator", "ai_trainer", "data_ops", "admin"]
+      },
+      "achievements": {
+        "total": 10,
+        "codes": [
+          "first_conversation",
+          "streak_3",
+          "streak_7",
+          "streak_30",
+          "vocabulary_50",
+          "vocabulary_100",
+          "perfect_pronunciation",
+          "scenario_master",
+          "early_bird",
+          "night_owl"
+        ]
+      }
+    }
+  },
+  "scenario_chains": [
+    {
+      "flow_ref": "F001",
+      "flow_name": "场景学习全链路",
+      "chain": [
+        { "entity": "Scenario", "status": "published", "count": 1 },
+        { "entity": "Conversation", "status": "completed", "count": 3 },
+        { "entity": "ConversationMessage", "status": null, "count": 30 },
+        { "entity": "PronunciationScore", "status": null, "count": 6 },
+        { "entity": "VocabularyItem", "status": "auto_collected", "count": 15 },
+        { "entity": "ReviewCard", "status": "mixed", "count": 15 }
+      ],
+      "user_refs": ["SEED-U001", "SEED-U002", "SEED-U007"],
+      "instances": 5,
+      "notes": "Core learning flow. 5 complete chains across heavy users."
+    },
+    {
+      "flow_ref": "F002",
+      "flow_name": "记忆闭环链路",
+      "chain": [
+        { "entity": "Conversation", "status": "completed", "count": 1 },
+        { "entity": "VocabularyItem", "status": "auto_collected", "count": 5 },
+        { "entity": "ReviewCard", "status": "review", "count": 5 },
+        { "entity": "Conversation", "status": "completed", "count": 1, "notes": "New conversation using mastered words" }
+      ],
+      "user_refs": ["SEED-U001", "SEED-U007"],
+      "instances": 3,
+      "notes": "Vocabulary collection -> review -> reuse loop."
+    },
+    {
+      "flow_ref": "F003",
+      "flow_name": "场景内容生产链路",
+      "chain": [
+        { "entity": "Scenario", "status": "draft", "count": 1 },
+        { "entity": "Scenario", "status": "review", "count": 1, "notes": "Submitted for review" },
+        { "entity": "Scenario", "status": "published", "count": 1, "notes": "Approved and published" },
+        { "entity": "ScenarioPack", "status": "published", "count": 1, "notes": "Grouped into pack" }
+      ],
+      "user_refs": ["SEED-U014", "SEED-U015"],
+      "instances": 3,
+      "notes": "Content pipeline: create -> review -> publish. Include 1 rejected flow."
+    },
+    {
+      "flow_ref": "F004",
+      "flow_name": "用户注册到首次学习",
+      "chain": [
+        { "entity": "User", "status": "active", "count": 1 },
+        { "entity": "Conversation", "status": "completed", "count": 1, "notes": "First conversation" },
+        { "entity": "ConversationMessage", "status": null, "count": 8 },
+        { "entity": "VocabularyItem", "status": "new", "count": 3 }
+      ],
+      "user_refs": ["SEED-U005", "SEED-U006", "SEED-U013"],
+      "instances": 3,
+      "notes": "New user onboarding. Light users with minimal data."
+    },
+    {
+      "flow_ref": "F005",
+      "flow_name": "付费转化链路",
+      "chain": [
+        { "entity": "DailyConversationCount", "status": null, "count": 1, "notes": "count=3 (limit reached)" },
+        { "entity": "Subscription", "status": "active", "count": 1, "notes": "Converted to paid" },
+        { "entity": "AuditLog", "status": null, "count": 1, "notes": "subscription.webhook" }
+      ],
+      "user_refs": ["SEED-U002"],
+      "instances": 1,
+      "notes": "Free user hits limit -> paywall -> subscribe (Sophie hasn't converted yet, showing paywall state)."
+    },
+    {
+      "flow_ref": "F006",
+      "flow_name": "AI质量监控链路",
+      "chain": [
+        { "entity": "Conversation", "status": "completed", "count": 3, "notes": "Include 1 low-score conversation" },
+        { "entity": "PromptTemplate", "status": "active", "count": 1, "notes": "Currently active template" }
+      ],
+      "user_refs": ["SEED-U016"],
+      "instances": 1,
+      "notes": "AI trainer reviews quality scores and manages prompts."
+    },
+    {
+      "flow_ref": "F008",
+      "flow_name": "投诉处理链路",
+      "chain": [
+        { "entity": "Feedback", "status": "pending", "count": 1 },
+        { "entity": "Feedback", "status": "resolved", "count": 1, "notes": "With admin_reply" }
+      ],
+      "user_refs": ["SEED-U002", "SEED-U018"],
+      "instances": 2,
+      "notes": "User complaint -> admin resolves."
+    },
+    {
+      "flow_ref": "F009",
+      "flow_name": "紧急场景速学链路",
+      "chain": [
+        { "entity": "Scenario", "status": "published", "count": 1, "notes": "Emergency scenario (doctor visit)" },
+        { "entity": "Conversation", "status": "completed", "count": 2 },
+        { "entity": "VocabularyItem", "status": "learning", "count": 8, "notes": "Critical vocabulary" },
+        { "entity": "ReviewCard", "status": "learning", "count": 8 }
+      ],
+      "user_refs": ["SEED-U011"],
+      "instances": 1,
+      "notes": "Immigrant user doing emergency scenario practice."
+    }
+  ],
+  "constraint_rules": [
+    {
+      "constraint_ref": "CN001",
+      "rule": "free_daily_limit = 3",
+      "seed_data": "SEED-U002 has a DailyConversationCount record with count=3 for today (limit reached). Other free users have count=0-2.",
+      "boundary_records": ["count=3 (at limit)", "count=0 (unused)", "count=2 (near limit)"]
+    },
+    {
+      "constraint_ref": "CN002",
+      "rule": "Cumulative refund <= order payment amount",
+      "seed_data": "1 Subscription with a partial refund audit log (refund < payment). No over-refund records.",
+      "boundary_records": ["partial refund (50% of payment)"]
+    },
+    {
+      "constraint_ref": "CN003",
+      "rule": "User data retention 30 days after deactivation",
+      "seed_data": "SEED-U020 deactivated 15 days ago (within 30-day window). is_active=false, deactivated_at set.",
+      "boundary_records": ["deactivated_at = 15 days ago (within retention)"]
+    },
+    {
+      "constraint_ref": "CN004",
+      "rule": "Streak restoration max 1 per month",
+      "seed_data": "SEED-U001 has restorations_this_month=1 (used). SEED-U004 has restorations_this_month=0 (available).",
+      "boundary_records": ["restorations_this_month=1 (exhausted)", "restorations_this_month=0 (available)"]
+    },
+    {
+      "constraint_ref": "CN005",
+      "rule": "Payment operations must have audit log",
+      "seed_data": "Every Subscription change has a corresponding AuditLog with idempotency_key.",
+      "boundary_records": ["webhook with idempotency_key"]
+    },
+    {
+      "constraint_ref": "CN006",
+      "rule": "Scenario must be approved before visible to learners",
+      "seed_data": "draft/review/rejected scenarios NOT visible in consumer endpoints. Only published scenarios have published_at set.",
+      "boundary_records": ["draft (no published_at)", "review (submitted_at set)", "rejected (rejection_reason set)", "published (published_at set)"]
+    },
+    {
+      "constraint_ref": "CN007",
+      "rule": "Pronunciation threshold 0.0-1.0",
+      "seed_data": "SystemConfig pronunciation_threshold = 0.6. PronunciationScores all within [0.0, 1.0].",
+      "boundary_records": ["score=0.95 (high)", "score=0.3 (low)", "score=0.6 (at threshold)"]
+    },
+    {
+      "constraint_ref": "CN008",
+      "rule": "User ban requires confirmation + audit log",
+      "seed_data": "SEED-U019 is banned with ban_reason set. AuditLog has user.ban entry with operator_id=SEED-U018.",
+      "boundary_records": ["is_banned=true with ban_reason", "AuditLog action=user.ban"]
+    }
+  ],
+  "enum_coverage": {
+    "User.english_level": {
+      "values": ["beginner", "intermediate", "advanced"],
+      "coverage": "all 3 covered across accounts"
+    },
+    "User.subscription_tier": {
+      "values": ["free", "premium", "pro"],
+      "coverage": "all 3 covered"
+    },
+    "Scenario.status": {
+      "values": ["draft", "review", "published", "rejected", "archived"],
+      "coverage": "all 5 covered"
+    },
+    "Scenario.difficulty": {
+      "values": ["beginner", "intermediate", "advanced"],
+      "coverage": "all 3 covered"
+    },
+    "Conversation.status": {
+      "values": ["active", "completed", "abandoned"],
+      "coverage": "all 3 covered"
+    },
+    "ConversationMessage.role": {
+      "values": ["user", "ai", "system"],
+      "coverage": "all 3 covered"
+    },
+    "VocabularyItem.source_type": {
+      "values": ["auto_collected", "manual"],
+      "coverage": "both covered"
+    },
+    "VocabularyItem.mastery_level": {
+      "values": ["new", "learning", "mastered"],
+      "coverage": "all 3 covered"
+    },
+    "ReviewCard.state": {
+      "values": ["new", "learning", "review", "relearning"],
+      "coverage": "all 4 covered"
+    },
+    "Subscription.plan": {
+      "values": ["free", "monthly", "yearly"],
+      "coverage": "all 3 covered"
+    },
+    "Subscription.status": {
+      "values": ["active", "expired", "cancelled", "trial"],
+      "coverage": "active + expired + cancelled covered; 1 trial record needed"
+    },
+    "Notification.type": {
+      "values": ["review_reminder", "system", "achievement", "escalation"],
+      "coverage": "all 4 covered"
+    },
+    "Feedback.type": {
+      "values": ["bug", "feature", "complaint", "other"],
+      "coverage": "all 4 covered"
+    },
+    "Feedback.status": {
+      "values": ["pending", "in_progress", "resolved", "closed"],
+      "coverage": "all 4 covered"
+    }
+  },
+  "history_depth": {
+    "user_accounts": "180 days (SEED-U018 admin created first)",
+    "core_business": "90 days (conversations, reviews)",
+    "config_tables": "system_start (day 0 = 90 days ago)",
+    "monthly_variation": "±15% random fluctuation per month"
+  },
+  "subscription_distribution": [
+    { "user": "SEED-U001", "plan": "premium", "status": "active", "started_days_ago": 60 },
+    { "user": "SEED-U003", "plan": "yearly", "status": "active", "started_days_ago": 40 },
+    { "user": "SEED-U004", "plan": "monthly", "status": "active", "started_days_ago": 25 },
+    { "user": "SEED-U007", "plan": "yearly", "status": "active", "started_days_ago": 70 },
+    { "user": "SEED-U011", "plan": "monthly", "status": "active", "started_days_ago": 45 },
+    { "user": "SEED-U012", "plan": "monthly", "status": "active", "started_days_ago": 30 },
+    { "user": "SEED-U008", "plan": "monthly", "status": "expired", "started_days_ago": 60, "notes": "Was subscriber, let it lapse" },
+    { "user": "SEED-U009", "plan": "monthly", "status": "cancelled", "started_days_ago": 30, "cancelled_days_ago": 10 }
+  ],
+  "streak_data": [
+    { "user": "SEED-U001", "current_streak": 23, "longest_streak": 45, "restorations_this_month": 1 },
+    { "user": "SEED-U002", "current_streak": 0, "longest_streak": 12, "restorations_this_month": 0, "notes": "Streak broken 2 days ago" },
+    { "user": "SEED-U003", "current_streak": 8, "longest_streak": 15, "restorations_this_month": 0 },
+    { "user": "SEED-U004", "current_streak": 14, "longest_streak": 14, "restorations_this_month": 0 },
+    { "user": "SEED-U007", "current_streak": 31, "longest_streak": 31, "restorations_this_month": 0 },
+    { "user": "SEED-U011", "current_streak": 5, "longest_streak": 20, "restorations_this_month": 0 }
+  ]
+}

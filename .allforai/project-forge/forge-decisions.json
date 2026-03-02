@@ -1,0 +1,385 @@
+{
+  "forge_run": {
+    "mode": "full",
+    "started_at": "2026-02-28T14:00:00Z",
+    "product_source": ".allforai/product-map/product-map.json"
+  },
+  "preflight": {
+    "inferred_endpoints": ["backend", "admin", "mobile-native"],
+    "tech_preferences": {
+      "backend": {
+        "template_id": "fastapi",
+        "architecture": "three-layer",
+        "cqrs": false
+      },
+      "admin": {
+        "template_id": "nextjs",
+        "state_management": "zustand",
+        "server_cache": "tanstack-query"
+      },
+      "mobile-native": {
+        "template_id": "react-native-expo"
+      }
+    },
+    "monorepo_tool": "manual",
+    "auth_strategy": "jwt",
+    "confirmed_at": "2026-02-28T14:00:00Z"
+  },
+  "technical_spikes": [
+    {
+      "id": "TS001",
+      "category": "ai_llm",
+      "title": "AI/LLM 集成 — 对话、纠正、追问、内容生成",
+      "affected_tasks": ["T002", "T003", "T004", "T020", "T029", "T030", "T031"],
+      "dimensions": ["vendor", "architecture", "cost"],
+      "options_researched": [
+        {
+          "label": "OpenAI + LangChain (推荐)",
+          "vendor": "openai",
+          "components": { "llm": "GPT-4o/5", "framework": "LangChain/LangGraph", "streaming": "SSE" },
+          "pros": ["生态最成熟, LangGraph 工作流", "Streaming SSE 开箱即用", "Vercel AI SDK 前端集成"],
+          "cons": ["成本随量增长", "数据出境合规"],
+          "cost_model": "~$2.5/1M input + $10/1M output (GPT-4o)",
+          "complexity": "low",
+          "sdk": "openai",
+          "compatibility": "Python SDK 与 FastAPI 完美兼容, async 原生支持"
+        },
+        {
+          "label": "Azure OpenAI Service",
+          "vendor": "azure",
+          "components": { "llm": "同 OpenAI 模型", "audit": "Azure 内容审核" },
+          "pros": ["内容审核内置", "VNet/合规/审计", "区域部署"],
+          "cons": ["配置复杂, 区域模型滞后", "成本不低于 OpenAI"],
+          "cost_model": "同 OpenAI + Azure 基础设施",
+          "complexity": "medium",
+          "sdk": "openai",
+          "compatibility": "同 SDK, 改 base_url"
+        },
+        {
+          "label": "自托管 Ollama",
+          "vendor": "self-hosted",
+          "components": { "llm": "开源模型", "runtime": "Ollama" },
+          "pros": ["零 API 成本", "数据不出境"],
+          "cons": ["模型效果差距大", "GPU 运维, 并发/延迟不可控"],
+          "cost_model": "GPU 服务器月租",
+          "complexity": "high",
+          "sdk": "ollama",
+          "compatibility": "REST API 兼容"
+        }
+      ],
+      "decision": {
+        "selected": "OpenAI + LangChain",
+        "vendor": "openai",
+        "sdk": "openai",
+        "approach": "OpenAI GPT + LangChain/LangGraph 编排, FastAPI SSE streaming, 通过 ai_client service 统一封装",
+        "notes": "GPT 交叉验证建议加 LLM Gateway 统一路由+回退+观测, 注意 Prompt 注入防护"
+      },
+      "implementation_principles": [
+        "所有 AI 调用通过 services/ai_client.py, streaming 用 async generator + SSE, 每次调用需 content filter 中间件",
+        "AI 对话历史压缩策略：超过 N 轮后自动摘要（避免 token 超限）"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "TS002",
+      "category": "speech",
+      "title": "语音识别 + 发音评估 — 语音输入、跟读、发音评分(音素级)",
+      "affected_tasks": ["T002", "T005", "T006", "T021", "T032"],
+      "dimensions": ["vendor", "cost", "compliance"],
+      "options_researched": [
+        {
+          "label": "Azure Speech SDK (推荐)",
+          "vendor": "azure",
+          "components": { "stt": "Azure STT", "tts": "Azure TTS", "pronunciation": "Azure Pronunciation Assessment" },
+          "pros": ["唯一提供完整音素级评估", "STT/TTS/评估一站式", "30+ 语言支持"],
+          "cons": ["厂商锁定严重", "移动端弱网延迟", "Prosody 仅 en-US"],
+          "cost_model": "$0.66-1.32/audio-hour",
+          "complexity": "medium",
+          "sdk": "azure-cognitiveservices-speech-sdk",
+          "compatibility": "Python SDK 兼容 FastAPI, 建议后端代理转发"
+        },
+        {
+          "label": "Whisper API + 自研评分",
+          "vendor": "openai",
+          "components": { "stt": "Whisper" },
+          "pros": ["STT 精度最高", "成本低"],
+          "cons": ["无发音评估, 需大量自研", "GOP 评分需训练数据"],
+          "cost_model": "$0.006/min",
+          "complexity": "high",
+          "sdk": "openai",
+          "compatibility": "后端调用即可"
+        },
+        {
+          "label": "Speechace API",
+          "vendor": "speechace",
+          "components": { "pronunciation": "Speechace 评分" },
+          "pros": ["教育场景优化", "集成简单"],
+          "cons": ["小众, 供应商风险", "文档/社区较少"],
+          "cost_model": "按调用量计费",
+          "complexity": "low",
+          "sdk": "speechace-api",
+          "compatibility": "HTTP REST 兼容"
+        }
+      ],
+      "decision": {
+        "selected": "Azure Speech SDK",
+        "vendor": "azure",
+        "sdk": "azure-cognitiveservices-speech-sdk",
+        "approach": "Azure Speech SDK 一站式 STT+TTS+发音评估, 通过 FastAPI 代理转发, speech_service 统一封装",
+        "notes": "GPT 交叉验证建议补充 Speechace 作为备选, FastAPI 代理转发避免 Expo 原生 SDK 适配复杂度"
+      },
+      "implementation_principles": [
+        "语音评估通过 services/speech_service.py 统一调用 Azure, 移动端不直接调 SDK（FastAPI 代理转发）",
+        "语音调用失败时 fallback 到文字输入模式, 不阻塞用户流程"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "TS003",
+      "category": "payment",
+      "title": "应用内付费/订阅 — iOS IAP, Google Play Billing, 订阅管理",
+      "affected_tasks": ["T022", "T023", "T024", "T034"],
+      "dimensions": ["vendor", "cost", "compliance"],
+      "options_researched": [
+        {
+          "label": "RevenueCat (推荐)",
+          "vendor": "revenuecat",
+          "components": { "iap": "react-native-purchases", "web": "Web Billing (Stripe)" },
+          "pros": ["iOS+Android+Web 统一", "收据验证自动化", "订阅分析仪表板"],
+          "cons": ["供应商锁定", "高收入后成本上升"],
+          "cost_model": "免费到 $2,500/月收入, 之后 1%",
+          "complexity": "low",
+          "sdk": "react-native-purchases",
+          "compatibility": "Expo 原生支持, Preview API for Expo Go"
+        },
+        {
+          "label": "react-native-iap",
+          "vendor": "direct",
+          "components": { "iap": "react-native-iap" },
+          "pros": ["零平台抽成", "完全控制"],
+          "cons": ["自建续费/宽限期/风控", "实施运维风险最高"],
+          "cost_model": "免费（但自建后端成本高）",
+          "complexity": "high",
+          "sdk": "react-native-iap",
+          "compatibility": "需 dev build"
+        },
+        {
+          "label": "Adapty",
+          "vendor": "adapty",
+          "components": { "iap": "react-native-adapty", "ab_test": "价格 A/B 测试" },
+          "pros": ["A/B 价格测试", "Paywall 模板"],
+          "cons": ["社区较小", "中国市场支持弱"],
+          "cost_model": "免费到 $10K/月, 之后 0.6%",
+          "complexity": "low",
+          "sdk": "react-native-adapty",
+          "compatibility": "支持 Expo"
+        }
+      ],
+      "decision": {
+        "selected": "RevenueCat",
+        "vendor": "revenuecat",
+        "sdk": "react-native-purchases",
+        "approach": "RevenueCat 统一管理 iOS/Android/Web 订阅, Webhook 回调同步后端状态, 后端强校验所有支付操作",
+        "notes": "GPT 交叉验证强调: CN002 后端校验累计退款<=实付, CN005 全链路审计日志"
+      },
+      "implementation_principles": [
+        "订阅状态以 RevenueCat Webhook 回调为准, 客户端状态仅做展示缓存",
+        "支付相关所有写操作必须经审计日志中间件（CN005）"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "TS004",
+      "category": "algorithm",
+      "title": "记忆曲线/间隔重复算法 — 学习调度、难度自适应",
+      "affected_tasks": ["T007", "T013", "T020"],
+      "dimensions": ["algorithm", "architecture"],
+      "options_researched": [
+        {
+          "label": "FSRS (推荐)",
+          "vendor": "open-source",
+          "components": { "algorithm": "FSRS-6", "package": "py-fsrs" },
+          "pros": ["Anki 23.10+ 默认算法", "基于三组分记忆模型", "ML 驱动自适应"],
+          "cons": ["参数调优需数据量", "冷启动阶段差异小"],
+          "cost_model": "免费（开源）",
+          "complexity": "low",
+          "sdk": "py-fsrs",
+          "compatibility": "Python 包, 与 FastAPI 完美兼容"
+        },
+        {
+          "label": "SM-2 (经典 Anki)",
+          "vendor": "open-source",
+          "components": { "algorithm": "SuperMemo-2", "package": "anki-sm-2" },
+          "pros": ["久经验证", "实现简单"],
+          "cons": ["不自适应", "效率低于 FSRS"],
+          "cost_model": "免费（开源）",
+          "complexity": "low",
+          "sdk": "anki-sm-2",
+          "compatibility": "Python 包"
+        },
+        {
+          "label": "自研简单算法",
+          "vendor": "self",
+          "components": { "algorithm": "固定间隔" },
+          "pros": ["完全可控", "无外部依赖"],
+          "cons": ["需自行验证", "缺乏理论支撑"],
+          "cost_model": "免费",
+          "complexity": "medium",
+          "sdk": "",
+          "compatibility": "N/A"
+        }
+      ],
+      "decision": {
+        "selected": "FSRS",
+        "vendor": "open-source",
+        "sdk": "py-fsrs",
+        "approach": "FSRS 算法通过 srs_service 封装, 业务层只传 (card_id, rating), 学习数据存储用于参数自适应",
+        "notes": "Anki 最新采用的下一代算法, T020 难度自适应天然匹配"
+      },
+      "implementation_principles": [
+        "间隔重复调度通过 services/srs_service.py 封装 FSRS, 业务层只传 (card_id, rating)"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "TS005",
+      "category": "realtime",
+      "title": "实时通信 — AI 对话 Streaming 推送",
+      "affected_tasks": ["T002", "T005"],
+      "dimensions": ["architecture"],
+      "options_researched": [
+        {
+          "label": "FastAPI WebSocket + SSE (推荐)",
+          "vendor": "self-hosted",
+          "components": { "protocol": "SSE + WebSocket", "framework": "FastAPI 内置" },
+          "pros": ["零额外依赖", "SSE 适合 LLM streaming", "轻量"],
+          "cons": ["重连需自实现", "无房间概念"],
+          "cost_model": "免费（自托管）",
+          "complexity": "low",
+          "sdk": "fastapi",
+          "compatibility": "FastAPI 原生支持"
+        },
+        {
+          "label": "Socket.IO",
+          "vendor": "open-source",
+          "components": { "protocol": "Socket.IO", "package": "python-socketio" },
+          "pros": ["自动重连/回退", "房间/命名空间"],
+          "cons": ["额外依赖", "协议开销"],
+          "cost_model": "免费（自托管）",
+          "complexity": "medium",
+          "sdk": "python-socketio",
+          "compatibility": "ASGI 兼容, 可与 FastAPI 共存"
+        },
+        {
+          "label": "Ably (托管)",
+          "vendor": "ably",
+          "components": { "protocol": "Ably Realtime" },
+          "pros": ["零运维", "全球 CDN"],
+          "cons": ["成本随量增长"],
+          "cost_model": "按消息量计费",
+          "complexity": "low",
+          "sdk": "ably",
+          "compatibility": "REST + SDK"
+        }
+      ],
+      "decision": {
+        "selected": "FastAPI WebSocket + SSE",
+        "vendor": "self-hosted",
+        "sdk": "fastapi",
+        "approach": "AI 对话用 SSE 单向推送, FastAPI 原生 WebSocket 备用, 无需额外依赖",
+        "notes": "T002/T005 不需要双向聊天室, SSE 单向推送已足够"
+      },
+      "implementation_principles": [
+        "AI 对话 streaming 统一用 SSE endpoint, 前端 EventSource 接收"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "id": "TS006",
+      "category": "push",
+      "title": "推送通知 — 学习提醒、系统通知",
+      "affected_tasks": ["T007", "T044"],
+      "dimensions": ["vendor"],
+      "options_researched": [
+        {
+          "label": "Expo Notifications (推荐)",
+          "vendor": "expo",
+          "components": { "push": "expo-notifications" },
+          "pros": ["Expo 生态原生", "统一 iOS/Android"],
+          "cons": ["依赖 Expo 推送服务"],
+          "cost_model": "免费",
+          "complexity": "low",
+          "sdk": "expo-notifications",
+          "compatibility": "Expo 原生集成"
+        },
+        {
+          "label": "FCM 直连",
+          "vendor": "google",
+          "components": { "push": "@react-native-firebase/messaging" },
+          "pros": ["功能最全", "自定义灵活"],
+          "cons": ["配置复杂"],
+          "cost_model": "免费",
+          "complexity": "medium",
+          "sdk": "@react-native-firebase/messaging",
+          "compatibility": "需 dev build 配置"
+        },
+        {
+          "label": "OneSignal",
+          "vendor": "onesignal",
+          "components": { "push": "onesignal-expo-plugin" },
+          "pros": ["分析仪表板", "用户分群"],
+          "cons": ["免费额度有限"],
+          "cost_model": "免费到 10K 用户",
+          "complexity": "low",
+          "sdk": "onesignal-expo-plugin",
+          "compatibility": "SDK 支持 Expo"
+        }
+      ],
+      "decision": {
+        "selected": "Expo Notifications",
+        "vendor": "expo",
+        "sdk": "expo-notifications",
+        "approach": "Expo Notifications 统一管理 iOS/Android 推送, 后端通过 Expo Push API 发送",
+        "notes": "已选 Expo 技术栈, expo-notifications 是最自然的选择"
+      },
+      "implementation_principles": [
+        "推送通知通过 services/push_service.py 封装 Expo Push API, 后端统一调度"
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "coding_principles": {
+    "generated_at": "2026-02-28T15:30:00Z",
+    "universal": [
+      "相同场景必须使用相同套路（T002/T004 共用 ai_client, T005/T006 共用 speech_service）",
+      "底层工具库不重复（HTTP client / error handler / logger / date 全项目统一一份）",
+      "成熟三方优先（有维护良好的库就用，如 py-fsrs / tenacity / pydantic）",
+      "每个外部服务调用封装为独立 service，业务层不直接调用 SDK"
+    ],
+    "project_specific": [
+      "[TS001] 所有 AI 调用通过 services/ai_client.py, streaming 用 async generator + SSE, 每次调用需 content filter 中间件",
+      "[TS001] AI 对话历史压缩策略：超过 N 轮后自动摘要（避免 token 超限）",
+      "[TS002] 语音评估通过 services/speech_service.py 统一调用 Azure, 移动端不直接调 SDK（FastAPI 代理转发）",
+      "[TS002] 语音调用失败时 fallback 到文字输入模式, 不阻塞用户流程",
+      "[TS003] 订阅状态以 RevenueCat Webhook 回调为准, 客户端状态仅做展示缓存",
+      "[TS003] 支付相关所有写操作必须经审计日志中间件（CN005）",
+      "[TS004] 间隔重复调度通过 services/srs_service.py 封装 FSRS, 业务层只传 (card_id, rating)",
+      "[CN001] 免费用量限制（3次对话/天）在 middleware 层统一拦截, 不在业务逻辑中硬编码",
+      "[CN002] 退款校验: 后端强校验累计退款 <= 订单实付金额, 防并发超退",
+      "[CN005] 支付操作全链路审计日志: 请求 → 回调 → 状态迁移 → 操作者 → 幂等键",
+      "[CN006] 场景内容发布前必须经审批流, 未审批内容不可对学习者可见"
+    ]
+  },
+  "phase_status": {
+    "phase_0_5": "completed",
+    "phase_1": "completed",
+    "phase_2": "completed",
+    "phase_2_5": "completed",
+    "phase_3": "completed",
+    "phase_4": "completed",
+    "phase_4_5": "skipped_scaffold",
+    "phase_5": "deferred",
+    "phase_6": "completed"
+  },
+  "decisions": []
+}

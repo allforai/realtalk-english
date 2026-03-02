@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-02-28T00:00:00Z",
+  "mode": "skipped",
+  "reason": "Scaffold phase — all handlers are stubs. E2E cross-project testing requires implemented business logic across api-backend, admin-web, and mobile-app. E2E test skeleton (playwright.config.ts + 3 specs) has been generated in e2e/ directory for post-implementation use.",
+  "prerequisites_status": {
+    "project_manifest": "available",
+    "business_flows": "available",
+    "api_backend_running": false,
+    "admin_web_running": false,
+    "mobile_app_running": false,
+    "mock_server_running": true
+  },
+  "e2e_skeleton": {
+    "config": "e2e/playwright.config.ts",
+    "specs": [
+      "e2e/scenarios/smoke.spec.ts",
+      "e2e/scenarios/auth.spec.ts",
+      "e2e/scenarios/scenarios.spec.ts"
+    ],
+    "fixtures": ["e2e/fixtures/auth.ts"]
+  },
+  "scenarios_to_derive": "Deferred to post-implementation. Will use business-flows.json to generate cross-project E2E scenarios.",
+  "summary": {
+    "total": 0,
+    "pass": 0,
+    "fail": 0,
+    "skip": 0,
+    "reason": "E2E testing deferred to post-implementation phase"
+  }
+}

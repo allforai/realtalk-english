@@ -1,0 +1,18 @@
+{
+  "sub_project_id": "sp-003",
+  "sub_project_name": "mobile-app",
+  "type": "mobile-native",
+  "template_id": "react-native-expo",
+  "architecture": null,
+  "framework": "React Native",
+  "language": "typescript",
+  "toolkit": "Expo",
+  "port": 8081,
+  "auth_strategy": "jwt",
+  "additional_config": {
+    "spike_sdks": {
+      "TS003": "react-native-purchases",
+      "TS006": "expo-notifications"
+    }
+  }
+}

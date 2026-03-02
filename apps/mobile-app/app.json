@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "RealTalk English",
+    "slug": "realtalk-english",
+    "version": "0.1.0",
+    "scheme": "realtalk",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "icon": "./src/assets/images/icon.png",
+    "splash": {
+      "image": "./src/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.realtalk.english",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "RealTalk needs microphone access for pronunciation practice."
+      }
+    },
+    "android": {
+      "package": "com.realtalk.english",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": ["RECORD_AUDIO"]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

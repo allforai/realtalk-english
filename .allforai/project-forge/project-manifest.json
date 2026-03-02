@@ -1,0 +1,93 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-02-28T16:00:00Z",
+  "mode": "new",
+  "product_source": ".allforai/product-map/product-map.json",
+  "monorepo": {
+    "tool": "manual",
+    "root_name": "realtalk-english"
+  },
+  "auth_strategy": "jwt",
+  "sub_projects": [
+    {
+      "id": "sp-001",
+      "name": "api-backend",
+      "type": "backend",
+      "stack": {
+        "template_id": "fastapi",
+        "framework": "FastAPI",
+        "language": "python",
+        "orm": "SQLAlchemy",
+        "database": "PostgreSQL",
+        "architecture": "three-layer",
+        "cqrs": false
+      },
+      "port": 8000,
+      "base_path": "./apps/api-backend",
+      "is_existing": false,
+      "assigned_modules": ["M001", "M002", "M003", "M004", "M005", "M006", "M007", "M008", "M009", "M010", "M011", "M012", "M013", "M014"],
+      "assigned_roles": ["R001", "R002", "R003", "R004", "R005", "R006", "R007"],
+      "status": "pending",
+      "decision_rationale": "FastAPI 选型匹配 AI/Speech spike: async 原生支持 SSE streaming, Azure Speech SDK 有 Python 包, FSRS 有 Python 包。三层架构因 CRUD 为主+外部 SDK 集成, 不需要 DDD 复杂度。"
+    },
+    {
+      "id": "sp-002",
+      "name": "admin-web",
+      "type": "admin",
+      "stack": {
+        "template_id": "nextjs",
+        "framework": "Next.js 14",
+        "language": "typescript",
+        "css": "Tailwind CSS",
+        "rendering": "SSR / SSG / CSR"
+      },
+      "port": 3000,
+      "base_path": "./apps/admin-web",
+      "is_existing": false,
+      "assigned_modules": ["M001", "M002", "M007", "M008", "M009", "M010", "M011", "M014"],
+      "assigned_roles": ["R004", "R005", "R006", "R007"],
+      "state_management": {
+        "library": "zustand",
+        "pattern": "分模块 store，按功能切片"
+      },
+      "server_cache": "tanstack-query",
+      "status": "pending",
+      "decision_rationale": "Next.js 匹配 React 生态, 管理后台需 SSR 表格性能。Zustand 轻量适合中型 admin, TanStack Query 管理 API 缓存减少 70%+ 状态管理代码。"
+    },
+    {
+      "id": "sp-003",
+      "name": "mobile-app",
+      "type": "mobile-native",
+      "stack": {
+        "template_id": "react-native-expo",
+        "framework": "React Native",
+        "language": "typescript",
+        "toolkit": "Expo"
+      },
+      "port": 8081,
+      "base_path": "./apps/mobile-app",
+      "is_existing": false,
+      "assigned_modules": ["M001", "M002", "M003", "M004", "M005", "M006", "M007", "M011", "M012", "M013", "M014"],
+      "assigned_roles": ["R001", "R002", "R003"],
+      "status": "pending",
+      "decision_rationale": "React Native Expo 选型匹配 spike 决策: RevenueCat (react-native-purchases) Expo 原生支持, expo-notifications 零配置推送, Expo Go Preview API 加速开发。"
+    }
+  ],
+  "modules": [
+    { "id": "M001", "name": "场景对话", "task_ids": ["T001", "T002", "T003", "T004", "T009", "T010", "T011", "T012", "T021", "T024", "T029", "T030"] },
+    { "id": "M002", "name": "发音纠正", "task_ids": ["T005", "T006", "T032"] },
+    { "id": "M003", "name": "记忆曲线", "task_ids": ["T007", "T008"] },
+    { "id": "M004", "name": "游戏化与轻社交", "task_ids": ["T013", "T014", "T015", "T016"] },
+    { "id": "M005", "name": "学习档案与进度", "task_ids": ["T017", "T018"] },
+    { "id": "M006", "name": "角色场景推荐", "task_ids": ["T019", "T020", "T021"] },
+    { "id": "M007", "name": "订阅与付费", "task_ids": ["T022", "T023", "T024", "T034"] },
+    { "id": "M008", "name": "运营数据看板", "task_ids": ["T025", "T026", "T027", "T028"] },
+    { "id": "M009", "name": "AI质量监控", "task_ids": ["T029", "T030", "T031", "T032"] },
+    { "id": "M010", "name": "用户管理与系统配置", "task_ids": ["T033", "T034", "T035", "T036", "T037"] },
+    { "id": "M011", "name": "注册登录与个人设置", "task_ids": ["T038", "T039", "T040", "T041", "T042"] },
+    { "id": "M012", "name": "首次体验", "task_ids": ["T043"] },
+    { "id": "M013", "name": "推送与通知", "task_ids": ["T044"] },
+    { "id": "M014", "name": "用户反馈", "task_ids": ["T045"] }
+  ],
+  "decisions": []
+}

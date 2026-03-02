@@ -1,0 +1,7 @@
+[
+  { "id": "rc-001", "vocabulary": { "word": "deadline", "definition": "The latest time by which something should be completed", "example": "We need to meet the project deadline by Friday." }, "due": "2026-02-28T00:00:00Z", "state": "review" },
+  { "id": "rc-002", "vocabulary": { "word": "stakeholder", "definition": "A person with an interest or concern in a business", "example": "We need to consult all stakeholders before making this decision." }, "due": "2026-02-28T00:00:00Z", "state": "review" },
+  { "id": "rc-003", "vocabulary": { "word": "boarding pass", "definition": "A document that allows a passenger to board an aircraft", "example": "Please have your boarding pass ready for inspection." }, "due": "2026-02-28T00:00:00Z", "state": "new" },
+  { "id": "rc-004", "vocabulary": { "word": "prescription", "definition": "A doctor's written direction for medicine", "example": "The doctor gave me a prescription for antibiotics." }, "due": "2026-02-28T00:00:00Z", "state": "learning" },
+  { "id": "rc-005", "vocabulary": { "word": "leverage", "definition": "To use something to maximum advantage", "example": "We should leverage our existing customer relationships." }, "due": "2026-02-28T00:00:00Z", "state": "relearning" }
+]

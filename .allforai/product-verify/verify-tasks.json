@@ -1,0 +1,98 @@
+[
+  {
+    "id": "VT-001",
+    "type": "IMPLEMENT",
+    "task_id": "T008",
+    "task_name": "管理词汇本",
+    "frequency": "中",
+    "priority": "P1",
+    "source_step": "S1",
+    "description": "VocabularyItem model exists but no handler/screen. Add GET/POST/DELETE /api/v1/vocabulary endpoints and VocabularyScreen in mobile-app.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create vocabulary handler + VocabularyScreen"
+  },
+  {
+    "id": "VT-002",
+    "type": "IMPLEMENT",
+    "task_id": "T017",
+    "task_name": "查看个人学习档案",
+    "frequency": "中",
+    "priority": "P1",
+    "source_step": "S1",
+    "description": "No profile endpoint or screen. Add GET /api/v1/profile/me and ProfileScreen in mobile-app.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create profile handler + ProfileScreen"
+  },
+  {
+    "id": "VT-003",
+    "type": "IMPLEMENT",
+    "task_id": "T041",
+    "task_name": "重置密码",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S1",
+    "description": "No password reset flow. Add POST /auth/forgot-password and POST /auth/reset-password endpoints.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create forgot/reset password handlers"
+  },
+  {
+    "id": "VT-004",
+    "type": "IMPLEMENT",
+    "task_id": "T042",
+    "task_name": "注销账户",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S1",
+    "description": "No account deletion endpoint. CN003 (data retention 30 days) cannot be enforced. Add DELETE /profile/me + retention scheduler.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create account deletion handler + retention job"
+  },
+  {
+    "id": "VT-005",
+    "type": "IMPLEMENT",
+    "task_id": "T045",
+    "task_name": "提交意见反馈",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S1",
+    "description": "Feedback model exists but no submission endpoint. Add POST /api/v1/feedback.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create feedback submission handler"
+  },
+  {
+    "id": "VT-006",
+    "type": "IMPLEMENT",
+    "task_id": "T019",
+    "task_name": "设置角色偏好",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S1",
+    "description": "No role preference endpoint. Part of profile settings system.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Include in profile settings PATCH endpoint"
+  },
+  {
+    "id": "VT-007",
+    "type": "IMPLEMENT",
+    "task_id": "T040",
+    "task_name": "管理个人设置",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S1",
+    "description": "No profile settings update route. Add PATCH /api/v1/profile/settings.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create profile settings handler"
+  },
+  {
+    "id": "VT-008",
+    "type": "IMPLEMENT",
+    "task_id": "T043",
+    "task_name": "完成新手引导",
+    "frequency": "低",
+    "priority": "P2",
+    "source_step": "S2",
+    "description": "No onboarding screen or endpoint. Add OnboardingScreen in mobile-app.",
+    "affected_roles": ["R001"],
+    "suggested_action": "Create OnboardingScreen + GET /api/v1/profile/onboarding-status"
+  }
+]

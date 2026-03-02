@@ -1,0 +1,7 @@
+[
+  { "id": "conv-001", "user_id": "u-001", "scenario_id": "sc-001", "status": "completed", "overall_score": 0.82, "duration_seconds": 420, "message_count": 12, "word_count": 350, "started_at": "2026-02-20T14:00:00Z", "completed_at": "2026-02-20T14:07:00Z", "created_at": "2026-02-20T14:00:00Z" },
+  { "id": "conv-002", "user_id": "u-001", "scenario_id": "sc-002", "status": "completed", "overall_score": 0.75, "duration_seconds": 300, "message_count": 8, "word_count": 200, "started_at": "2026-02-21T10:00:00Z", "completed_at": "2026-02-21T10:05:00Z", "created_at": "2026-02-21T10:00:00Z" },
+  { "id": "conv-003", "user_id": "u-002", "scenario_id": "sc-004", "status": "completed", "overall_score": 0.68, "duration_seconds": 250, "message_count": 6, "word_count": 150, "started_at": "2026-02-22T09:00:00Z", "completed_at": "2026-02-22T09:04:00Z", "created_at": "2026-02-22T09:00:00Z" },
+  { "id": "conv-004", "user_id": "u-003", "scenario_id": "sc-001", "status": "active", "overall_score": null, "duration_seconds": null, "message_count": 4, "word_count": 120, "started_at": "2026-02-28T15:00:00Z", "completed_at": null, "created_at": "2026-02-28T15:00:00Z" },
+  { "id": "conv-005", "user_id": "u-004", "scenario_id": "sc-003", "status": "abandoned", "overall_score": null, "duration_seconds": 60, "message_count": 2, "word_count": 30, "started_at": "2026-02-25T11:00:00Z", "completed_at": null, "created_at": "2026-02-25T11:00:00Z" }
+]

@@ -1,0 +1,8 @@
+[
+  { "id": "ach-001", "user_id": "u-001", "type": "streak", "title": "7-Day Streak", "description": "Practice for 7 consecutive days", "icon": "fire", "unlocked_at": "2026-02-20T00:00:00Z" },
+  { "id": "ach-002", "user_id": "u-001", "type": "conversations", "title": "First Conversation", "description": "Complete your first conversation", "icon": "chat", "unlocked_at": "2026-02-20T14:07:00Z" },
+  { "id": "ach-003", "user_id": "u-001", "type": "vocabulary", "title": "Word Collector", "description": "Learn 50 new words", "icon": "book", "unlocked_at": "2026-02-25T10:00:00Z" },
+  { "id": "ach-004", "user_id": "u-001", "type": "score", "title": "High Achiever", "description": "Score above 90% in a conversation", "icon": "star", "unlocked_at": null },
+  { "id": "ach-005", "user_id": "u-002", "type": "conversations", "title": "First Conversation", "description": "Complete your first conversation", "icon": "chat", "unlocked_at": "2026-02-22T09:04:00Z" },
+  { "id": "ach-006", "user_id": "u-003", "type": "streak", "title": "3-Day Streak", "description": "Practice for 3 consecutive days", "icon": "fire", "unlocked_at": "2026-02-27T00:00:00Z" }
+]

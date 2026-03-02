@@ -1,0 +1,35 @@
+{
+  "period": "2026-02",
+  "users": {
+    "total": 11,
+    "active": 6,
+    "new_this_period": 1,
+    "by_tier": { "free": 5, "premium": 3, "pro": 3 },
+    "by_level": { "beginner": 2, "intermediate": 4, "advanced": 5 }
+  },
+  "conversations": {
+    "total": 5,
+    "completed": 3,
+    "active": 1,
+    "abandoned": 1,
+    "avg_duration_seconds": 323,
+    "avg_score": 0.75,
+    "avg_message_count": 6.4
+  },
+  "scenarios": {
+    "total": 6,
+    "published": 4,
+    "draft": 1,
+    "review": 1,
+    "most_popular": [
+      { "id": "sc-001", "title": "Job Interview: Tell Me About Yourself", "conversation_count": 2 },
+      { "id": "sc-002", "title": "At the Airport: Checking In", "conversation_count": 1 }
+    ]
+  },
+  "vocabulary": {
+    "total_cards": 5,
+    "by_state": { "new": 1, "learning": 1, "review": 2, "relearning": 1 },
+    "avg_retention_rate": 0.72
+  },
+  "generated_at": "2026-02-28T00:00:00Z"
+}

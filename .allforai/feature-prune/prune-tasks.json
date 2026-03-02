@@ -9,7 +9,7 @@
     "affected_screens": [
       "S005"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -23,7 +23,7 @@
     "affected_screens": [
       "S006"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -37,7 +37,7 @@
     "affected_screens": [
       "S008"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -51,7 +51,7 @@
     "affected_screens": [
       "S011"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -65,7 +65,7 @@
     "affected_screens": [
       "S011"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -79,7 +79,7 @@
     "affected_screens": [
       "S013"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -93,7 +93,7 @@
     "affected_screens": [
       "S014"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -107,7 +107,7 @@
     "affected_screens": [
       "S015"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=core；策略=aggressive",
     "action": "标记移除，通知开发团队清理相关代码和界面",
     "risk": "低"
   },
@@ -121,7 +121,7 @@
     "affected_screens": [
       "S016"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -135,7 +135,7 @@
     "affected_screens": [
       "S017"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -149,7 +149,7 @@
     "affected_screens": [
       "S018"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=core；策略=aggressive",
     "action": "标记移除，通知开发团队清理相关代码和界面",
     "risk": "低"
   },
@@ -163,50 +163,50 @@
     "affected_screens": [
       "S019"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-013",
-    "title": "订阅付费方案 → CUT",
-    "decision": "CUT",
+    "title": "订阅付费方案 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T022"
     ],
     "affected_screens": [
       "S020"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=高；类别=basic；被业务流引用；护栏保护(basic基本功能+risk=高+营收相关+rules=2,exceptions=2)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-014",
-    "title": "管理订阅 → CUT",
-    "decision": "CUT",
+    "title": "管理订阅 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T023"
     ],
     "affected_screens": [
       "S021"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=basic；被业务流引用；护栏保护(basic基本功能+营收相关+rules=0,exceptions=1)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-015",
-    "title": "购买场景包 → CUT",
-    "decision": "CUT",
+    "title": "购买场景包 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T024"
     ],
     "affected_screens": [
       "S022"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=中；类别=basic；护栏保护(basic基本功能+risk=中+营收相关+rules=0,exceptions=1)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
@@ -219,7 +219,7 @@
     "affected_screens": [
       "S024"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -233,7 +233,7 @@
     "affected_screens": [
       "S025"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -247,7 +247,7 @@
     "affected_screens": [
       "S026"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=低；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -261,7 +261,7 @@
     "affected_screens": [
       "S028"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
@@ -275,22 +275,22 @@
     "affected_screens": [
       "S029"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=core；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-021",
-    "title": "调整发音评估参数 → CUT",
-    "decision": "CUT",
+    "title": "调整发音评估参数 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T032"
     ],
     "affected_screens": [
       "S030"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=中；类别=core；被业务流引用；护栏保护(risk=中)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
@@ -303,36 +303,36 @@
     "affected_screens": [
       "S032"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=高；类别=basic；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-023",
-    "title": "配置系统参数 → CUT",
-    "decision": "CUT",
+    "title": "配置系统参数 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T035"
     ],
     "affected_screens": [
       "S033"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=高；类别=basic；护栏保护(basic基本功能+risk=高+rules=1,exceptions=1)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-024",
-    "title": "管理权限角色 → CUT",
-    "decision": "CUT",
+    "title": "管理权限角色 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T036"
     ],
     "affected_screens": [
       "S034"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=中；类别=basic；护栏保护(basic基本功能+risk=中)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
@@ -345,92 +345,92 @@
     "affected_screens": [
       "S035"
     ],
-    "reason": "频次=中；场景=secondary；复杂度匹配=match；策略=aggressive",
+    "reason": "频次=中；场景=secondary；复杂度匹配=match；风险=中；类别=basic；被业务流引用；策略=aggressive",
     "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-026",
-    "title": "注册账户 → CUT",
-    "decision": "CUT",
+    "title": "注册账户 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T038"
     ],
     "affected_screens": [
       "S036"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=中；类别=basic；被业务流引用；护栏保护(basic基本功能+risk=中+rules=2,exceptions=1)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-027",
-    "title": "管理个人设置 → CUT",
-    "decision": "CUT",
+    "title": "管理个人设置 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T040"
     ],
     "affected_screens": [
       "S038"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=basic；护栏保护(basic基本功能)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-028",
-    "title": "重置密码 → CUT",
-    "decision": "CUT",
+    "title": "重置密码 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T041"
     ],
     "affected_screens": [
       "S039"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=中；类别=basic；护栏保护(basic基本功能+risk=中+rules=2,exceptions=0)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-029",
-    "title": "注销账户 → CUT",
-    "decision": "CUT",
+    "title": "注销账户 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T042"
     ],
     "affected_screens": [
       "S038"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=高；类别=basic；护栏保护(basic基本功能+risk=高+rules=2,exceptions=1)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-030",
-    "title": "完成新手引导 → CUT",
-    "decision": "CUT",
+    "title": "完成新手引导 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T043"
     ],
     "affected_screens": [
       "S040"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=basic；被业务流引用；护栏保护(basic基本功能)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   },
   {
     "id": "PRUNE-031",
-    "title": "提交意见反馈 → CUT",
-    "decision": "CUT",
+    "title": "提交意见反馈 → DEFER",
+    "decision": "DEFER",
     "affected_tasks": [
       "T045"
     ],
     "affected_screens": [
       "S042"
     ],
-    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；策略=aggressive",
-    "action": "标记移除，通知开发团队清理相关代码和界面",
+    "reason": "频次=低；场景=secondary；复杂度匹配=over_engineered；风险=低；类别=basic；被业务流引用；护栏保护(basic基本功能)；策略=aggressive",
+    "action": "从当前迭代移除，迁移到 backlog，3个月后重新评估",
     "risk": "低"
   }
 ]

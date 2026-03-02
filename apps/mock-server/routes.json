@@ -1,0 +1,44 @@
+[
+  { "method": "GET", "path": "/api/v1/scenarios", "fixture": "scenarios", "paginated": true, "description": "List published scenarios" },
+  { "method": "GET", "path": "/api/v1/scenarios/:id", "fixture": "scenarios", "description": "Get scenario detail" },
+  { "method": "POST", "path": "/api/v1/scenarios", "status": 201, "description": "Create scenario" },
+  { "method": "PUT", "path": "/api/v1/scenarios/:id", "status": 200, "description": "Update scenario" },
+  { "method": "POST", "path": "/api/v1/scenarios/:id/submit-review", "status": 200, "response": { "message": "Submitted for review" }, "description": "Submit for review" },
+  { "method": "POST", "path": "/api/v1/scenarios/:id/review", "status": 200, "description": "Approve or reject" },
+  { "method": "GET", "path": "/api/v1/scenarios/review-queue", "fixture": "review-queue", "paginated": true, "description": "Review queue" },
+
+  { "method": "POST", "path": "/api/v1/conversations", "status": 201, "description": "Start conversation" },
+  { "method": "GET", "path": "/api/v1/conversations", "fixture": "conversations", "paginated": true, "description": "List conversations" },
+  { "method": "GET", "path": "/api/v1/conversations/:id", "fixture": "conversations", "description": "Get conversation" },
+  { "method": "POST", "path": "/api/v1/conversations/:id/messages", "status": 200, "response": { "data": { "message_id": "mock-msg-001", "content": "That's a great response! Let me help you improve it." } }, "description": "Send text message" },
+  { "method": "POST", "path": "/api/v1/conversations/:id/messages/audio", "status": 200, "response": { "data": { "message_id": "mock-msg-002", "pronunciation": { "accuracy": 0.85, "fluency": 0.78, "completeness": 0.92 } } }, "description": "Send audio" },
+  { "method": "POST", "path": "/api/v1/conversations/:id/complete", "status": 200, "description": "Complete conversation" },
+  { "method": "GET", "path": "/api/v1/conversations/:id/report", "fixture": "reports", "description": "Get report" },
+
+  { "method": "GET", "path": "/api/v1/reviews/today", "fixture": "review-cards", "description": "Today's review cards" },
+  { "method": "POST", "path": "/api/v1/reviews/:card_id/rate", "status": 200, "response": { "data": { "next_due": "2026-03-02T00:00:00Z" } }, "description": "Rate card" },
+  { "method": "GET", "path": "/api/v1/reviews/summary", "response": { "data": { "total_due": 12, "reviewed": 5, "retention_rate": 0.82, "next_due_at": "2026-03-01T08:00:00Z" } }, "description": "Review summary" },
+
+  { "method": "GET", "path": "/api/v1/streaks/me", "response": { "data": { "current_streak": 7, "longest_streak": 15, "last_active_date": "2026-02-28", "can_restore": true } }, "description": "Current streak" },
+  { "method": "POST", "path": "/api/v1/streaks/restore", "status": 200, "response": { "data": { "current_streak": 8, "message": "Streak restored!" } }, "description": "Restore streak" },
+  { "method": "GET", "path": "/api/v1/achievements", "fixture": "achievements", "description": "List achievements" },
+
+  { "method": "GET", "path": "/api/v1/recommendations", "fixture": "recommendations", "description": "Personalized recommendations" },
+
+  { "method": "GET", "path": "/api/v1/admin/ai-quality/overview", "fixture": "ai-quality-overview", "description": "AI quality overview" },
+  { "method": "GET", "path": "/api/v1/admin/ai-quality/low-score", "fixture": "ai-quality-low-score", "paginated": true, "description": "Low-score conversations" },
+
+  { "method": "GET", "path": "/api/v1/admin/metrics/dashboard", "fixture": "metrics-dashboard", "description": "Metrics dashboard" },
+  { "method": "POST", "path": "/api/v1/admin/metrics/alerts", "status": 201, "description": "Create alert" },
+
+  { "method": "GET", "path": "/api/v1/admin/users", "fixture": "users", "paginated": true, "description": "Search users" },
+  { "method": "GET", "path": "/api/v1/admin/users/:id", "fixture": "users", "description": "User detail" },
+  { "method": "POST", "path": "/api/v1/admin/users/:id/ban", "status": 200, "response": { "data": { "message": "User banned" } }, "description": "Ban user" },
+  { "method": "POST", "path": "/api/v1/admin/users/:id/unban", "status": 200, "response": { "data": { "message": "User unbanned" } }, "description": "Unban user" },
+
+  { "method": "GET", "path": "/api/v1/notifications", "fixture": "notifications", "paginated": true, "description": "List notifications" },
+  { "method": "PATCH", "path": "/api/v1/notifications/:id/read", "status": 200, "response": { "data": { "is_read": true } }, "description": "Mark as read" },
+  { "method": "PUT", "path": "/api/v1/notifications/settings", "status": 200, "description": "Update push settings" },
+
+  { "method": "POST", "path": "/api/v1/webhooks/revenuecat", "status": 200, "response": { "message": "Webhook processed" }, "description": "RevenueCat webhook" }
+]

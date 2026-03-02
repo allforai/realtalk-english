@@ -1,0 +1,25 @@
+{
+  "sub_project_id": "sp-001",
+  "sub_project_name": "api-backend",
+  "type": "backend",
+  "template_id": "fastapi",
+  "architecture": "three-layer",
+  "framework": "FastAPI",
+  "language": "python",
+  "orm": "SQLAlchemy",
+  "database": "PostgreSQL",
+  "port": 8000,
+  "auth_strategy": "jwt",
+  "additional_config": {
+    "async_support": true,
+    "openapi_native": true,
+    "spike_sdks": {
+      "TS001": "openai",
+      "TS002": "azure-cognitiveservices-speech-sdk",
+      "TS003": "react-native-purchases (webhook only)",
+      "TS004": "py-fsrs",
+      "TS005": "fastapi (built-in SSE)",
+      "TS006": "expo push API (HTTP)"
+    }
+  }
+}

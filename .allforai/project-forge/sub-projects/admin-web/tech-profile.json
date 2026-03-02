@@ -1,0 +1,16 @@
+{
+  "sub_project_id": "sp-002",
+  "sub_project_name": "admin-web",
+  "type": "admin",
+  "template_id": "nextjs",
+  "architecture": null,
+  "framework": "Next.js 14",
+  "language": "typescript",
+  "css": "Tailwind CSS",
+  "rendering": "SSR / SSG / CSR",
+  "port": 3000,
+  "auth_strategy": "jwt",
+  "state_management": "zustand",
+  "server_cache": "tanstack-query",
+  "additional_config": {}
+}

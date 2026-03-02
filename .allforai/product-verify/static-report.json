@@ -1,0 +1,845 @@
+{
+  "report_type": "product-verify-static",
+  "generated_at": "2026-02-28T00:00:00Z",
+  "project": "RealTalk English",
+  "scan_scope": "scaffold (stubs only)",
+  "summary": {
+    "total_tasks": 45,
+    "api_covered": 18,
+    "api_missing": 8,
+    "api_deferred": 19,
+    "screen_covered": 19,
+    "screen_missing": 7,
+    "screen_deferred": 19,
+    "constraints_total": 8,
+    "constraints_covered": 6,
+    "constraints_partial": 2,
+    "extra_endpoints": 4
+  },
+  "task_coverage": [
+    {
+      "task_id": "T001",
+      "title": "浏览并选择场景",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/scenarios → handlers/scenario.py:list_scenarios",
+        "GET /api/v1/scenarios/{scenario_id} → handlers/scenario.py:get_scenario"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/scenarios/screens/ScenarioListScreen.tsx",
+        "apps/mobile-app/src/features/scenarios/screens/ScenarioDetailScreen.tsx",
+        "apps/mobile-app/src/features/scenarios/components/ScenarioCard.tsx",
+        "apps/mobile-app/src/features/scenarios/components/FilterBar.tsx"
+      ]
+    },
+    {
+      "task_id": "T002",
+      "title": "进行场景对话",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "POST /api/v1/conversations → handlers/conversation.py:create_conversation",
+        "GET /api/v1/conversations → handlers/conversation.py:list_conversations",
+        "GET /api/v1/conversations/{id} → handlers/conversation.py:get_conversation",
+        "POST /api/v1/conversations/{id}/messages → handlers/conversation.py:send_message",
+        "POST /api/v1/conversations/{id}/messages/audio → handlers/conversation.py:send_audio_message",
+        "POST /api/v1/conversations/{id}/complete → handlers/conversation.py:complete_conversation"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/conversation/screens/ConversationScreen.tsx",
+        "apps/mobile-app/src/features/conversation/components/InputBar.tsx",
+        "apps/mobile-app/src/features/conversation/components/MessageBubble.tsx",
+        "apps/mobile-app/src/features/conversation/components/MicrophoneButton.tsx",
+        "apps/mobile-app/src/features/conversation/components/TypingIndicator.tsx",
+        "apps/mobile-app/src/features/conversation/hooks/useSSEStream.ts"
+      ]
+    },
+    {
+      "task_id": "T003",
+      "title": "查看对话报告",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/conversations/{id}/report → handlers/conversation.py:get_report"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/conversation/screens/ConversationReportScreen.tsx"
+      ]
+    },
+    {
+      "task_id": "T004",
+      "title": "进行自由对话",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "Same endpoints as T002 — free mode is a conversation type flag, not a separate route"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "Same ConversationScreen.tsx — mode param in CreateConversationReq"
+      ],
+      "notes": "Free mode uses the same conversation endpoints with a different mode parameter"
+    },
+    {
+      "task_id": "T005",
+      "title": "查看实时发音纠正",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "POST /api/v1/conversations/{id}/messages/audio → pronunciation scoring in SSE stream",
+        "models/pronunciation_score.py exists with full schema"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/conversation/components/PronunciationCard.tsx",
+        "apps/mobile-app/src/features/conversation/components/PhonemeDetail.tsx",
+        "apps/mobile-app/src/features/conversation/components/ScoreBar.tsx"
+      ]
+    },
+    {
+      "task_id": "T006",
+      "title": "查看发音详细报告",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "Part of GET /api/v1/conversations/{id}/report — pronunciation details included in report"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/conversation/screens/ConversationReportScreen.tsx",
+        "apps/mobile-app/src/features/conversation/components/PhonemeDetail.tsx"
+      ]
+    },
+    {
+      "task_id": "T007",
+      "title": "完成记忆曲线复习",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/reviews/today → handlers/review.py:get_today_cards",
+        "POST /api/v1/reviews/{card_id}/rate → handlers/review.py:rate_card",
+        "GET /api/v1/reviews/summary → handlers/review.py:get_summary"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/review/screens/ReviewScreen.tsx",
+        "apps/mobile-app/src/features/review/components/CardStack.tsx",
+        "apps/mobile-app/src/features/review/components/ReviewCard.tsx",
+        "apps/mobile-app/src/features/review/components/RatingButtons.tsx",
+        "apps/mobile-app/src/features/review/components/CompletionSummary.tsx"
+      ]
+    },
+    {
+      "task_id": "T008",
+      "title": "管理词汇本",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "VocabularyItem model exists but no dedicated handler or screen. Vocabulary is auto-collected from conversations and reviewed via ReviewCard, but there is no explicit vocabulary management endpoint (list/add/remove vocabulary items)."
+    },
+    {
+      "task_id": "T009",
+      "title": "创建场景对话脚本",
+      "priority": "高",
+      "role": "R004",
+      "api_status": "covered",
+      "api_evidence": [
+        "POST /api/v1/scenarios → handlers/scenario.py:create_scenario",
+        "PUT /api/v1/scenarios/{id} → handlers/scenario.py:update_scenario",
+        "POST /api/v1/scenarios/{id}/submit-review → handlers/scenario.py:submit_review"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/scenarios/page.tsx",
+        "apps/admin-web/src/app/admin/scenarios/new/page.tsx",
+        "apps/admin-web/src/app/admin/scenarios/[id]/page.tsx",
+        "apps/admin-web/src/components/scenarios/ScenarioForm.tsx",
+        "apps/admin-web/src/components/scenarios/DialogueNodeEditor.tsx",
+        "apps/admin-web/src/components/scenarios/DialogueNodeItem.tsx",
+        "apps/admin-web/src/components/scenarios/ScenarioPreview.tsx"
+      ]
+    },
+    {
+      "task_id": "T010",
+      "title": "审核场景内容",
+      "priority": "高",
+      "role": "R004",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/scenarios/review-queue → handlers/scenario.py:review_queue",
+        "POST /api/v1/scenarios/{id}/review → handlers/scenario.py:review_scenario"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/scenarios/review/page.tsx",
+        "apps/admin-web/src/app/admin/scenarios/review/[id]/page.tsx",
+        "apps/admin-web/src/components/scenarios/ReviewQueueTable.tsx",
+        "apps/admin-web/src/components/scenarios/ReviewActionPanel.tsx"
+      ]
+    },
+    {
+      "task_id": "T011",
+      "title": "管理场景包",
+      "priority": "中",
+      "role": "R004",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/scenario-packs/page.tsx → ComingSoonPage"
+      ],
+      "notes": "ScenarioPack model exists. Admin page shows 'Coming Soon' placeholder."
+    },
+    {
+      "task_id": "T012",
+      "title": "管理场景标签",
+      "priority": "中",
+      "role": "R004",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/scenario-tags/page.tsx → ComingSoonPage"
+      ],
+      "notes": "ScenarioTag model exists. Admin page shows 'Coming Soon' placeholder."
+    },
+    {
+      "task_id": "T013",
+      "title": "查看学习连胜与成就",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/streaks/me → handlers/streak.py:get_current_streak",
+        "POST /api/v1/streaks/restore → handlers/streak.py:restore_streak",
+        "GET /api/v1/achievements → handlers/achievement.py:list_achievements"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/gamification/screens/StreaksAchievementsScreen.tsx",
+        "apps/mobile-app/src/features/gamification/components/StreakCounter.tsx",
+        "apps/mobile-app/src/features/gamification/components/CalendarHeatmap.tsx",
+        "apps/mobile-app/src/features/gamification/components/AchievementGrid.tsx",
+        "apps/mobile-app/src/features/gamification/components/AchievementBadge.tsx",
+        "apps/mobile-app/src/features/gamification/components/RestoreStreakButton.tsx"
+      ]
+    },
+    {
+      "task_id": "T014",
+      "title": "查看排行榜",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [],
+      "notes": "Deferred in design. No endpoint or screen exists."
+    },
+    {
+      "task_id": "T015",
+      "title": "兑换积分商品",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [],
+      "notes": "Deferred in design. No endpoint or screen exists."
+    },
+    {
+      "task_id": "T016",
+      "title": "分享学习成果",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [],
+      "notes": "Deferred in design. No endpoint or screen exists."
+    },
+    {
+      "task_id": "T017",
+      "title": "查看个人学习档案",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No dedicated profile/learning-archive endpoint. ProfileStack exists in mobile-app navigation but routes to StreaksAchievementsScreen as placeholder. No ProfileScreen component found."
+    },
+    {
+      "task_id": "T018",
+      "title": "查看学习统计报告",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "Part of GET /api/v1/conversations/{id}/report — individual report",
+        "GET /api/v1/reviews/summary — review stats"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/conversation/screens/ConversationReportScreen.tsx",
+        "apps/mobile-app/src/features/review/components/CompletionSummary.tsx"
+      ],
+      "notes": "Aggregate learning stats are partially covered via conversation reports and review summary. No dedicated aggregate statistics endpoint."
+    },
+    {
+      "task_id": "T019",
+      "title": "设置角色偏好",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No profile settings endpoint for role preferences. User model has english_level and learning_goal but no update endpoint."
+    },
+    {
+      "task_id": "T020",
+      "title": "查看个性化推荐",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/recommendations → handlers/recommendation.py:get_recommendations"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/home/components/RecommendationCarousel.tsx",
+        "apps/mobile-app/src/features/home/screens/HomeScreen.tsx"
+      ]
+    },
+    {
+      "task_id": "T021",
+      "title": "使用紧急场景速学",
+      "priority": "中",
+      "role": "R003",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/scenarios (with filters) → same as T001, emergency scenarios are a filtered subset"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "Same ScenarioListScreen.tsx with FilterBar.tsx — filter by tag/difficulty"
+      ],
+      "notes": "Emergency scenarios are a filtered view of the scenario list, not a separate route."
+    },
+    {
+      "task_id": "T022",
+      "title": "订阅付费方案",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [
+        "RevenueCat SDK (mobile-side) — purchaseService.ts stub exists",
+        "POST /api/v1/webhooks/revenuecat → backend webhook handler exists"
+      ],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/mobile-app/src/services/purchaseService.ts (stub, all TODO)"
+      ],
+      "notes": "Subscription is handled via RevenueCat SDK on mobile + webhook on backend. Both are stubs."
+    },
+    {
+      "task_id": "T023",
+      "title": "管理订阅",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [],
+      "notes": "Subscription management deferred. Subscription model and service exist on backend."
+    },
+    {
+      "task_id": "T024",
+      "title": "购买场景包",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [],
+      "notes": "Scene pack purchasing deferred. ScenarioPack model exists."
+    },
+    {
+      "task_id": "T025",
+      "title": "查看关键指标看板",
+      "priority": "高",
+      "role": "R006",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/admin/metrics/dashboard → handlers/metrics.py:get_dashboard",
+        "POST /api/v1/admin/metrics/alerts → handlers/metrics.py:create_alert"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/dashboard/page.tsx",
+        "apps/admin-web/src/components/dashboard/MetricsDashboard.tsx",
+        "apps/admin-web/src/components/dashboard/DauChart.tsx",
+        "apps/admin-web/src/components/dashboard/RetentionChart.tsx",
+        "apps/admin-web/src/components/dashboard/RevenueChart.tsx",
+        "apps/admin-web/src/components/dashboard/AlertDialog.tsx"
+      ]
+    },
+    {
+      "task_id": "T026",
+      "title": "分析用户行为",
+      "priority": "中",
+      "role": "R006",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/behavior/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T027",
+      "title": "管理A/B测试",
+      "priority": "中",
+      "role": "R006",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/ab-tests/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T028",
+      "title": "生成运营报告",
+      "priority": "中",
+      "role": "R006",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/reports/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T029",
+      "title": "查看AI对话质量评分",
+      "priority": "高",
+      "role": "R005",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/admin/ai-quality/overview → handlers/ai_quality.py:get_overview",
+        "GET /api/v1/admin/ai-quality/low-score → handlers/ai_quality.py:get_low_score_conversations"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/ai-quality/page.tsx",
+        "apps/admin-web/src/components/ai-quality/QualityOverviewCards.tsx",
+        "apps/admin-web/src/components/ai-quality/QualityTrendChart.tsx",
+        "apps/admin-web/src/components/ai-quality/LowScoreTable.tsx",
+        "apps/admin-web/src/components/ai-quality/ConversationDetail.tsx"
+      ]
+    },
+    {
+      "task_id": "T030",
+      "title": "标注异常对话",
+      "priority": "中",
+      "role": "R005",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/anomalies/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T031",
+      "title": "管理Prompt模板",
+      "priority": "中",
+      "role": "R005",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/prompts/page.tsx → ComingSoonPage"
+      ],
+      "notes": "PromptTemplate model exists in backend."
+    },
+    {
+      "task_id": "T032",
+      "title": "调整发音评估参数",
+      "priority": "低",
+      "role": "R005",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/pronunciation/page.tsx → ComingSoonPage"
+      ],
+      "notes": "CONFIG_001 error code exists for threshold validation. SystemConfig model exists."
+    },
+    {
+      "task_id": "T033",
+      "title": "管理用户账户",
+      "priority": "高",
+      "role": "R007",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/admin/users → handlers/user_mgmt.py:search_users",
+        "GET /api/v1/admin/users/{id} → handlers/user_mgmt.py:get_user_detail",
+        "POST /api/v1/admin/users/{id}/ban → handlers/user_mgmt.py:ban_user",
+        "POST /api/v1/admin/users/{id}/unban → handlers/user_mgmt.py:unban_user"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/users/page.tsx",
+        "apps/admin-web/src/app/admin/admin/users/[id]/page.tsx",
+        "apps/admin-web/src/components/users/UserSearchTable.tsx",
+        "apps/admin-web/src/components/users/UserDetailPanel.tsx",
+        "apps/admin-web/src/components/users/UserLearningStats.tsx",
+        "apps/admin-web/src/components/users/BanUserDialog.tsx",
+        "apps/admin-web/src/components/users/UnbanUserDialog.tsx"
+      ]
+    },
+    {
+      "task_id": "T034",
+      "title": "处理订阅与退款",
+      "priority": "中",
+      "role": "R007",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/subscriptions/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T035",
+      "title": "配置系统参数",
+      "priority": "低",
+      "role": "R007",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/settings/page.tsx → ComingSoonPage"
+      ],
+      "notes": "SystemConfig model exists."
+    },
+    {
+      "task_id": "T036",
+      "title": "管理权限角色",
+      "priority": "低",
+      "role": "R007",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/roles/page.tsx → ComingSoonPage"
+      ],
+      "notes": "Role and Permission models exist. AuthGuard component exists."
+    },
+    {
+      "task_id": "T037",
+      "title": "处理用户投诉",
+      "priority": "中",
+      "role": "R007",
+      "api_status": "deferred",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/complaints/page.tsx → ComingSoonPage"
+      ]
+    },
+    {
+      "task_id": "T038",
+      "title": "注册账户",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "POST /api/v1/auth/register → handlers/auth.py:register"
+      ],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "Register API endpoint exists. Mobile LoginScreen exists but no separate RegisterScreen — registration may be inline within LoginScreen or planned as a separate view."
+    },
+    {
+      "task_id": "T039",
+      "title": "登录账户",
+      "priority": "高",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "POST /api/v1/auth/login → handlers/auth.py:login",
+        "POST /api/v1/auth/refresh → handlers/auth.py:refresh",
+        "POST /api/v1/auth/logout → handlers/auth.py:logout"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/auth/screens/LoginScreen.tsx",
+        "apps/admin-web/src/app/admin/login/page.tsx",
+        "apps/admin-web/src/components/auth/LoginForm.tsx"
+      ]
+    },
+    {
+      "task_id": "T040",
+      "title": "管理个人设置",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No profile/settings update endpoint. User model has the fields but no PATCH/PUT user profile route exists."
+    },
+    {
+      "task_id": "T041",
+      "title": "重置密码",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No password reset / forgot-password endpoint in auth handler."
+    },
+    {
+      "task_id": "T042",
+      "title": "注销账户",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No account deactivation/deletion endpoint. User model has deactivated_at field but no handler exposes it. CN003 (30-day data retention) has no enforcement code."
+    },
+    {
+      "task_id": "T043",
+      "title": "完成新手引导",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "missing_screen",
+      "screen_evidence": [],
+      "notes": "No onboarding endpoint or screen. Expected as mobile-only flow."
+    },
+    {
+      "task_id": "T044",
+      "title": "管理通知中心",
+      "priority": "中",
+      "role": "R001",
+      "api_status": "covered",
+      "api_evidence": [
+        "GET /api/v1/notifications → handlers/notification.py:list_notifications",
+        "PATCH /api/v1/notifications/{id}/read → handlers/notification.py:mark_read",
+        "PUT /api/v1/notifications/settings → handlers/notification.py:update_settings"
+      ],
+      "screen_status": "covered",
+      "screen_evidence": [
+        "apps/mobile-app/src/features/notifications/screens/NotificationCenterScreen.tsx",
+        "apps/mobile-app/src/features/notifications/components/NotificationItem.tsx"
+      ]
+    },
+    {
+      "task_id": "T045",
+      "title": "提交意见反馈",
+      "priority": "低",
+      "role": "R001",
+      "api_status": "missing_api",
+      "api_evidence": [],
+      "screen_status": "deferred",
+      "screen_evidence": [
+        "apps/admin-web/src/app/admin/feedback/page.tsx → ComingSoonPage (admin view only)"
+      ],
+      "notes": "Feedback model exists in backend but no user-facing feedback submission endpoint. Admin-side feedback page is a ComingSoonPage placeholder."
+    }
+  ],
+  "constraint_coverage": [
+    {
+      "constraint_id": "CN001",
+      "title": "免费版每天3轮对话限制",
+      "affects": ["T002"],
+      "status": "covered",
+      "evidence": [
+        "middleware/rate_limit.py: RateLimitMiddleware checks POST /api/v1/conversations (stub/TODO)",
+        "models/daily_conversation_count.py: DailyConversationCount model with user_id+date unique constraint",
+        "repositories/daily_count_repo.py: DailyCountRepository exists",
+        "error_codes.py: CONV_001 = 'Daily conversation limit reached' (429)"
+      ]
+    },
+    {
+      "constraint_id": "CN002",
+      "title": "退款金额不可超过原订单金额",
+      "affects": ["T034"],
+      "status": "deferred",
+      "evidence": [
+        "T034 (subscriptions/refunds) is deferred entirely",
+        "No refund logic in codebase"
+      ]
+    },
+    {
+      "constraint_id": "CN003",
+      "title": "用户注销后数据保留30天",
+      "affects": ["T042"],
+      "status": "partial",
+      "evidence": [
+        "models/user.py: deactivated_at field exists",
+        "No account deactivation endpoint exists (T042 missing_api)",
+        "No scheduled cleanup job or 30-day retention logic"
+      ],
+      "gap": "deactivated_at field exists but no deactivation handler or retention scheduler"
+    },
+    {
+      "constraint_id": "CN004",
+      "title": "连胜中断恢复限每月1次",
+      "affects": ["T013"],
+      "status": "covered",
+      "evidence": [
+        "models/user_streak.py: restorations_this_month + restoration_month fields",
+        "services/streak_service.py: restore_streak() documents CN004 check (stub/TODO)",
+        "handlers/streak.py: POST /streaks/restore references CN004",
+        "error_codes.py: STREAK_001 = 'Monthly restoration limit reached' (400)"
+      ]
+    },
+    {
+      "constraint_id": "CN005",
+      "title": "支付操作必须留存审计日志",
+      "affects": ["T022", "T024", "T034"],
+      "status": "covered",
+      "evidence": [
+        "middleware/audit_log.py: AuditLogMiddleware with pattern for /webhooks/revenuecat (CN005 reference)",
+        "models/audit_log.py: AuditLog model with operator_id, action, target_entity, payload (append-only)",
+        "repositories/audit_log_repo.py: AuditLogRepository exists",
+        "services/subscription_service.py: process_webhook() documents CN005 (stub/TODO)"
+      ]
+    },
+    {
+      "constraint_id": "CN006",
+      "title": "场景审核通过后方可上架",
+      "affects": ["T010", "T011"],
+      "status": "covered",
+      "evidence": [
+        "models/scenario.py: ScenarioStatus enum (draft → review → published/rejected)",
+        "handlers/scenario.py: submit_review references CN006, review_scenario references CN006",
+        "error_codes.py: SCEN_006 = 'Invalid status transition' (409)"
+      ]
+    },
+    {
+      "constraint_id": "CN007",
+      "title": "发音评估阈值范围0.0-1.0",
+      "affects": ["T032"],
+      "status": "covered",
+      "evidence": [
+        "models/pronunciation_score.py: CHECK constraints for accuracy_score, fluency_score, completeness_score, prosody_score — all [0.0, 1.0]",
+        "error_codes.py: CONFIG_001 = 'Threshold out of range [0.0, 1.0]' (422)"
+      ]
+    },
+    {
+      "constraint_id": "CN008",
+      "title": "用户封禁操作需二次确认+日志",
+      "affects": ["T033"],
+      "status": "covered",
+      "evidence": [
+        "schemas/user_mgmt.py: BanUserReq.confirm field (must be True, else USER_001)",
+        "error_codes.py: USER_001 = 'Ban confirmation required' (400)",
+        "middleware/audit_log.py: AuditLogMiddleware patterns include /admin/users/*/ban and /admin/users/*/unban",
+        "models/audit_log.py: AuditLog model (CN008 reference)",
+        "components/users/BanUserDialog.tsx: DestructiveConfirmDialog exists in admin-web"
+      ]
+    }
+  ],
+  "extra_endpoints": [
+    {
+      "route": "POST /api/v1/auth/refresh",
+      "handler": "handlers/auth.py:refresh",
+      "mapped_task": null,
+      "notes": "Supporting endpoint for auth flow — token refresh. Logically part of T039 auth lifecycle."
+    },
+    {
+      "route": "POST /api/v1/auth/logout",
+      "handler": "handlers/auth.py:logout",
+      "mapped_task": null,
+      "notes": "Supporting endpoint for auth flow — logout. Logically part of T039 auth lifecycle."
+    },
+    {
+      "route": "POST /api/v1/webhooks/revenuecat",
+      "handler": "handlers/webhook.py:revenuecat_webhook",
+      "mapped_task": null,
+      "notes": "Server-to-server webhook, not user-initiated. Supports T022/T023 subscription flow."
+    },
+    {
+      "route": "GET /health",
+      "handler": "handlers/system.py:health_check",
+      "mapped_task": null,
+      "notes": "Infrastructure health check — operational, not a product task."
+    }
+  ],
+  "gap_summary": {
+    "critical_gaps": [],
+    "moderate_gaps": [
+      {
+        "task_id": "T008",
+        "issue": "Vocabulary management has no handler or screen despite VocabularyItem model existing",
+        "recommendation": "Add GET/POST/DELETE /api/v1/vocabulary endpoints and a VocabularyScreen in mobile-app"
+      },
+      {
+        "task_id": "T017",
+        "issue": "Personal learning archive has no dedicated endpoint or screen",
+        "recommendation": "Add GET /api/v1/profile/me endpoint and ProfileScreen in mobile-app"
+      }
+    ],
+    "low_priority_gaps": [
+      {
+        "task_id": "T019",
+        "issue": "Role preferences have no update endpoint",
+        "recommendation": "Add PATCH /api/v1/profile/preferences when ProfileScreen is built"
+      },
+      {
+        "task_id": "T038",
+        "issue": "Register API exists but no dedicated mobile RegisterScreen",
+        "recommendation": "May be inline in LoginScreen — verify UX flow"
+      },
+      {
+        "task_id": "T040",
+        "issue": "Profile settings update has no endpoint",
+        "recommendation": "Add PATCH /api/v1/profile/settings"
+      },
+      {
+        "task_id": "T041",
+        "issue": "Password reset flow completely missing",
+        "recommendation": "Add POST /api/v1/auth/forgot-password and POST /api/v1/auth/reset-password"
+      },
+      {
+        "task_id": "T042",
+        "issue": "Account deactivation endpoint missing, CN003 not enforceable",
+        "recommendation": "Add DELETE /api/v1/profile/me and scheduled cleanup job"
+      },
+      {
+        "task_id": "T043",
+        "issue": "Onboarding flow completely missing",
+        "recommendation": "Add OnboardingScreen in mobile-app"
+      },
+      {
+        "task_id": "T045",
+        "issue": "Feedback submission endpoint missing (model exists)",
+        "recommendation": "Add POST /api/v1/feedback endpoint"
+      }
+    ]
+  }
+}

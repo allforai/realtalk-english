@@ -1,0 +1,42 @@
+[
+  {
+    "step": "S4",
+    "item_id": "POST /auth/refresh",
+    "item_name": "Token refresh endpoint",
+    "decision": "ignore",
+    "reason": "Auth lifecycle infrastructure, part of T039",
+    "decided_at": "2026-02-28T00:00:00Z"
+  },
+  {
+    "step": "S4",
+    "item_id": "POST /auth/logout",
+    "item_name": "Logout endpoint",
+    "decision": "ignore",
+    "reason": "Auth lifecycle infrastructure, part of T039",
+    "decided_at": "2026-02-28T00:00:00Z"
+  },
+  {
+    "step": "S4",
+    "item_id": "POST /webhooks/revenuecat",
+    "item_name": "RevenueCat webhook",
+    "decision": "ignore",
+    "reason": "Server-to-server subscription webhook, infrastructure",
+    "decided_at": "2026-02-28T00:00:00Z"
+  },
+  {
+    "step": "S4",
+    "item_id": "GET /health",
+    "item_name": "Health check",
+    "decision": "ignore",
+    "reason": "Infrastructure health check endpoint",
+    "decided_at": "2026-02-28T00:00:00Z"
+  },
+  {
+    "step": "S5",
+    "item_id": "cross_model_review",
+    "item_name": "Cross-model validation (6 high-freq tasks)",
+    "decision": "all_stubs_confirmed",
+    "reason": "All 6 sampled handlers confirmed as stubs by DeepSeek — expected for scaffold phase",
+    "decided_at": "2026-02-28T00:00:00Z"
+  }
+]

@@ -1,0 +1,264 @@
+{
+  "generated_at": "2026-02-28T16:00:00Z",
+  "source_design": [
+    ".allforai/project-forge/sub-projects/api-backend/design.md",
+    ".allforai/project-forge/sub-projects/admin-web/design.md",
+    ".allforai/project-forge/sub-projects/mobile-app/design.md"
+  ],
+  "entity_count": 23,
+  "entities": [
+    {
+      "entity": "User",
+      "table": "users",
+      "task_refs": ["T038", "T039", "T033", "T040", "T041", "T042"],
+      "role_refs": ["R001", "R002", "R003", "R004", "R005", "R006", "R007"],
+      "flow_refs": ["F001", "F004", "F005"],
+      "seed_priority": "critical",
+      "insert_method": "api",
+      "api_endpoint": "POST /api/v1/auth/register",
+      "notes": "All other entities depend on user_id. Create first."
+    },
+    {
+      "entity": "Role",
+      "table": "roles",
+      "task_refs": ["T036"],
+      "role_refs": ["R007"],
+      "flow_refs": [],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Config table. Pre-populate: consumer, operator, ai_trainer, data_ops, admin."
+    },
+    {
+      "entity": "Permission",
+      "table": "permissions",
+      "task_refs": ["T036"],
+      "role_refs": ["R007"],
+      "flow_refs": [],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Config table. Pre-populate RBAC permissions per role."
+    },
+    {
+      "entity": "UserRole",
+      "table": "user_roles",
+      "task_refs": ["T036"],
+      "role_refs": ["R007"],
+      "flow_refs": [],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Join table. Assign roles after user creation."
+    },
+    {
+      "entity": "Scenario",
+      "table": "scenarios",
+      "task_refs": ["T001", "T009", "T010", "T011"],
+      "role_refs": ["R001", "R002", "R003", "R004"],
+      "flow_refs": ["F001", "F003", "F004", "F009"],
+      "seed_priority": "critical",
+      "insert_method": "api",
+      "api_endpoint": "POST /api/v1/scenarios",
+      "notes": "Core content entity. Need published/draft/review/rejected states."
+    },
+    {
+      "entity": "ScenarioPack",
+      "table": "scenario_packs",
+      "task_refs": ["T011", "T024"],
+      "role_refs": ["R004"],
+      "flow_refs": ["F003"],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "API_GAP: T011 DEFERRED, no CRUD endpoint."
+    },
+    {
+      "entity": "ScenarioTag",
+      "table": "scenario_tags",
+      "task_refs": ["T012"],
+      "role_refs": ["R004"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "API_GAP: T012 DEFERRED. Pre-populate tag taxonomy."
+    },
+    {
+      "entity": "ScenarioTagMap",
+      "table": "scenario_tag_map",
+      "task_refs": ["T012"],
+      "role_refs": ["R004"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Join table. Tag scenarios after creation."
+    },
+    {
+      "entity": "Conversation",
+      "table": "conversations",
+      "task_refs": ["T002", "T003", "T004"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F001", "F002", "F004", "F005", "F009"],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": "POST /api/v1/conversations",
+      "notes": "High-frequency. API creates but need completed/abandoned states via DB."
+    },
+    {
+      "entity": "ConversationMessage",
+      "table": "conversation_messages",
+      "task_refs": ["T002"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F001"],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Child of Conversation. DB insert with realistic dialogue content."
+    },
+    {
+      "entity": "PronunciationScore",
+      "table": "pronunciation_scores",
+      "task_refs": ["T005", "T006"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F001"],
+      "seed_priority": "high",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Child of ConversationMessage. Only for voice messages."
+    },
+    {
+      "entity": "VocabularyItem",
+      "table": "vocabulary_items",
+      "task_refs": ["T008"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F002"],
+      "seed_priority": "high",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Auto-collected from conversations. No direct create API."
+    },
+    {
+      "entity": "ReviewCard",
+      "table": "review_cards",
+      "task_refs": ["T007"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F001", "F002", "F009"],
+      "seed_priority": "high",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "FSRS cards linked to VocabularyItem. Need new/learning/review/relearning states."
+    },
+    {
+      "entity": "UserStreak",
+      "table": "user_streaks",
+      "task_refs": ["T013"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": [],
+      "seed_priority": "high",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "One per user. Vary current_streak and longest_streak."
+    },
+    {
+      "entity": "Achievement",
+      "table": "achievements",
+      "task_refs": ["T013"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Config table. Pre-populate achievement definitions."
+    },
+    {
+      "entity": "UserAchievement",
+      "table": "user_achievements",
+      "task_refs": ["T013"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Join table. Heavy users earn more achievements."
+    },
+    {
+      "entity": "Subscription",
+      "table": "subscriptions",
+      "task_refs": ["T022", "T023", "T034"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": ["F005"],
+      "seed_priority": "high",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "RevenueCat webhook-driven. DB insert for seed data."
+    },
+    {
+      "entity": "AuditLog",
+      "table": "audit_logs",
+      "task_refs": [],
+      "role_refs": ["R007"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Append-only. CN005: payment audit trail. CN008: ban audit trail."
+    },
+    {
+      "entity": "Notification",
+      "table": "notifications",
+      "task_refs": ["T044"],
+      "role_refs": ["R001", "R002", "R003"],
+      "flow_refs": [],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "System + review_reminder + achievement types."
+    },
+    {
+      "entity": "Feedback",
+      "table": "feedbacks",
+      "task_refs": ["T045", "T037"],
+      "role_refs": ["R001", "R007"],
+      "flow_refs": ["F008"],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "Need pending/in_progress/resolved/closed states."
+    },
+    {
+      "entity": "PromptTemplate",
+      "table": "prompt_templates",
+      "task_refs": ["T031"],
+      "role_refs": ["R005"],
+      "flow_refs": ["F006"],
+      "seed_priority": "medium",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "API_GAP: T031 DEFERRED. Pre-populate 2-3 templates."
+    },
+    {
+      "entity": "SystemConfig",
+      "table": "system_configs",
+      "task_refs": ["T035"],
+      "role_refs": ["R007"],
+      "flow_refs": [],
+      "seed_priority": "critical",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "API_GAP: T035 DEFERRED. Pre-populate: free_daily_limit=3, round_timeout_sec=300, etc."
+    },
+    {
+      "entity": "DailyConversationCount",
+      "table": "daily_conversation_counts",
+      "task_refs": [],
+      "role_refs": [],
+      "flow_refs": [],
+      "seed_priority": "low",
+      "insert_method": "db",
+      "api_endpoint": null,
+      "notes": "CN001 enforcement. Auto-populated, but seed some history for dashboard."
+    }
+  ]
+}

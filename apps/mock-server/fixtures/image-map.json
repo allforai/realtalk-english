@@ -1,0 +1,28 @@
+{
+  "avatars": {
+    "u-001": "https://api.dicebear.com/7.x/avataaars/svg?seed=AlexChen",
+    "u-002": "https://api.dicebear.com/7.x/avataaars/svg?seed=SophieWang",
+    "u-003": "https://api.dicebear.com/7.x/avataaars/svg?seed=MichaelLiu",
+    "u-004": "https://api.dicebear.com/7.x/avataaars/svg?seed=JennyZhao",
+    "u-005": "https://api.dicebear.com/7.x/avataaars/svg?seed=DavidXu",
+    "u-006": "https://api.dicebear.com/7.x/avataaars/svg?seed=LisaHuang",
+    "u-op-001": "https://api.dicebear.com/7.x/avataaars/svg?seed=RachelGuo",
+    "u-op-002": "https://api.dicebear.com/7.x/avataaars/svg?seed=EricSun",
+    "u-op-003": "https://api.dicebear.com/7.x/avataaars/svg?seed=FangZhou",
+    "u-admin-001": "https://api.dicebear.com/7.x/avataaars/svg?seed=OliviaJiang"
+  },
+  "scenarios": {
+    "sc-001": "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=400&h=300&fit=crop",
+    "sc-002": "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=300&fit=crop",
+    "sc-003": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=300&fit=crop",
+    "sc-004": "https://images.unsplash.com/photo-1529543544282-ea5407407db9?w=400&h=300&fit=crop",
+    "sc-005": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+    "sc-006": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
+  },
+  "achievements": {
+    "streak": "https://api.dicebear.com/7.x/icons/svg?seed=fire",
+    "conversations": "https://api.dicebear.com/7.x/icons/svg?seed=chat",
+    "vocabulary": "https://api.dicebear.com/7.x/icons/svg?seed=book",
+    "score": "https://api.dicebear.com/7.x/icons/svg?seed=star"
+  }
+}

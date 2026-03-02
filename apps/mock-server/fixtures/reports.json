@@ -1,0 +1,59 @@
+[
+  {
+    "conversation_id": "conv-001",
+    "user_id": "u-001",
+    "scenario_id": "sc-001",
+    "overall_score": 0.82,
+    "scores": {
+      "fluency": 0.85,
+      "grammar": 0.78,
+      "vocabulary": 0.80,
+      "pronunciation": 0.84,
+      "task_completion": 0.83
+    },
+    "feedback": {
+      "strengths": ["Good use of professional vocabulary", "Clear sentence structure"],
+      "improvements": ["Work on subject-verb agreement", "Use more varied transition words"],
+      "vocabulary_learned": ["deadline", "stakeholder", "leverage"]
+    },
+    "generated_at": "2026-02-20T14:07:00Z"
+  },
+  {
+    "conversation_id": "conv-002",
+    "user_id": "u-001",
+    "scenario_id": "sc-002",
+    "overall_score": 0.75,
+    "scores": {
+      "fluency": 0.78,
+      "grammar": 0.72,
+      "vocabulary": 0.70,
+      "pronunciation": 0.80,
+      "task_completion": 0.75
+    },
+    "feedback": {
+      "strengths": ["Polite tone throughout", "Good listening comprehension"],
+      "improvements": ["Learn more travel-specific phrases", "Practice asking for clarification"],
+      "vocabulary_learned": ["boarding pass", "aisle seat"]
+    },
+    "generated_at": "2026-02-21T10:05:00Z"
+  },
+  {
+    "conversation_id": "conv-003",
+    "user_id": "u-002",
+    "scenario_id": "sc-004",
+    "overall_score": 0.68,
+    "scores": {
+      "fluency": 0.65,
+      "grammar": 0.62,
+      "vocabulary": 0.70,
+      "pronunciation": 0.72,
+      "task_completion": 0.71
+    },
+    "feedback": {
+      "strengths": ["Willingness to engage in conversation", "Good use of greetings"],
+      "improvements": ["Expand vocabulary for social situations", "Practice forming longer sentences"],
+      "vocabulary_learned": ["host", "living"]
+    },
+    "generated_at": "2026-02-22T09:04:00Z"
+  }
+]

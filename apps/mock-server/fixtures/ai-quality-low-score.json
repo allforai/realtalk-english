@@ -1,0 +1,4 @@
+[
+  { "conversation_id": "conv-003", "user_id": "u-002", "scenario_id": "sc-004", "overall_score": 0.68, "issues": ["Limited vocabulary range", "Frequent hesitation markers"], "completed_at": "2026-02-22T09:04:00Z" },
+  { "conversation_id": "conv-005", "user_id": "u-004", "scenario_id": "sc-003", "overall_score": null, "issues": ["Abandoned after 2 messages", "Unable to describe symptoms"], "completed_at": null }
+]

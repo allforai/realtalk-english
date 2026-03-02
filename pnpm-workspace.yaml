@@ -1,0 +1,6 @@
+packages:
+  - "apps/admin-web"
+  - "apps/mobile-app"
+  - "apps/mock-server"
+  - "packages/*"
+  - "e2e"
