@@ -1,44 +1,84 @@
 [
   {
     "step": "Step 0",
+    "item_id": "profile",
+    "item_name": "项目画像：RealTalk English，38 端点，中型产品",
     "decision": "concept_guided",
-    "detail": "产品画像从concept加载",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "reason": "概念指导模式，无 gap，自动通过",
+    "decided_at": "2026-03-04T00:50:00Z"
   },
   {
     "step": "Step 1",
+    "item_id": "roles",
+    "item_name": "角色识别：7 个角色（3 consumer + 4 professional），与概念文档一致",
     "decision": "concept_guided",
-    "detail": "7 roles mapped",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "reason": "概念 → 代码角色映射无差异，自动通过",
+    "decided_at": "2026-03-04T00:55:00Z"
   },
   {
     "step": "Step 2",
-    "decision": "concept_guided",
-    "detail": "45 tasks generated",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "item_id": "tasks",
+    "item_name": "核心任务提取：52 个任务（20 basic + 32 core），含 7 个 code_audit 补充",
+    "decision": "auto_audited",
+    "reason": "自审计扫描 34 后端端点 + 25 管理页 + 12 移动端屏幕，发现 7 个遗漏任务自动补充",
+    "audit_details": {
+      "initial_tasks": 45,
+      "audit_added": 7,
+      "final_tasks": 52,
+      "code_routes_scanned": 34,
+      "admin_pages_scanned": 25,
+      "mobile_screens_scanned": 12,
+      "added_tasks": ["T046 获取当前用户信息", "T047 查看用户行为分析", "T048 管理 A/B 测试", "T049 生成/导出运营报告", "T050 管理角色权限", "T051 重置密码", "T052 新手引导"]
+    },
+    "decided_at": "2026-03-04T01:05:00Z"
   },
   {
     "step": "Step 3",
-    "decision": "concept_guided",
-    "detail": "9 flows, 0 orphan, 20 independent",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "item_id": "flows",
+    "item_name": "业务流建模：8 条流，35/52 任务覆盖，1 孤立任务（T004）",
+    "decision": "auto_audited",
+    "reason": "自审计：0 handoff 断裂、0 缺失终止节点、3 高频未覆盖（T009/T014/T046 均为替代路径或系统后台调用）。T004 退出登录为独立操作，标记 WARNING 不阻塞",
+    "audit_details": {
+      "flow_count": 8,
+      "tasks_in_flows": 35,
+      "orphan_tasks": ["T004"],
+      "independent_operations": 16,
+      "high_freq_not_in_flow": ["T009", "T014", "T046"],
+      "handoff_breaks": 0,
+      "missing_terminals": 0
+    },
+    "decided_at": "2026-03-04T01:10:00Z"
   },
   {
     "step": "Step 4",
-    "decision": "concept_guided",
-    "detail": "0 conflicts, 9 CRUD gaps",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "item_id": "conflicts",
+    "item_name": "冲突检测：2 冲突（0高/1中/1低）+ 4 CRUD 缺口",
+    "decision": "auto_confirmed",
+    "reason": "无高严重度冲突，CRUD 缺口均为低优先级补充建议",
+    "decided_at": "2026-03-04T01:15:00Z"
   },
   {
     "step": "Step 5",
-    "decision": "concept_guided",
-    "detail": "8 constraints",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "item_id": "constraints",
+    "item_name": "约束识别：15 条（12 implemented + 1 partial + 2 missing），12 hard + 3 soft",
+    "decision": "auto_confirmed",
+    "reason": "概念指导模式：无 code_status=missing 的硬约束（2 个 missing 均为 soft），自动通过",
+    "decided_at": "2026-03-04T01:15:00Z"
   },
   {
     "step": "Step 6",
-    "decision": "concept_guided",
-    "detail": "product-map + indexes generated",
-    "decided_at": "2026-02-27T19:12:18Z"
+    "item_id": "output",
+    "item_name": "产品地图输出：52 任务、7 角色、8 流、15 约束 + SVG + 索引",
+    "decision": "auto_confirmed",
+    "reason": "product-map.json + report + visual SVG + task-index + flow-index 全部生成",
+    "decided_at": "2026-03-04T01:20:00Z"
+  },
+  {
+    "step": "Step 7",
+    "item_id": "validation",
+    "item_name": "校验：0 ERROR + 23 WARNING（THIN_AC）+ 0 新冲突，竞品差异跳过（概念指导）",
+    "decision": "auto_confirmed",
+    "reason": "无 ERROR 级问题。23 WARNING 均为 THIN_AC（acceptance_criteria < 3 条），多为 user_added 任务，不阻塞下游。概念指导模式跳过竞品 Part 3",
+    "decided_at": "2026-03-04T01:25:00Z"
   }
 ]

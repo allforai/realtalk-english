@@ -1,0 +1,283 @@
+{
+  "split_by": "priority",
+  "split_value": "medium",
+  "split_label": "中优先级",
+  "description": "中优先级缺口任务（15 条）",
+  "generated_at": "2026-03-03T16:23:51Z",
+  "count": 15,
+  "items": [
+    {
+      "id": "GAP-030",
+      "title": "成就与连续天数页 — NO_PRIMARY",
+      "type": "NO_PRIMARY",
+      "priority": "中",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T014",
+        "T015",
+        "T016"
+      ],
+      "affected_screens": [
+        "S008"
+      ],
+      "description": "界面 S008 (成就与连续天数页) 无主操作按钮",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-036",
+      "title": "用户详情页 — NO_PRIMARY",
+      "type": "NO_PRIMARY",
+      "priority": "中",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T033",
+        "T034",
+        "T035"
+      ],
+      "affected_screens": [
+        "S018"
+      ],
+      "description": "界面 S018 (用户详情页) 无主操作按钮",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-046",
+      "title": "实体「词汇卡」— NO_REVERSE_TRANSITION",
+      "type": "NO_REVERSE_TRANSITION",
+      "priority": "中",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T012",
+        "T022",
+        "T023"
+      ],
+      "affected_screens": [],
+      "description": "实体「词汇卡」状态机检测到 NO_REVERSE_TRANSITION（4 个状态, 4 个转换）",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-003",
+      "title": "查看成就列表 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T016"
+      ],
+      "affected_screens": [
+        "S008"
+      ],
+      "description": "任务 T016 (查看成就列表) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务"
+    },
+    {
+      "id": "GAP-004",
+      "title": "标记通知已读 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "中",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T019"
+      ],
+      "affected_screens": [
+        "S009"
+      ],
+      "description": "任务 T019 (标记通知已读) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务"
+    },
+    {
+      "id": "GAP-010",
+      "title": "管理场景包 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "内容运营"
+      ],
+      "affected_tasks": [
+        "T037"
+      ],
+      "affected_screens": [
+        "S019"
+      ],
+      "description": "任务 T037 (管理场景包) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-011",
+      "title": "管理场景包 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "内容运营"
+      ],
+      "affected_tasks": [
+        "T037"
+      ],
+      "affected_screens": [
+        "S019"
+      ],
+      "description": "任务 T037 (管理场景包) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "中频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-012",
+      "title": "管理场景标签 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "内容运营"
+      ],
+      "affected_tasks": [
+        "T038"
+      ],
+      "affected_screens": [
+        "S020"
+      ],
+      "description": "任务 T038 (管理场景标签) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务"
+    },
+    {
+      "id": "GAP-014",
+      "title": "管理 Prompt 模板 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "AI 训练师"
+      ],
+      "affected_tasks": [
+        "T040"
+      ],
+      "affected_screens": [
+        "S022"
+      ],
+      "description": "任务 T040 (管理 Prompt 模板) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-015",
+      "title": "管理 Prompt 模板 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "AI 训练师"
+      ],
+      "affected_tasks": [
+        "T040"
+      ],
+      "affected_screens": [
+        "S022"
+      ],
+      "description": "任务 T040 (管理 Prompt 模板) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "中频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-021",
+      "title": "处理用户投诉 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "中",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T044"
+      ],
+      "affected_screens": [
+        "S030"
+      ],
+      "description": "任务 T044 (处理用户投诉) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务"
+    },
+    {
+      "id": "GAP-022",
+      "title": "查看用户反馈 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "中",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T045"
+      ],
+      "affected_screens": [
+        "S031"
+      ],
+      "description": "任务 T045 (查看用户反馈) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务"
+    },
+    {
+      "id": "GAP-001",
+      "title": "退出登录 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "中",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T004"
+      ],
+      "affected_screens": [],
+      "description": "任务 T004 (退出登录) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "低频任务",
+      "xv_notes": [
+        "priority 低→中: 退出登录缺少异常处理会影响账户安全与会话一致性，属于中风险基础能力。"
+      ]
+    },
+    {
+      "id": "GAP-023",
+      "title": "管理 A/B 测试 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "core",
+      "priority": "中",
+      "affected_roles": [
+        "数据运营"
+      ],
+      "affected_tasks": [
+        "T048"
+      ],
+      "affected_screens": [
+        "S025"
+      ],
+      "description": "任务 T048 (管理 A/B 测试) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "低频任务"
+    },
+    {
+      "id": "GAP-024",
+      "title": "管理角色权限 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "basic",
+      "priority": "中",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T050"
+      ],
+      "affected_screens": [
+        "S029"
+      ],
+      "description": "任务 T050 (管理角色权限) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "低频任务",
+      "xv_notes": [
+        "priority 低→中: 角色权限CRUD不完整可能导致权限配置失效或越权风险，属于安全相关能力。"
+      ]
+    }
+  ]
+}

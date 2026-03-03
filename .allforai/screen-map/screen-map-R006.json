@@ -1,0 +1,137 @@
+{
+  "split_by": "role",
+  "split_value": "R006",
+  "split_label": "数据运营",
+  "description": "角色 R006（数据运营）关联的界面子集",
+  "generated_at": "2026-03-03T16:13:29Z",
+  "count": 4,
+  "items": [
+    {
+      "id": "S010",
+      "name": "管理后台仪表盘",
+      "description": "核心指标仪表盘：DAU/MAU/留存率/营收趋势图表",
+      "primary_purpose": "监控产品核心运营指标",
+      "primary_action": "查看指标趋势",
+      "entry_point": "/admin/dashboard（登录后默认页）",
+      "audience_type": "professional",
+      "tasks": [
+        "T030",
+        "T031"
+      ],
+      "states": {
+        "loading": "图表骨架屏",
+        "error": "数据获取失败 → 重试按钮"
+      },
+      "actions": [
+        {
+          "label": "查看指标",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R006"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展示图表数据",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "设置预警阈值",
+          "crud": "C",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R006"
+          ],
+          "requires_confirm": false,
+          "on_failure": "无效阈值 → 提示修正",
+          "on_success": "预警保存成功",
+          "validation_rules": [
+            "阈值为正数"
+          ],
+          "exception_flows": [
+            "无效阈值 → 提示修正"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "查看指标"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S024",
+      "name": "用户行为分析页",
+      "description": "用户活跃时段/学习路径/功能使用热力图",
+      "primary_purpose": "用户活跃时段/学习路径/功能使用热力图",
+      "primary_action": "待实现",
+      "entry_point": "/admin/behavior",
+      "audience_type": "professional",
+      "tasks": [
+        "T047"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S025",
+      "name": "A/B 测试管理页",
+      "description": "创建/管理实验：变体/流量/结果",
+      "primary_purpose": "创建/管理实验",
+      "primary_action": "待实现",
+      "entry_point": "/admin/ab-tests",
+      "audience_type": "professional",
+      "tasks": [
+        "T048"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S026",
+      "name": "报告导出页",
+      "description": "生成日报/周报/月报，导出 PDF/CSV",
+      "primary_purpose": "生成日报/周报/月报，导出 PDF/CS",
+      "primary_action": "待实现",
+      "entry_point": "/admin/reports",
+      "audience_type": "professional",
+      "tasks": [
+        "T049"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    }
+  ]
+}

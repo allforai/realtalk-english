@@ -1,0 +1,58 @@
+[
+  {
+    "entity": "学习场景",
+    "gaps": [
+      "DEAD_END_STATE",
+      "NO_REVERSE_TRANSITION"
+    ],
+    "state_count": 4,
+    "transition_count": 4,
+    "affected_tasks": [
+      "T024",
+      "T025",
+      "T026",
+      "T027"
+    ],
+    "details": {
+      "dead_ends": [
+        "rejected"
+      ],
+      "unreachable": [],
+      "missing_reverse": [
+        {
+          "from": "review",
+          "to": "rejected"
+        }
+      ],
+      "no_error_recovery": [],
+      "orphan": false
+    },
+    "severity": "高"
+  },
+  {
+    "entity": "词汇卡",
+    "gaps": [
+      "NO_REVERSE_TRANSITION"
+    ],
+    "state_count": 4,
+    "transition_count": 4,
+    "affected_tasks": [
+      "T012",
+      "T022",
+      "T023"
+    ],
+    "details": {
+      "dead_ends": [],
+      "unreachable": [],
+      "missing_reverse": [
+        {
+          "from": "learning",
+          "to": "review"
+        }
+      ],
+      "no_error_recovery": [],
+      "orphan": false
+    },
+    "severity": "中"
+  }
+]

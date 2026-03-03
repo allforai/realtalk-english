@@ -1,88 +1,78 @@
 {
-  "generated_at": "2026-02-27T19:12:18Z",
+  "generated_at": "2026-03-03T16:08:24Z",
   "source": "business-flows.json",
-  "flow_count": 9,
+  "flow_count": 8,
   "flows": [
     {
       "id": "F001",
-      "name": "场景学习全链路",
-      "node_count": 5,
+      "name": "用户认证与入门",
+      "node_count": 7,
       "gap_count": 0,
       "roles": [
-        "职场人士"
+        "R001"
       ]
     },
     {
       "id": "F002",
-      "name": "记忆闭环链路",
-      "node_count": 4,
+      "name": "核心学习循环",
+      "node_count": 9,
       "gap_count": 0,
       "roles": [
-        "职场人士"
+        "R001"
       ]
     },
     {
       "id": "F003",
-      "name": "场景内容生产链路",
-      "node_count": 3,
+      "name": "场景内容生命周期",
+      "node_count": 4,
       "gap_count": 0,
       "roles": [
-        "内容运营"
+        "R004"
       ]
     },
     {
       "id": "F004",
-      "name": "用户注册到首次学习",
+      "name": "AI 质量保障循环",
       "node_count": 5,
       "gap_count": 0,
       "roles": [
-        "职场人士"
+        "R005"
       ]
     },
     {
       "id": "F005",
-      "name": "付费转化链路",
+      "name": "订阅付费链路",
       "node_count": 3,
       "gap_count": 0,
       "roles": [
-        "职场人士"
+        "R001"
       ]
     },
     {
       "id": "F006",
-      "name": "AI质量监控链路",
+      "name": "用户管理与合规",
       "node_count": 4,
       "gap_count": 0,
       "roles": [
-        "AI 训练师"
+        "R007"
       ]
     },
     {
       "id": "F007",
-      "name": "运营分析链路",
-      "node_count": 4,
+      "name": "数据驱动运营循环",
+      "node_count": 5,
       "gap_count": 0,
       "roles": [
-        "数据运营"
+        "R006"
       ]
     },
     {
       "id": "F008",
-      "name": "投诉处理链路",
+      "name": "用户投诉处理",
       "node_count": 2,
       "gap_count": 0,
       "roles": [
-        "职场人士",
-        "系统管理员"
-      ]
-    },
-    {
-      "id": "F009",
-      "name": "紧急场景速学链路",
-      "node_count": 2,
-      "gap_count": 0,
-      "roles": [
-        "新移民"
+        "R007"
       ]
     }
   ]

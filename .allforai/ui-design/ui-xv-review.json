@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-03-03T16:22:07Z",
+  "reviews": [
+    {
+      "task_type": "design_review",
+      "model_used": "google/gemini-3.1-pro-preview-20260219",
+      "family": "gemini",
+      "auto_applied": {
+        "high_severity_issues": 2
+      },
+      "raw_findings": {
+        "usability_issues": [
+          {
+            "screen_or_section": "S001",
+            "issue": "Missing error state for invalid credentials",
+            "severity": "high",
+            "suggestion": "Add inline error messages for form fields in addition to the Snackbar."
+          },
+          {
+            "screen_or_section": "S002",
+            "issue": "Unclear navigation to other core features",
+            "severity": "medium",
+            "suggestion": "Ensure the Bottom Navigation is explicitly mentioned in the layout mode for the Home screen."
+          },
+          {
+            "screen_or_section": "S005",
+            "issue": "Missing state for processing/generating AI response",
+            "severity": "high",
+            "suggestion": "Add a specific loading state (e.g., typing indicator) for the AI response."
+          },
+          {
+            "screen_or_section": "S007",
+            "issue": "Potential cognitive overload with 4 rating buttons",
+            "severity": "medium",
+            "suggestion": "Ensure clear visual hierarchy and spacing between the Again/Hard/Good/Easy buttons to prevent accidental clicks."
+          },
+          {
+            "screen_or_section": "S010",
+            "issue": "Lack of data visualization specifics",
+            "severity": "low",
+            "suggestion": "Specify the types of charts or graphs used for 'View Metrics' to ensure consistent data presentation."
+          }
+        ],
+        "missing_patterns": [
+          {
+            "pattern": "User Profile / Settings",
+            "context": "Missing a dedicated screen for users to manage their account, preferences, and subscription status."
+          },
+          {
+            "pattern": "Onboarding",
+            "context": "Missing an onboarding flow for new users to understand the core value proposition and set initial preferences."
+          },
+          {
+            "pattern": "Empty States for specific lists",
+            "context": "While general empty states are mentioned, specific empty states for 'No scenes available' or 'No vocabulary to review' should be detailed."
+          }
+        ],
+        "strengths": [
+          "Consistent use of Material Design 3 guidelines.",
+          "Clear definition of color palette and typography.",
+          "Standardized key states (Empty, Loading, Error, Success) across all screens.",
+          "Clear distinction between consumer and professional interfaces."
+        ]
+      }
+    },
+    {
+      "task_type": "visual_consistency",
+      "model_used": "openai/gpt-5.2-chat-20251211",
+      "family": "gpt",
+      "auto_applied": {
+        "consistency_findings": 12
+      },
+      "raw_findings": {
+        "inconsistencies": [
+          {
+            "screens": [
+              "首页",
+              "管理后台仪表盘"
+            ],
+            "issue": "End-user home and admin dashboard likely require different navigation patterns and density but may share the same base template since no module distinction is defined."
+          },
+          {
+            "screens": [
+              "场景列表页",
+              "场景列表（管理端）"
+            ],
+            "issue": "User-facing content list and admin management list likely need different table/list treatments (read-only vs CRUD) but appear structurally identical in inventory."
+          },
+          {
+            "screens": [
+              "AI 对话界面",
+              "异常对话检测页"
+            ],
+            "issue": "Real-time conversational UI and admin monitoring screen have very different interaction models yet no differentiation in layout/system tokens is indicated."
+          },
+          {
+            "screens": [
+              "成就与连续天数页",
+              "用户行为分析页"
+            ],
+            "issue": "Gamified user progress screen and analytics dashboard both likely require distinct visualization density and chart styling but share the same design foundation."
+          }
+        ],
+        "token_gaps": [
+          {
+            "token": "on_success",
+            "context": "Success states (e.g., achievements, approvals) need accessible foreground color on success backgrounds."
+          },
+          {
+            "token": "error_container",
+            "context": "Error banners, dialogs, and inline validation require container/background variants beyond a single error color."
+          },
+          {
+            "token": "warning_container",
+            "context": "Warning states (e.g., review queues, moderation alerts) need background + foreground pairings."
+          },
+          {
+            "token": "outline",
+            "context": "Dividers, input borders, and data tables require a neutral outline/border token not defined."
+          },
+          {
+            "token": "surface_container_levels",
+            "context": "Admin dashboards and nested cards require multiple elevation surface tokens (e.g., surface_container_low/high)."
+          },
+          {
+            "token": "state_hover",
+            "context": "Web (MUI) requires hover state color tokens for buttons, list items, and table rows."
+          },
+          {
+            "token": "state_focus",
+            "context": "Accessible focus indicators are not defined for keyboard navigation."
+          },
+          {
+            "token": "state_disabled",
+            "context": "Disabled button/input foreground and background tokens are missing."
+          }
+        ],
+        "grouping_issues": [
+          {
+            "screen": "登录页",
+            "current_module": "",
+            "suggested_module": "认证 Auth"
+          },
+          {
+            "screen": "首页",
+            "current_module": "",
+            "suggested_module": "学习端 App Core"
+          },
+          {
+            "screen": "AI 对话界面",
+            "current_module": "",
+            "suggested_module": "学习端 - AI 练习"
+          },
+          {
+            "screen": "词汇复习页",
+            "current_module": "",
+            "suggested_module": "学习端 - 复习"
+          },
+          {
+            "screen": "成就与连续天数页",
+            "current_module": "",
+            "suggested_module": "学习端 - 成就系统"
+          },
+          {
+            "screen": "通知中心",
+            "current_module": "",
+            "suggested_module": "学习端 - 消息"
+          },
+          {
+            "screen": "管理后台仪表盘",
+            "current_module": "",
+            "suggested_module": "管理后台 Admin"
+          },
+          {
+            "screen": "用户管理列表页",
+            "current_module": "",
+            "suggested_module": "管理后台 - 用户管理"
+          },
+          {
+            "screen": "AI 质量监控页",
+            "current_module": "",
+            "suggested_module": "管理后台 - AI 监控"
+          },
+          {
+            "screen": "用户行为分析页",
+            "current_module": "",
+            "suggested_module": "数据分析 Analytics"
+          },
+          {
+            "screen": "A/B 测试管理页",
+            "current_module": "",
+            "suggested_module": "实验平台 Experimentation"
+          },
+          {
+            "screen": "订阅管理页",
+            "current_module": "",
+            "suggested_module": "商业化 Billing"
+          },
+          {
+            "screen": "角色权限管理页",
+            "current_module": "",
+            "suggested_module": "系统设置 - 权限"
+          }
+        ]
+      }
+    }
+  ]
+}

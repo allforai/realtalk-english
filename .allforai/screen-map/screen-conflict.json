@@ -1,563 +1,334 @@
 {
-  "generated_at": "2026-02-27T19:16:30Z",
-  "conflicts": [],
-  "exception_gaps": [
+  "generated_at": "2026-03-03T16:14:08Z",
+  "issues": [
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S003",
-      "screen_name": "AI对话页",
-      "action": "文字输入",
-      "detail": "CUD 操作「文字输入」缺少 validation_rules"
+      "id": "SC-S004-开始对话-NORISK",
+      "screen_id": "S004",
+      "screen_name": "场景详情页",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "severity": "高",
+      "description": "操作「开始对话」关联高风险任务但无二次确认",
+      "confirmed": true
     },
     {
+      "id": "SC-S004-开始对话-NOVAL",
+      "screen_id": "S004",
+      "screen_name": "场景详情页",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S007",
-      "screen_name": "记忆曲线复习页",
-      "action": "标记已记住/未记住",
-      "detail": "CUD 操作「标记已记住/未记住」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「开始对话」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S009",
-      "screen_name": "场景脚本编辑器",
-      "action": "创建新场景",
-      "detail": "CUD 操作「创建新场景」缺少 validation_rules"
+      "id": "SC-S005-发送文本消息-NORISK",
+      "screen_id": "S005",
+      "screen_name": "AI 对话界面",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "severity": "高",
+      "description": "操作「发送文本消息」关联高风险任务但无二次确认",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S009",
-      "screen_name": "场景脚本编辑器",
-      "action": "编辑对话节点",
-      "detail": "CUD 操作「编辑对话节点」缺少 validation_rules"
+      "id": "SC-S005-录制语音-NORISK",
+      "screen_id": "S005",
+      "screen_name": "AI 对话界面",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "severity": "高",
+      "description": "操作「录制语音」关联高风险任务但无二次确认",
+      "confirmed": true
     },
     {
+      "id": "SC-S005-录制语音-NOVAL",
+      "screen_id": "S005",
+      "screen_name": "AI 对话界面",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S010",
-      "screen_name": "审核队列页",
-      "action": "审核通过",
-      "detail": "CUD 操作「审核通过」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「录制语音」无前端校验规则",
+      "confirmed": true
     },
     {
+      "id": "SC-S005-结束对话-NOVAL",
+      "screen_id": "S005",
+      "screen_name": "AI 对话界面",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S011",
-      "screen_name": "场景包管理页",
-      "action": "上架场景包",
-      "detail": "CUD 操作「上架场景包」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「结束对话」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S011",
-      "screen_name": "场景包管理页",
-      "action": "下架场景包",
-      "detail": "CUD 操作「下架场景包」缺少 validation_rules"
+      "id": "SC-S006-再来一次-SILENT",
+      "screen_id": "S006",
+      "screen_name": "对话报告页",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「再来一次」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S006-再来一次-NOVAL",
+      "screen_id": "S006",
+      "screen_name": "对话报告页",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S011",
-      "screen_name": "场景包管理页",
-      "action": "编辑标签和关键词",
-      "detail": "CUD 操作「编辑标签和关键词」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「再来一次」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S014",
-      "screen_name": "积分商城页",
-      "action": "兑换奖品",
-      "detail": "CUD 操作「兑换奖品」缺少 validation_rules"
+      "id": "SC-S006-NOEMPTY",
+      "screen_id": "S006",
+      "screen_name": "对话报告页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "高",
+      "description": "界面「对话报告页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S015",
-      "screen_name": "分享成果页",
-      "action": "分享到社交媒体",
-      "detail": "CUD 操作「分享到社交媒体」缺少 validation_rules"
+      "id": "SC-S007-评分（Again-SILENT",
+      "screen_id": "S007",
+      "screen_name": "词汇复习页",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「评分（Again/Hard/Good/Easy）」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S007-评分（Again-NOVAL",
+      "screen_id": "S007",
+      "screen_name": "词汇复习页",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S018",
-      "screen_name": "角色偏好设置页",
-      "action": "选择角色类型",
-      "detail": "CUD 操作「选择角色类型」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「评分（Again/Hard/Good/Easy）」无前端校验规则",
+      "confirmed": true
     },
     {
+      "id": "SC-S008-恢复断签-NOVAL",
+      "screen_id": "S008",
+      "screen_name": "成就与连续天数页",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S018",
-      "screen_name": "角色偏好设置页",
-      "action": "设置学习目标",
-      "detail": "CUD 操作「设置学习目标」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「恢复断签」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S018",
-      "screen_name": "角色偏好设置页",
-      "action": "选择感兴趣场景",
-      "detail": "CUD 操作「选择感兴趣场景」缺少 validation_rules"
+      "id": "SC-S009-点击通知-SILENT",
+      "screen_id": "S009",
+      "screen_name": "通知中心",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「点击通知」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S009-点击通知-NOVAL",
+      "screen_id": "S009",
+      "screen_name": "通知中心",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S019",
-      "screen_name": "紧急场景速学页",
-      "action": "收藏到词汇本",
-      "detail": "CUD 操作「收藏到词汇本」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「点击通知」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S021",
-      "screen_name": "订阅管理页",
-      "action": "续费/升级",
-      "detail": "CUD 操作「续费/升级」缺少 validation_rules"
+      "id": "SC-S009-管理通知偏好-SILENT",
+      "screen_id": "S009",
+      "screen_name": "通知中心",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「管理通知偏好」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S009-管理通知偏好-NOVAL",
+      "screen_id": "S009",
+      "screen_name": "通知中心",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S021",
-      "screen_name": "订阅管理页",
-      "action": "取消订阅",
-      "detail": "CUD 操作「取消订阅」缺少 validation_rules"
+      "severity": "中",
+      "description": "C端操作「管理通知偏好」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S022",
-      "screen_name": "场景包购买页",
-      "action": "购买场景包",
-      "detail": "CUD 操作「购买场景包」缺少 validation_rules"
+      "id": "SC-S010-NOEMPTY",
+      "screen_id": "S010",
+      "screen_name": "管理后台仪表盘",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「管理后台仪表盘」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S023",
-      "screen_name": "关键指标看板",
-      "action": "设置指标告警",
-      "detail": "CUD 操作「设置指标告警」缺少 validation_rules"
+      "id": "SC-S011-新建场景-SILENT",
+      "screen_id": "S011",
+      "screen_name": "场景列表（管理端）",
+      "type": "SILENT_FAILURE",
+      "severity": "中",
+      "description": "操作「新建场景」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S011-新建场景-NOVAL",
+      "screen_id": "S011",
+      "screen_name": "场景列表（管理端）",
       "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S024",
-      "screen_name": "用户行为分析页",
-      "action": "创建自定义分析",
-      "detail": "CUD 操作「创建自定义分析」缺少 validation_rules"
+      "severity": "低",
+      "description": "高频操作「新建场景」无前端校验规则",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S025",
-      "screen_name": "A/B测试管理页",
-      "action": "停止/启动测试",
-      "detail": "CUD 操作「停止/启动测试」缺少 validation_rules"
+      "id": "SC-S012-NOEMPTY",
+      "screen_id": "S012",
+      "screen_name": "场景创建页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「场景创建页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S026",
-      "screen_name": "运营报告生成页",
-      "action": "生成运营报告",
-      "detail": "CUD 操作「生成运营报告」缺少 validation_rules"
+      "id": "SC-S013-NOEMPTY",
+      "screen_id": "S013",
+      "screen_name": "场景编辑页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「场景编辑页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S028",
-      "screen_name": "异常对话标注页",
-      "action": "提交标注",
-      "detail": "CUD 操作「提交标注」缺少 validation_rules"
+      "id": "SC-S015-驳回-SILENT",
+      "screen_id": "S015",
+      "screen_name": "场景审核详情页",
+      "type": "SILENT_FAILURE",
+      "severity": "中",
+      "description": "操作「驳回」无失败反馈定义",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "action": "创建新Prompt模板",
-      "detail": "CUD 操作「创建新Prompt模板」缺少 validation_rules"
+      "id": "SC-S015-NOEMPTY",
+      "screen_id": "S015",
+      "screen_name": "场景审核详情页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「场景审核详情页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "action": "编辑Prompt模板",
-      "detail": "CUD 操作「编辑Prompt模板」缺少 validation_rules"
+      "id": "SC-S016-NOEMPTY",
+      "screen_id": "S016",
+      "screen_name": "AI 质量监控页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「AI 质量监控页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "action": "发布Prompt到生产环境",
-      "detail": "CUD 操作「发布Prompt到生产环境」缺少 validation_rules"
+      "id": "SC-S018-NOEMPTY",
+      "screen_id": "S018",
+      "screen_name": "用户详情页",
+      "type": "NO_EMPTY_STATE",
+      "severity": "低",
+      "description": "界面「用户详情页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S031",
-      "screen_name": "用户管理页",
-      "action": "封禁/解禁用户",
-      "detail": "CUD 操作「封禁/解禁用户」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S034",
-      "screen_name": "权限角色管理页",
-      "action": "创建/编辑角色权限",
-      "detail": "CUD 操作「创建/编辑角色权限」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S034",
-      "screen_name": "权限角色管理页",
-      "action": "分配用户角色",
-      "detail": "CUD 操作「分配用户角色」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S035",
-      "screen_name": "投诉处理页",
-      "action": "回复用户",
-      "detail": "CUD 操作「回复用户」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S036",
+      "id": "SC-S032-NOEMPTY",
+      "screen_id": "S032",
       "screen_name": "注册页",
-      "action": "第三方登录注册",
-      "detail": "CUD 操作「第三方登录注册」缺少 validation_rules"
+      "type": "NO_EMPTY_STATE",
+      "severity": "高",
+      "description": "界面「注册页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S038",
-      "screen_name": "个人设置页",
-      "action": "修改头像/昵称",
-      "detail": "CUD 操作「修改头像/昵称」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S038",
-      "screen_name": "个人设置页",
-      "action": "修改通知偏好",
-      "detail": "CUD 操作「修改通知偏好」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S038",
-      "screen_name": "个人设置页",
-      "action": "修改语言设置",
-      "detail": "CUD 操作「修改语言设置」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S038",
-      "screen_name": "个人设置页",
-      "action": "注销账户",
-      "detail": "CUD 操作「注销账户」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S040",
-      "screen_name": "新手引导页",
-      "action": "选择学习目的",
-      "detail": "CUD 操作「选择学习目的」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S040",
-      "screen_name": "新手引导页",
-      "action": "选择当前水平",
-      "detail": "CUD 操作「选择当前水平」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S041",
-      "screen_name": "通知中心页",
-      "action": "管理通知设置",
-      "detail": "CUD 操作「管理通知设置」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S042",
-      "screen_name": "意见反馈页",
-      "action": "上传截图",
-      "detail": "CUD 操作「上传截图」缺少 validation_rules"
-    },
-    {
-      "type": "MISSING_VALIDATION",
-      "severity": "medium",
-      "screen": "S042",
-      "screen_name": "意见反馈页",
-      "action": "提交反馈",
-      "detail": "CUD 操作「提交反馈」缺少 validation_rules"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S003",
-      "screen_name": "AI对话页",
-      "action": "文字输入",
-      "detail": "中高风险任务 T002 的操作「文字输入」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S005",
-      "screen_name": "自由对话页",
-      "action": "自由语音/文字输入",
-      "detail": "中高风险任务 T004 的操作「自由语音/文字输入」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S009",
-      "screen_name": "场景脚本编辑器",
-      "action": "创建新场景",
-      "detail": "中高风险任务 T009 的操作「创建新场景」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S009",
-      "screen_name": "场景脚本编辑器",
-      "action": "编辑对话节点",
-      "detail": "中高风险任务 T009 的操作「编辑对话节点」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S009",
-      "screen_name": "场景脚本编辑器",
-      "action": "保存草稿",
-      "detail": "中高风险任务 T009 的操作「保存草稿」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S010",
-      "screen_name": "审核队列页",
-      "action": "审核通过",
-      "detail": "中高风险任务 T010 的操作「审核通过」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S010",
-      "screen_name": "审核队列页",
-      "action": "驳回并备注",
-      "detail": "中高风险任务 T010 的操作「驳回并备注」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S019",
-      "screen_name": "紧急场景速学页",
-      "action": "收藏到词汇本",
-      "detail": "中高风险任务 T021 的操作「收藏到词汇本」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S025",
-      "screen_name": "A/B测试管理页",
-      "action": "创建A/B测试",
-      "detail": "中高风险任务 T027 的操作「创建A/B测试」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S025",
-      "screen_name": "A/B测试管理页",
-      "action": "停止/启动测试",
-      "detail": "中高风险任务 T027 的操作「停止/启动测试」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S028",
-      "screen_name": "异常对话标注页",
-      "action": "标注异常类型",
-      "detail": "中高风险任务 T030 的操作「标注异常类型」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S028",
-      "screen_name": "异常对话标注页",
-      "action": "提交标注",
-      "detail": "中高风险任务 T030 的操作「提交标注」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "action": "创建新Prompt模板",
-      "detail": "中高风险任务 T031 的操作「创建新Prompt模板」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "action": "编辑Prompt模板",
-      "detail": "中高风险任务 T031 的操作「编辑Prompt模板」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S030",
-      "screen_name": "发音评估参数页",
-      "action": "调整音素阈值",
-      "detail": "中高风险任务 T032 的操作「调整音素阈值」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S034",
-      "screen_name": "权限角色管理页",
-      "action": "创建/编辑角色权限",
-      "detail": "中高风险任务 T036 的操作「创建/编辑角色权限」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S034",
-      "screen_name": "权限角色管理页",
-      "action": "分配用户角色",
-      "detail": "中高风险任务 T036 的操作「分配用户角色」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S035",
-      "screen_name": "投诉处理页",
-      "action": "处理投诉",
-      "detail": "中高风险任务 T037 的操作「处理投诉」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S035",
-      "screen_name": "投诉处理页",
-      "action": "回复用户",
-      "detail": "中高风险任务 T037 的操作「回复用户」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S036",
-      "screen_name": "注册页",
-      "action": "第三方登录注册",
-      "detail": "中高风险任务 T038 的操作「第三方登录注册」缺少异常处理"
-    },
-    {
-      "type": "SILENT_FAILURE",
-      "severity": "medium",
-      "screen": "S039",
+      "id": "SC-S033-发送重置链接-NORISK",
+      "screen_id": "S033",
       "screen_name": "重置密码页",
-      "action": "设置新密码",
-      "detail": "中高风险任务 T041 的操作「设置新密码」缺少异常处理"
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "severity": "高",
+      "description": "操作「发送重置链接」关联高风险任务但无二次确认",
+      "confirmed": true
     },
     {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S001",
-      "screen_name": "场景列表页",
-      "detail": "列表界面「场景列表页」缺少空状态设计"
+      "id": "SC-S033-发送重置链接-SILENT",
+      "screen_id": "S033",
+      "screen_name": "重置密码页",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「发送重置链接」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S033-NOEMPTY",
+      "screen_id": "S033",
+      "screen_name": "重置密码页",
       "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S008",
-      "screen_name": "词汇本页",
-      "detail": "列表界面「词汇本页」缺少空状态设计"
+      "severity": "高",
+      "description": "界面「重置密码页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S010",
-      "screen_name": "审核队列页",
-      "detail": "列表界面「审核队列页」缺少空状态设计"
+      "id": "SC-S034-选择学习目标-SILENT",
+      "screen_id": "S034",
+      "screen_name": "新手引导页",
+      "type": "SILENT_FAILURE",
+      "severity": "高",
+      "description": "操作「选择学习目标」无失败反馈定义",
+      "confirmed": true
     },
     {
+      "id": "SC-S034-NOEMPTY",
+      "screen_id": "S034",
+      "screen_name": "新手引导页",
       "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S011",
-      "screen_name": "场景包管理页",
-      "detail": "列表界面「场景包管理页」缺少空状态设计"
+      "severity": "高",
+      "description": "界面「新手引导页」未定义空状态",
+      "confirmed": true
     },
     {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S016",
-      "screen_name": "个人学习档案页",
-      "detail": "列表界面「个人学习档案页」缺少空状态设计"
+      "id": "SC-S035-选择方案并支付-NOVAL",
+      "screen_id": "S035",
+      "screen_name": "付费墙页",
+      "type": "MISSING_VALIDATION",
+      "severity": "中",
+      "description": "C端操作「选择方案并支付」无前端校验规则",
+      "confirmed": true
     },
     {
+      "id": "SC-S035-NOEMPTY",
+      "screen_id": "S035",
+      "screen_name": "付费墙页",
       "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S022",
-      "screen_name": "场景包购买页",
-      "detail": "列表界面「场景包购买页」缺少空状态设计"
+      "severity": "高",
+      "description": "界面「付费墙页」未定义空状态",
+      "confirmed": true
     },
     {
+      "id": "SC-S037-NOEMPTY",
+      "screen_id": "S037",
+      "screen_name": "管理后台登录页",
       "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S027",
-      "screen_name": "AI对话质量评分页",
-      "detail": "列表界面「AI对话质量评分页」缺少空状态设计"
+      "severity": "低",
+      "description": "界面「管理后台登录页」未定义空状态",
+      "confirmed": true
     },
     {
+      "id": "SC-S038-NOEMPTY",
+      "screen_id": "S038",
+      "screen_name": "系统健康状态页",
       "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S029",
-      "screen_name": "Prompt模板管理页",
-      "detail": "列表界面「Prompt模板管理页」缺少空状态设计"
-    },
-    {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S032",
-      "screen_name": "订阅与退款管理页",
-      "detail": "列表界面「订阅与退款管理页」缺少空状态设计"
-    },
-    {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S034",
-      "screen_name": "权限角色管理页",
-      "detail": "列表界面「权限角色管理页」缺少空状态设计"
-    },
-    {
-      "type": "NO_EMPTY_STATE",
-      "severity": "low",
-      "screen": "S035",
-      "screen_name": "投诉处理页",
-      "detail": "列表界面「投诉处理页」缺少空状态设计"
+      "severity": "低",
+      "description": "界面「系统健康状态页」未定义空状态",
+      "confirmed": true
     }
-  ]
+  ],
+  "summary": {
+    "total": 35,
+    "by_type": {
+      "HIGH_RISK_NO_CONFIRM": 4,
+      "MISSING_VALIDATION": 10,
+      "SILENT_FAILURE": 8,
+      "NO_EMPTY_STATE": 13
+    },
+    "by_severity": {
+      "高": 15,
+      "中": 11,
+      "低": 9
+    }
+  }
 }

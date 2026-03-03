@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-03-03T16:22:38Z",
+  "reviews": [
+    {
+      "task_type": "pruning_second_opinion",
+      "model_used": "google/gemini-3.1-pro-preview-20260219",
+      "family": "gemini",
+      "auto_applied": {
+        "promoted": 0,
+        "demoted": 0
+      },
+      "raw_findings": {
+        "risky_cuts": [
+          {
+            "task_id": "T001",
+            "reason": "User registration is a fundamental entry point for the application and cannot be deferred.",
+            "recommended": "CORE"
+          },
+          {
+            "task_id": "T021",
+            "reason": "Subscription to paid plans is revenue-critical; deferring it blocks monetization.",
+            "recommended": "CORE"
+          },
+          {
+            "task_id": "T034",
+            "reason": "Banning users is a high-risk security and moderation essential feature to prevent platform abuse.",
+            "recommended": "CORE"
+          },
+          {
+            "task_id": "T051",
+            "reason": "Password reset is essential for account recovery; deferring it will lead to permanent user lockouts.",
+            "recommended": "CORE"
+          }
+        ],
+        "over_kept": [
+          {
+            "task_id": "T014",
+            "reason": "Viewing learning streaks is a gamification feature, not essential for the core MVP learning loop.",
+            "recommended": "DEFER"
+          },
+          {
+            "task_id": "T017",
+            "reason": "Personalized scenario recommendations require complex algorithms and can be deferred in favor of standard lists.",
+            "recommended": "DEFER"
+          },
+          {
+            "task_id": "T028",
+            "reason": "AI quality score overviews are advanced QA/analytics tools not required for the primary user experience.",
+            "recommended": "DEFER"
+          },
+          {
+            "task_id": "T030",
+            "reason": "Core metrics dashboard is an internal analytics feature that can be deferred for an MVP.",
+            "recommended": "DEFER"
+          }
+        ],
+        "weak_rationale": [
+          {
+            "task_id": "T015",
+            "issue": "The reason snippet is truncated and incomplete ('excepti')."
+          },
+          {
+            "task_id": "T031",
+            "issue": "The reason snippet is truncated and incomplete ('rules=1,')."
+          },
+          {
+            "task_id": "T048",
+            "issue": "The reason snippet is truncated and incomplete ('rules=2,')."
+          },
+          {
+            "task_id": "T002",
+            "issue": "Relies on a blanket rule ('高频受保护') without providing specific business justification for the feature itself."
+          },
+          {
+            "task_id": "T005",
+            "issue": "Relies on a blanket rule ('高频受保护') without providing specific business justification for the feature itself."
+          }
+        ]
+      }
+    },
+    {
+      "task_type": "competitive_benchmark",
+      "model_used": "deepseek/deepseek-chat-v3.1",
+      "family": "deepseek",
+      "auto_applied": {
+        "competitive_flags": 1
+      },
+      "raw_findings": {
+        "competitive_risks": [
+          {
+            "task_id": "T021",
+            "task_name": "订阅付费方案",
+            "coverage": "all_have",
+            "risk": "All competitors have this feature but it's being deferred, risking inability to monetize alongside competitors"
+          }
+        ],
+        "differentiators": [
+          {
+            "task_id": "T002",
+            "task_name": "登录账号",
+            "opportunity": "Core feature that no competitor has, potential unique user authentication experience"
+          },
+          {
+            "task_id": "T003",
+            "task_name": "刷新登录凭证",
+            "opportunity": "Core feature that no competitor has, potential security and user experience differentiator"
+          },
+          {
+            "task_id": "T005",
+            "task_name": "浏览学习场景列表",
+            "opportunity": "Core feature that no competitor has, unique content discovery mechanism"
+          },
+          {
+            "task_id": "T006",
+            "task_name": "查看场景详情",
+            "opportunity": "Core feature that no competitor has, detailed content presentation advantage"
+          },
+          {
+            "task_id": "T007",
+            "task_name": "发起 AI 对话",
+            "opportunity": "Core feature that no competitor has, foundational AI interaction capability"
+          },
+          {
+            "task_id": "T008",
+            "task_name": "发送文本消息并接收 AI 回复",
+            "opportunity": "Core feature that no competitor has, core conversational AI functionality"
+          },
+          {
+            "task_id": "T009",
+            "task_name": "发送语音消息并获取发音评估",
+            "opportunity": "Core feature that no competitor has, unique speech recognition and pronunciation feedback"
+          },
+          {
+            "task_id": "T010",
+            "task_name": "结束对话并查看报告",
+            "opportunity": "Core feature that no competitor has, valuable learning analytics and feedback system"
+          },
+          {
+            "task_id": "T012",
+            "task_name": "复习今日到期词汇卡",
+            "opportunity": "Core feature that no competitor has, unique spaced repetition vocabulary system"
+          },
+          {
+            "task_id": "T014",
+            "task_name": "查看学习连续天数",
+            "opportunity": "Core feature that no competitor has, gamification and engagement differentiator"
+          },
+          {
+            "task_id": "T017",
+            "task_name": "查看个性化场景推荐",
+            "opportunity": "Core feature that no competitor has, AI-powered personalized learning paths"
+          },
+          {
+            "task_id": "T022",
+            "task_name": "对话中自动收集生词",
+            "opportunity": "Core feature that no competitor has, seamless vocabulary acquisition during conversations"
+          },
+          {
+            "task_id": "T024",
+            "task_name": "创建学习场景草稿",
+            "opportunity": "Core feature that no competitor has, unique content creation workflow"
+          },
+          {
+            "task_id": "T025",
+            "task_name": "编辑学习场景",
+            "opportunity": "Core feature that no competitor has, flexible content customization capability"
+          },
+          {
+            "task_id": "T028",
+            "task_name": "查看 AI 质量评分概览",
+            "opportunity": "Core feature that no competitor has, transparent AI performance monitoring"
+          },
+          {
+            "task_id": "T029",
+            "task_name": "查看低分对话并分析",
+            "opportunity": "Core feature that no competitor has, detailed AI improvement analytics"
+          },
+          {
+            "task_id": "T030",
+            "task_name": "查看核心指标仪表盘",
+            "opportunity": "Core feature that no competitor has, comprehensive performance monitoring system"
+          },
+          {
+            "task_id": "T032",
+            "task_name": "搜索用户",
+            "opportunity": "Core feature that no competitor has, advanced user management capability"
+          },
+          {
+            "task_id": "T033",
+            "task_name": "查看用户详情",
+            "opportunity": "Core feature that no competitor has, detailed user analytics and profiling"
+          },
+          {
+            "task_id": "T039",
+            "task_name": "检测异常对话",
+            "opportunity": "Core feature that no competitor has, proactive quality control and safety monitoring"
+          },
+          {
+            "task_id": "T046",
+            "task_name": "获取当前用户信息",
+            "opportunity": "Core feature that no competitor has, personalized user experience foundation"
+          }
+        ]
+      }
+    }
+  ]
+}

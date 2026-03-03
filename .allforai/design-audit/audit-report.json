@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-27T20:27:55Z",
+  "generated_at": "2026-03-03T16:27:18Z",
   "mode": "full",
   "role_filter": null,
   "available_layers": [
@@ -12,53 +12,116 @@
   ],
   "summary": {
     "trace": {
-      "total": 252,
-      "pass": 252,
+      "total": 295,
+      "pass": 295,
       "orphan": 0
     },
     "coverage": {
-      "total": 180,
-      "covered": 180,
-      "gap": 0,
-      "rate": "100%"
+      "total": 208,
+      "covered": 205,
+      "gap": 3,
+      "rate": "99%"
     },
     "cross": {
-      "total": 49,
-      "ok": 46,
-      "conflict": 2,
-      "warning": 1,
+      "total": 36,
+      "ok": 36,
+      "conflict": 0,
+      "warning": 0,
       "broken_ref": 0
     },
     "fidelity": {
       "traceability_rate": "100%",
       "traceability_status": "PASS",
-      "viewpoint_coverage_rate": "100%",
+      "viewpoint_coverage_rate": "94%",
       "viewpoint_status": "PASS"
     }
   },
   "trace_issues": [],
-  "coverage_issues": [],
-  "cross_issues": [
+  "coverage_issues": [
     {
-      "check_id": "X1",
-      "type": "CONFLICT",
-      "task_id": "T019",
-      "task_name": "设置角色偏好",
-      "detail": "feature-gap 报 T019 有缺口，但 feature-prune 标为 CUT — 矛盾"
+      "check_id": "C1",
+      "type": "GAP",
+      "task_id": "T004",
+      "task_name": "退出登录",
+      "missing_in": "screen-map",
+      "detail": "任务 T004 (退出登录) 在 screen-map 中无对应界面",
+      "xv_critical": true
     },
     {
-      "check_id": "X1",
-      "type": "CONFLICT",
-      "task_id": "T016",
-      "task_name": "分享学习成果",
-      "detail": "feature-gap 报 T016 有缺口，但 feature-prune 标为 CUT — 矛盾"
+      "check_id": "C1",
+      "type": "GAP",
+      "task_id": "T003",
+      "task_name": "刷新登录凭证",
+      "missing_in": "screen-map",
+      "detail": "任务 T003 (刷新登录凭证) 在 screen-map 中无对应界面",
+      "xv_acceptable": true
     },
     {
-      "check_id": "X3",
-      "type": "WARNING",
-      "task_id": "T009",
-      "task_name": "创建场景对话脚本",
-      "detail": "高频任务 T009 的操作 '预览场景对话' click_depth=3 ≥ 3（被埋深）"
+      "check_id": "C1",
+      "type": "GAP",
+      "task_id": "T023",
+      "task_name": "手动添加词汇到生词本",
+      "missing_in": "screen-map",
+      "detail": "任务 T023 (手动添加词汇到生词本) 在 screen-map 中无对应界面",
+      "xv_critical": true
     }
-  ]
+  ],
+  "cross_issues": [],
+  "cross_model_review": {
+    "generated_at": "2026-03-03T16:27:29Z",
+    "reviews": [
+      {
+        "task_type": "cross_layer_validation",
+        "model_used": "deepseek/deepseek-chat-v3.1",
+        "family": "deepseek",
+        "auto_applied": {
+          "root_causes": 0,
+          "false_alarms": 0
+        },
+        "raw_findings": {
+          "root_causes": [],
+          "missed_connections": [],
+          "false_alarms": []
+        }
+      },
+      {
+        "task_type": "coverage_analysis",
+        "model_used": "openai/gpt-5.2-chat-20251211",
+        "family": "gpt",
+        "auto_applied": {
+          "critical_gaps": 2,
+          "acceptable_gaps": 1
+        },
+        "raw_findings": {
+          "critical_gaps": [
+            {
+              "task_id": "T004",
+              "task_name": "退出登录",
+              "missing_in": "screen-map",
+              "risk": "Logout is a core user control and security-related function; missing from the screen map suggests incomplete navigation design and potential access or discoverability issues."
+            },
+            {
+              "task_id": "T023",
+              "task_name": "手动添加词汇到生词本",
+              "missing_in": "screen-map",
+              "risk": "Manually adding vocabulary is likely a core user feature; absence from the screen map indicates the feature entry point or navigation path may be undefined, risking implementation or UX gaps."
+            }
+          ],
+          "acceptable_gaps": [
+            {
+              "task_id": "T003",
+              "reason": "刷新登录凭证 is typically a background/session management mechanism and may not require explicit screen-level navigation representation."
+            }
+          ],
+          "patterns": [
+            {
+              "pattern": "All coverage gaps are concentrated in the screen-map layer",
+              "affected_count": 3,
+              "suggestion": "Review the navigation design process to ensure all user-facing and security-critical tasks are explicitly represented in the screen map before design freeze."
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

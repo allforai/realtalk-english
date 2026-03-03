@@ -1,0 +1,992 @@
+{
+  "generated_at": "2026-03-03T16:23:08Z",
+  "style": "Material Design 3",
+  "style_source": "Material Design 3 Guidelines (material.io)",
+  "design_tokens": {
+    "colors": {
+      "primary": "#6750A4",
+      "secondary": "#625B71",
+      "tertiary": "#7D5260",
+      "background": "#FFFBFE",
+      "surface": "#FFFBFE",
+      "surface_variant": "#E7E0EC",
+      "on_surface": "#1C1B1F",
+      "on_surface_variant": "#49454F",
+      "success": "#2E7D32",
+      "warning": "#ED6C02",
+      "error": "#B3261E"
+    },
+    "typography": {
+      "display": "57px/400",
+      "headline": "32px/400",
+      "title": "22px/500",
+      "body": "16px/400",
+      "label": "14px/500",
+      "font_family": "'Roboto', 'Noto Sans SC', sans-serif"
+    },
+    "spacing": "4px grid (4/8/12/16/24/32)",
+    "border_radius": "12px",
+    "shadow": "0 1px 3px 1px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.3)"
+  },
+  "component_library": {
+    "primary": "Flutter Material 3",
+    "alternative": "MUI (React)"
+  },
+  "screens": [
+    {
+      "screen_id": "S001",
+      "name": "登录页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "表单空白，光标聚焦邮箱输入框",
+        "loading": "登录按钮显示 spinner",
+        "error": "密码错误 → 输入框下方红色提示"
+      },
+      "task_refs": [
+        "T002"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S002",
+      "name": "首页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "新用户无历史 → 展示入门推荐",
+        "loading": "骨架屏占位",
+        "error": "网络错误 → 重试按钮"
+      },
+      "task_refs": [
+        "T017",
+        "T014",
+        "T046"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S003",
+      "name": "场景列表页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "无匹配场景 → 引导调整筛选条件",
+        "loading": "卡片骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T005"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ]
+    },
+    {
+      "screen_id": "S004",
+      "name": "场景详情页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "首次访问无进度 → 鼓励开始",
+        "loading": "内容加载中",
+        "error": "场景不存在 → 404 提示返回列表"
+      },
+      "task_refs": [
+        "T006",
+        "T007"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL"
+      ]
+    },
+    {
+      "screen_id": "S005",
+      "name": "AI 对话界面",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "对话开始 → AI 先发开场白",
+        "loading": "AI 回复中 → SSE 流式打字效果",
+        "error": "LLM 超时 → 提示重试发送"
+      },
+      "task_refs": [
+        "T008",
+        "T009",
+        "T022"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S006",
+      "name": "对话报告页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "报告生成中 → 加载动画",
+        "error": "报告获取失败 → 重试"
+      },
+      "task_refs": [
+        "T010"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S007",
+      "name": "词汇复习页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "无到期卡片 → 提示今日已完成，展示统计摘要",
+        "loading": "卡片加载中",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T012",
+        "T013"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S008",
+      "name": "成就与连续天数页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "新用户 → 展示首个成就引导",
+        "loading": "骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T014",
+        "T015",
+        "T016"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S009",
+      "name": "通知中心",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "无通知 → 空状态",
+        "loading": "列表加载中",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T018",
+        "T019",
+        "T020"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S010",
+      "name": "管理后台仪表盘",
+      "role": "数据运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "图表骨架屏",
+        "error": "数据获取失败 → 重试按钮"
+      },
+      "task_refs": [
+        "T030",
+        "T031"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S011",
+      "name": "场景列表（管理端）",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "无场景 → 引导创建首个",
+        "loading": "表格骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T024",
+        "T025"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-SEARCH",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S012",
+      "name": "场景创建页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "表单加载中",
+        "error": "保存失败 → 错误提示"
+      },
+      "task_refs": [
+        "T024"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD",
+        "PT-APPROVAL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S013",
+      "name": "场景编辑页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "内容加载中",
+        "error": "保存失败 → 错误提示"
+      },
+      "task_refs": [
+        "T025",
+        "T026"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S014",
+      "name": "审核队列页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "无待审核场景 → 提示",
+        "loading": "表格加载中",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T027"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S015",
+      "name": "场景审核详情页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "内容加载中",
+        "error": "非 review 状态 → 提示"
+      },
+      "task_refs": [
+        "T027"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S016",
+      "name": "AI 质量监控页",
+      "role": "AI 训练师",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "图表和列表加载中",
+        "error": "数据获取失败 → 重试"
+      },
+      "task_refs": [
+        "T028",
+        "T029"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-SEARCH"
+      ]
+    },
+    {
+      "screen_id": "S017",
+      "name": "用户管理列表页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "无匹配用户 → 空结果提示",
+        "loading": "表格加载中",
+        "error": "网络错误 → 重试"
+      },
+      "task_refs": [
+        "T032"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ]
+    },
+    {
+      "screen_id": "S018",
+      "name": "用户详情页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "内容加载中",
+        "error": "用户不存在 → 404"
+      },
+      "task_refs": [
+        "T033",
+        "T034",
+        "T035"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S019",
+      "name": "场景包管理页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T037"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD"
+      ]
+    },
+    {
+      "screen_id": "S020",
+      "name": "场景标签管理页",
+      "role": "内容运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T038"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD"
+      ]
+    },
+    {
+      "screen_id": "S021",
+      "name": "异常对话检测页",
+      "role": "AI 训练师",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T039"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S022",
+      "name": "Prompt 模板管理页",
+      "role": "AI 训练师",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T040"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD"
+      ]
+    },
+    {
+      "screen_id": "S023",
+      "name": "发音分析页",
+      "role": "AI 训练师",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T041"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S024",
+      "name": "用户行为分析页",
+      "role": "数据运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T047"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S025",
+      "name": "A/B 测试管理页",
+      "role": "数据运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T048"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-CRUD"
+      ]
+    },
+    {
+      "screen_id": "S026",
+      "name": "报告导出页",
+      "role": "数据运营",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T049"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S027",
+      "name": "订阅管理页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T042"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S028",
+      "name": "系统设置页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T043"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S029",
+      "name": "角色权限管理页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T050"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-PERMISSION"
+      ]
+    },
+    {
+      "screen_id": "S030",
+      "name": "投诉处理页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T044"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-STATE"
+      ]
+    },
+    {
+      "screen_id": "S031",
+      "name": "用户反馈页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon",
+        "loading": "骨架屏 (shimmer)",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T045"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S032",
+      "name": "注册页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "注册中 → spinner",
+        "error": "邮箱已存在 → 提示已注册"
+      },
+      "task_refs": [
+        "T001"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S033",
+      "name": "重置密码页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "发送中",
+        "error": "发送失败 → 重试"
+      },
+      "task_refs": [
+        "T051"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S034",
+      "name": "新手引导页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "引导内容加载中",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T052"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S035",
+      "name": "付费墙页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "方案加载中",
+        "error": "支付失败 → 重试"
+      },
+      "task_refs": [
+        "T021"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S036",
+      "name": "历史对话列表页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "无历史 → 引导开始首次对话",
+        "loading": "列表加载中",
+        "error": "Snackbar (错误色) + 重试"
+      },
+      "task_refs": [
+        "T011"
+      ],
+      "innovation_ui": false,
+      "_pattern": [
+        "PT-LIST-DETAIL"
+      ]
+    },
+    {
+      "screen_id": "S037",
+      "name": "管理后台登录页",
+      "role": "职场人士",
+      "audience_type": "consumer",
+      "layout": "单列卡片流",
+      "sections": [
+        "顶部导航/状态栏",
+        "主内容区",
+        "底部导航"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "骨架屏 (shimmer)",
+        "error": "凭证错误 → 提示"
+      },
+      "task_refs": [
+        "T002"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    },
+    {
+      "screen_id": "S038",
+      "name": "系统健康状态页",
+      "role": "系统管理员",
+      "audience_type": "professional",
+      "layout": "侧边导航 + 内容区",
+      "sections": [
+        "侧边导航栏",
+        "顶部操作栏",
+        "主内容区",
+        "分页器"
+      ],
+      "states": {
+        "empty": "引导文案 + CTA",
+        "loading": "骨架屏 (shimmer)",
+        "error": "DB 不可达 → unhealthy"
+      },
+      "task_refs": [
+        "T036"
+      ],
+      "innovation_ui": false,
+      "_pattern": []
+    }
+  ],
+  "pattern_alignment": [
+    {
+      "pattern_group": "scenario-approval",
+      "item": "状态标签颜色",
+      "detail": "审批流状态标签统一：待审=amber/yellow, 通过=green, 拒绝=red"
+    },
+    {
+      "pattern_group": "scenario-crud",
+      "item": "操作按钮位置",
+      "detail": "统一到右上角主操作 + 行内次操作 (顶部操作栏+数据表格+跳转详情页编辑)"
+    }
+  ],
+  "xv_cross_model_review": {
+    "design_review": {
+      "model": "google/gemini-3.1-pro-preview",
+      "high_severity_issues": 2
+    },
+    "visual_consistency": {
+      "model": "openai/gpt-5.2-chat",
+      "consistency_findings": 12
+    }
+  }
+}

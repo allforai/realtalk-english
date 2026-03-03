@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-03-03T16:09:27Z",
+  "summary": {
+    "error_issues": 0,
+    "warning_issues": 23,
+    "info_issues": 23,
+    "conflict_issues": 0,
+    "competitor_gaps": "skipped — concept_guided mode (competitive_position exists)"
+  },
+  "completeness": [
+    {
+      "task_id": "T002",
+      "task_name": "登录账号",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T003",
+      "task_name": "刷新登录凭证",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T006",
+      "task_name": "查看场景详情",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T010",
+      "task_name": "结束对话并查看报告",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T014",
+      "task_name": "查看学习连续天数",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T017",
+      "task_name": "查看个性化场景推荐",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T021",
+      "task_name": "订阅付费方案",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T022",
+      "task_name": "对话中自动收集生词",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T024",
+      "task_name": "创建学习场景草稿",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T025",
+      "task_name": "编辑学习场景",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T028",
+      "task_name": "查看 AI 质量评分概览",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T029",
+      "task_name": "查看低分对话并分析",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T030",
+      "task_name": "查看核心指标仪表盘",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T032",
+      "task_name": "搜索用户",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T033",
+      "task_name": "查看用户详情",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T034",
+      "task_name": "封禁用户",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T039",
+      "task_name": "检测异常对话",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T040",
+      "task_name": "管理 Prompt 模板",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T042",
+      "task_name": "管理订阅方案",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T043",
+      "task_name": "管理系统配置",
+      "level": "WARNING",
+      "flags": [
+        "MISSING_EXCEPTIONS",
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T046",
+      "task_name": "获取当前用户信息",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T048",
+      "task_name": "管理 A/B 测试",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    },
+    {
+      "task_id": "T050",
+      "task_name": "管理角色权限",
+      "level": "WARNING",
+      "flags": [
+        "THIN_AC"
+      ],
+      "detail": "推荐字段不完整（高频/高风险任务）",
+      "confirmed": true
+    }
+  ],
+  "conflicts": [],
+  "competitor_diff": {
+    "skipped": true,
+    "reason": "concept-guided mode: competitive_position already defined in product-concept.json"
+  }
+}

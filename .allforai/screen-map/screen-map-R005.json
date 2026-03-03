@@ -1,0 +1,136 @@
+{
+  "split_by": "role",
+  "split_value": "R005",
+  "split_label": "AI 训练师",
+  "description": "角色 R005（AI 训练师）关联的界面子集",
+  "generated_at": "2026-03-03T16:13:29Z",
+  "count": 4,
+  "items": [
+    {
+      "id": "S016",
+      "name": "AI 质量监控页",
+      "description": "AI 对话质量评分概览和低分对话列表，支持按日期和阈值筛选",
+      "primary_purpose": "监控和改善 AI 对话质量",
+      "primary_action": "查看质量趋势和低分对话",
+      "entry_point": "/admin/ai-quality",
+      "audience_type": "professional",
+      "tasks": [
+        "T028",
+        "T029"
+      ],
+      "states": {
+        "loading": "图表和列表加载中",
+        "error": "数据获取失败 → 重试"
+      },
+      "actions": [
+        {
+          "label": "查看评分概览",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R005"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展示趋势图表",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "筛选低分对话",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R005"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "更新低分对话列表",
+          "validation_rules": [],
+          "exception_flows": [
+            "无低分对话 → 展示空状态"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "查看评分概览",
+          "筛选低分对话"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S021",
+      "name": "异常对话检测页",
+      "description": "查看和处理自动标记的异常对话",
+      "primary_purpose": "查看和处理自动标记的异常对话",
+      "primary_action": "待实现",
+      "entry_point": "/admin/anomalies",
+      "audience_type": "professional",
+      "tasks": [
+        "T039"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S022",
+      "name": "Prompt 模板管理页",
+      "description": "管理 Prompt 模板：版本/编辑/关联场景",
+      "primary_purpose": "管理 Prompt 模板",
+      "primary_action": "待实现",
+      "entry_point": "/admin/prompts",
+      "audience_type": "professional",
+      "tasks": [
+        "T040"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S023",
+      "name": "发音分析页",
+      "description": "发音统计：按用户/场景/时段的音素级分析",
+      "primary_purpose": "发音统计",
+      "primary_action": "待实现",
+      "entry_point": "/admin/pronunciation",
+      "audience_type": "professional",
+      "tasks": [
+        "T041"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    }
+  ]
+}

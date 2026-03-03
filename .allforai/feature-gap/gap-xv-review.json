@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-03-03T16:23:51Z",
+  "reviews": [
+    {
+      "task_type": "journey_validation",
+      "model_used": "google/gemini-3.1-pro-preview-20260219",
+      "family": "gemini",
+      "auto_applied": {
+        "added_gaps": 2
+      },
+      "raw_findings": {
+        "overlooked": [
+          {
+            "role": "职场人士",
+            "task": "被封禁状态展示",
+            "gap": "Missing dead-end state handling. When an admin executes T034 (封禁用户), there is no corresponding UI state or forced logout flow defined for the banned user to explain their account status.",
+            "severity": "high"
+          },
+          {
+            "role": "职场人士/系统管理员",
+            "task": "处理用户投诉 (T044)",
+            "gap": "Missing cross-role feedback loop. After the admin processes a complaint, there is no defined notification mechanism or UI for the end-user to see the resolution.",
+            "severity": "high"
+          },
+          {
+            "role": "AI 训练师/系统管理员",
+            "task": "检测异常对话 (T039) -> 封禁用户 (T034)",
+            "gap": "Missing cross-role handoff. There is no workflow connecting the AI Trainer's detection of abnormal behavior to the Admin's banning action.",
+            "severity": "medium"
+          },
+          {
+            "role": "数据运营",
+            "task": "生成/导出运营报告 (T049)",
+            "gap": "Missing asynchronous flow handling. Report generation is typically async, but there is no notification system or 'Download Center' defined to retrieve the exported file.",
+            "severity": "medium"
+          }
+        ],
+        "false_positives": [
+          "任务 T003 (刷新登录凭证) 无对应界面: Token refresh is a background API process and inherently does not require a dedicated UI screen.",
+          "任务 T016 (查看成就列表) 界面无 is_primary 标记的操作: Viewing a list is a passive consumption task and does not require a primary action button.",
+          "任务 T033 (查看用户详情) 界面无 is_primary 标记的操作: Viewing user details is a read-only task and does not strictly require a primary action.",
+          "任务 T041 (查看发音分析报告) 界面无 is_primary 标记的操作及反馈: Read-only analytical views do not require primary action buttons or success/failure mutation feedback.",
+          "任务 T045 (查看用户反馈) 界面无 is_primary 标记的操作及反馈: Passive viewing tasks do not require primary actions or mutation feedback.",
+          "任务 T047 (查看用户行为分析) 界面无 is_primary 标记的操作及反馈: Data dashboard viewing is passive and does not require primary actions or mutation feedback."
+        ]
+      }
+    },
+    {
+      "task_type": "gap_prioritization",
+      "model_used": "openai/gpt-5.2-chat-20251211",
+      "family": "gpt",
+      "auto_applied": {
+        "priority_adjusted": 4,
+        "dedup_marked": 12
+      },
+      "raw_findings": {
+        "adjustments": [
+          {
+            "id": "GAP-001",
+            "current": "低",
+            "recommended": "中",
+            "reason": "退出登录缺少异常处理会影响账户安全与会话一致性，属于中风险基础能力。"
+          },
+          {
+            "id": "GAP-024",
+            "current": "低",
+            "recommended": "中",
+            "reason": "角色权限CRUD不完整可能导致权限配置失效或越权风险，属于安全相关能力。"
+          },
+          {
+            "id": "GAP-002",
+            "current": "中",
+            "recommended": "高",
+            "reason": "复习统计摘要缺少异常处理会影响核心学习反馈闭环，直接影响留存与学习效果。"
+          },
+          {
+            "id": "GAP-016",
+            "current": "中",
+            "recommended": "高",
+            "reason": "发音分析报告属于核心学习结果页，异常无处理会造成结果不可用或误解，影响核心价值。"
+          }
+        ],
+        "dedup": [
+          "GAP-031",
+          "GAP-032",
+          "GAP-010",
+          "GAP-011",
+          "GAP-014",
+          "GAP-015",
+          "GAP-005",
+          "GAP-006",
+          "GAP-017",
+          "GAP-018",
+          "GAP-019",
+          "GAP-020"
+        ]
+      }
+    }
+  ]
+}

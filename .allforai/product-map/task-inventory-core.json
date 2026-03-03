@@ -1,0 +1,834 @@
+{
+  "generated_at": "2026-03-04T01:00:00Z",
+  "version": "2.6.0",
+  "category": "core",
+  "task_count": 32,
+  "tasks": [
+    {
+      "id": "T005",
+      "task_name": "浏览学习场景列表",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开学习页",
+        "查看已发布场景列表（按难度/标签/角色筛选）",
+        "翻页浏览"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "仅展示 status=published 的场景",
+        "支持 difficulty/tag_id/role 过滤",
+        "分页返回"
+      ],
+      "exceptions": [
+        "无匹配场景 → 展示空状态引导"
+      ],
+      "acceptance_criteria": [
+        "筛选条件正确过滤",
+        "分页正常工作",
+        "未发布场景不可见"
+      ]
+    },
+    {
+      "id": "T006",
+      "task_name": "查看场景详情",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "点击场景卡片",
+        "查看标题/描述/难度/目标角色",
+        "查看个人进度（若有历史对话）",
+        "决定是否开始对话"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "附带用户在该场景的历史进度"
+      ],
+      "exceptions": [
+        "场景不存在 → 404"
+      ],
+      "acceptance_criteria": [
+        "展示完整场景信息",
+        "历史进度正确显示"
+      ]
+    },
+    {
+      "id": "T007",
+      "task_name": "发起 AI 对话",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "选择场景（或自由对话）",
+        "创建新对话会话",
+        "系统检查每日对话限额（CN001）",
+        "进入对话界面"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "免费用户每日 3 轮对话限制（CN001）",
+        "付费用户无限制",
+        "可选绑定 scenario_id 或自由对话"
+      ],
+      "config_items": [
+        {
+          "param": "免费用户每日对话上限",
+          "current": "3",
+          "config_level": "general_config"
+        }
+      ],
+      "exceptions": [
+        "达到每日限额 → 提示升级订阅",
+        "系统异常 → 提示稍后重试"
+      ],
+      "acceptance_criteria": [
+        "免费用户超限被拦截",
+        "付费用户不受限",
+        "对话状态初始化为 active"
+      ]
+    },
+    {
+      "id": "T008",
+      "task_name": "发送文本消息并接收 AI 回复",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "输入文本消息",
+        "提交到后端",
+        "后端调用 LLM 生成回复（SSE 流式）",
+        "实时展示 AI 回复"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "SSE 流式传输",
+        "消息按 sequence 排序",
+        "记录 token_count"
+      ],
+      "exceptions": [
+        "LLM 调用超时 → 返回错误提示",
+        "网络断开 → 提示重试"
+      ],
+      "acceptance_criteria": [
+        "流式回复实时显示",
+        "消息顺序正确",
+        "断网有友好提示"
+      ]
+    },
+    {
+      "id": "T009",
+      "task_name": "发送语音消息并获取发音评估",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "录制语音",
+        "上传音频到后端",
+        "Azure STT 转文字",
+        "Azure 发音评估（音素级）",
+        "LLM 生成 AI 回复（SSE）",
+        "展示转写文本 + 发音分数 + AI 回复"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "accuracy/fluency/completeness 三维评分（0-1）",
+        "phoneme_details JSON 记录音素级细节"
+      ],
+      "exceptions": [
+        "语音识别失败 → 提示重新录制",
+        "音频过短 → 提示说长一点"
+      ],
+      "acceptance_criteria": [
+        "发音评分三维度正确返回",
+        "音素级细节可查看",
+        "转写文本准确"
+      ]
+    },
+    {
+      "id": "T010",
+      "task_name": "结束对话并查看报告",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "点击结束对话",
+        "系统生成对话报告（总分/语法错误/表达建议）",
+        "查看报告详情"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "对话状态改为 completed",
+        "生成 overall_score/grammar_errors/expression_suggestions",
+        "记录 duration_seconds/message_count/word_count"
+      ],
+      "exceptions": [
+        "对话已结束 → 提示不可重复结束"
+      ],
+      "acceptance_criteria": [
+        "报告包含总分和语法反馈",
+        "时长和字数统计准确"
+      ]
+    },
+    {
+      "id": "T011",
+      "task_name": "查看历史对话列表",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "打开对话历史页",
+        "查看所有历史对话（分页）",
+        "点击查看某次对话详情和报告"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "按创建时间倒序",
+        "分页返回"
+      ],
+      "exceptions": [
+        "无历史 → 空状态引导"
+      ],
+      "acceptance_criteria": [
+        "历史记录分页正常",
+        "可查看每次对话详情"
+      ]
+    },
+    {
+      "id": "T012",
+      "task_name": "复习今日到期词汇卡",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开复习页",
+        "查看今日到期卡片",
+        "逐张复习（看词→回忆→评分）",
+        "FSRS 算法重新计算下次复习时间"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "FSRS 间隔重复算法",
+        "评分后更新 stability/difficulty/due",
+        "state: new→learning→review→relearning"
+      ],
+      "exceptions": [
+        "无到期卡片 → 提示今日已完成"
+      ],
+      "acceptance_criteria": [
+        "到期卡片正确计算",
+        "评分后下次复习日期更新",
+        "FSRS 参数正确"
+      ]
+    },
+    {
+      "id": "T013",
+      "task_name": "查看复习统计摘要",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "完成复习后",
+        "查看本次复习统计（复习数/正确率/掌握进度）"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "统计当次复习的卡片数和正确率"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "统计数据准确"
+      ]
+    },
+    {
+      "id": "T014",
+      "task_name": "查看学习连续天数",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开首页或个人页",
+        "查看当前连续天数和历史最长连续天数",
+        "查看上次活跃日期"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "每日首次活动更新 last_active_date 和 current_streak"
+      ],
+      "exceptions": [
+        "断签 → 连续天数归零"
+      ],
+      "acceptance_criteria": [
+        "连续天数正确计算",
+        "断签后归零"
+      ]
+    },
+    {
+      "id": "T015",
+      "task_name": "恢复断签连续天数",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "中",
+      "main_flow": [
+        "断签后查看恢复选项",
+        "点击恢复",
+        "系统检查本月恢复次数",
+        "恢复连续天数"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "每月最多恢复 1 次",
+        "restorations_this_month 按月重置"
+      ],
+      "config_items": [
+        {
+          "param": "每月恢复次数上限",
+          "current": "1",
+          "config_level": "code_constant"
+        }
+      ],
+      "exceptions": [
+        "本月已恢复过 → 提示下月再试"
+      ],
+      "acceptance_criteria": [
+        "恢复成功 streak 恢复",
+        "超限被拒绝"
+      ]
+    },
+    {
+      "id": "T016",
+      "task_name": "查看成就列表",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "打开成就页",
+        "查看所有成就（已获得/未解锁）",
+        "查看获取条件和获取时间"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "criteria JSONB 定义触发条件",
+        "earned_at 记录获取时间"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "已获得和未解锁状态正确区分"
+      ]
+    },
+    {
+      "id": "T017",
+      "task_name": "查看个性化场景推荐",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开首页",
+        "查看推荐场景列表",
+        "点击感兴趣的场景进入详情"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "基于用户水平/历史/偏好推荐"
+      ],
+      "exceptions": [
+        "新用户无历史 → 推荐入门场景"
+      ],
+      "acceptance_criteria": [
+        "推荐与用户水平匹配",
+        "新用户有合理推荐"
+      ]
+    },
+    {
+      "id": "T022",
+      "task_name": "对话中自动收集生词",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "对话进行中",
+        "系统自动识别新词汇",
+        "写入 vocabulary_items（source_type=auto_collected）",
+        "自动创建 review_card"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "source_conversation_id 关联来源对话",
+        "mastery_level 初始为 new",
+        "(user_id, word) 唯一"
+      ],
+      "exceptions": [
+        "已存在词汇 → 跳过"
+      ],
+      "acceptance_criteria": [
+        "新词自动收集",
+        "已有词不重复"
+      ]
+    },
+    {
+      "id": "T023",
+      "task_name": "手动添加词汇到生词本",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "进入生词本",
+        "点击添加",
+        "输入单词/释义/例句",
+        "保存并创建 review_card"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "source_type=manual",
+        "(user_id, word) 唯一"
+      ],
+      "exceptions": [
+        "已存在 → 提示重复"
+      ],
+      "acceptance_criteria": [
+        "手动添加成功",
+        "重复词提示"
+      ]
+    },
+    {
+      "id": "T024",
+      "task_name": "创建学习场景草稿",
+      "owner_role": "R004",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "进入场景管理",
+        "点击新建",
+        "填写标题/描述/难度/目标角色",
+        "编辑对话节点树（dialogue_nodes）",
+        "保存为 draft 状态"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "初始 status=draft",
+        "dialogue_nodes 为 JSONB 对话树结构",
+        "记录 author_id"
+      ],
+      "exceptions": [
+        "必填字段缺失 → 提示补全"
+      ],
+      "acceptance_criteria": [
+        "草稿保存成功",
+        "对话节点结构正确"
+      ]
+    },
+    {
+      "id": "T025",
+      "task_name": "编辑学习场景",
+      "owner_role": "R004",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "打开场景列表",
+        "选择草稿场景",
+        "修改内容",
+        "保存"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "仅 draft 状态可编辑",
+        "已发布场景需重新走审核"
+      ],
+      "exceptions": [
+        "非 draft 状态 → 提示不可编辑"
+      ],
+      "acceptance_criteria": [
+        "draft 可编辑",
+        "published 不可直接编辑"
+      ]
+    },
+    {
+      "id": "T026",
+      "task_name": "提交场景审核",
+      "owner_role": "R004",
+      "frequency": "中",
+      "risk_level": "中",
+      "main_flow": [
+        "完成场景编辑",
+        "点击提交审核",
+        "状态从 draft 变为 review",
+        "进入审核队列"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "status: draft → review",
+        "记录 submitted_at"
+      ],
+      "exceptions": [
+        "非 draft 状态 → 不可提交"
+      ],
+      "acceptance_criteria": [
+        "提交后状态为 review",
+        "出现在审核队列"
+      ]
+    },
+    {
+      "id": "T027",
+      "task_name": "审核学习场景",
+      "owner_role": "R004",
+      "frequency": "中",
+      "risk_level": "高",
+      "main_flow": [
+        "查看审核队列",
+        "选择待审场景",
+        "审查内容质量",
+        "批准（published）或驳回（rejected + 填写原因）"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "review → published 或 review → rejected",
+        "记录 reviewer_id/reviewed_at",
+        "驳回必填 rejection_reason"
+      ],
+      "exceptions": [
+        "非 review 状态 → 不可审核"
+      ],
+      "acceptance_criteria": [
+        "批准后状态为 published",
+        "驳回含原因",
+        "记录审核人"
+      ]
+    },
+    {
+      "id": "T028",
+      "task_name": "查看 AI 质量评分概览",
+      "owner_role": "R005",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开 AI 质量页",
+        "查看整体评分趋势",
+        "查看各维度分数"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "overview 接口返回趋势数据"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "评分趋势正确显示"
+      ]
+    },
+    {
+      "id": "T029",
+      "task_name": "查看低分对话并分析",
+      "owner_role": "R005",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "查看低分对话列表（按阈值过滤）",
+        "点击查看对话详情",
+        "分析 AI 回复质量问题",
+        "标记处理意见"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "threshold 参数过滤低分",
+        "分页返回"
+      ],
+      "config_items": [
+        {
+          "param": "低分阈值",
+          "current": "3.0",
+          "config_level": "general_config"
+        }
+      ],
+      "exceptions": [
+        "无低分对话 → 展示空状态"
+      ],
+      "acceptance_criteria": [
+        "阈值过滤正确",
+        "对话详情可查看"
+      ]
+    },
+    {
+      "id": "T030",
+      "task_name": "查看核心指标仪表盘",
+      "owner_role": "R006",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "打开仪表盘",
+        "查看 DAU/MAU/留存率/营收等指标",
+        "查看趋势图表"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "dashboard 接口返回聚合指标"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "DAU/MAU/留存/营收数据正确"
+      ]
+    },
+    {
+      "id": "T031",
+      "task_name": "设置指标预警阈值",
+      "owner_role": "R006",
+      "frequency": "低",
+      "risk_level": "中",
+      "main_flow": [
+        "进入预警设置",
+        "选择指标",
+        "设置阈值和通知方式",
+        "保存"
+      ],
+      "category": "core",
+      "status": "confirmed",
+      "rules": [
+        "alerts API 设置阈值"
+      ],
+      "exceptions": [
+        "无效阈值 → 提示修正"
+      ],
+      "acceptance_criteria": [
+        "预警保存成功",
+        "触发时通知正确"
+      ]
+    },
+    {
+      "id": "T037",
+      "task_name": "管理场景包",
+      "owner_role": "R004",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "查看场景包列表",
+        "创建/编辑场景包",
+        "关联场景到包"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "rules": [
+        "scenario_packs 表已定义",
+        "pack_id FK 已就绪"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "场景包 CRUD 完整"
+      ]
+    },
+    {
+      "id": "T038",
+      "task_name": "管理场景标签",
+      "owner_role": "R004",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "查看标签列表",
+        "创建/编辑/删除标签",
+        "关联标签到场景"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "rules": [
+        "scenario_tags 表已定义"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "标签 CRUD 完整"
+      ]
+    },
+    {
+      "id": "T039",
+      "task_name": "检测异常对话",
+      "owner_role": "R005",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "查看异常检测面板",
+        "查看自动标记的异常对话",
+        "审查并处理"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "rules": [
+        "自动异常检测算法"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "异常对话自动标记",
+        "可审查处理"
+      ]
+    },
+    {
+      "id": "T040",
+      "task_name": "管理 Prompt 模板",
+      "owner_role": "R005",
+      "frequency": "中",
+      "risk_level": "高",
+      "main_flow": [
+        "查看 Prompt 模板列表",
+        "创建/编辑模板",
+        "版本管理",
+        "关联到场景"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "rules": [
+        "prompt_templates 表已定义",
+        "版本追踪"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "模板 CRUD 完整",
+        "版本追溯"
+      ]
+    },
+    {
+      "id": "T041",
+      "task_name": "查看发音分析报告",
+      "owner_role": "R005",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "查看发音分析面板",
+        "按用户/场景/时间段筛选",
+        "查看音素级分析统计"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "rules": [
+        "聚合 pronunciation_scores 数据"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "发音统计数据准确"
+      ]
+    },
+    {
+      "id": "T047",
+      "task_name": "查看用户行为分析",
+      "owner_role": "R006",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "进入行为分析页",
+        "查看用户活跃时段/学习路径/功能使用热力图",
+        "按时间段/用户群筛选"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "聚合用户行为事件数据"
+      ],
+      "exceptions": [
+        "数据不足 → 展示提示"
+      ],
+      "acceptance_criteria": [
+        "行为分析数据准确",
+        "筛选条件生效"
+      ]
+    },
+    {
+      "id": "T048",
+      "task_name": "管理 A/B 测试",
+      "owner_role": "R006",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "进入 A/B 测试页",
+        "创建实验（名称/变体/流量分配）",
+        "查看实验结果",
+        "结束实验并选择胜出方案"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "流量随机分配",
+        "结果统计需达到统计显著性"
+      ],
+      "exceptions": [
+        "流量不足 → 提示延长实验"
+      ],
+      "acceptance_criteria": [
+        "实验创建/查看/结束完整",
+        "分流正确"
+      ]
+    },
+    {
+      "id": "T049",
+      "task_name": "生成/导出运营报告",
+      "owner_role": "R006",
+      "frequency": "低",
+      "risk_level": "低",
+      "main_flow": [
+        "进入报告页",
+        "选择报告类型（日报/周报/月报）",
+        "选择时间段",
+        "生成并导出（PDF/CSV）"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "支持多格式导出"
+      ],
+      "exceptions": [
+        "数据范围过大 → 异步生成"
+      ],
+      "acceptance_criteria": [
+        "报告数据准确",
+        "导出格式正确"
+      ]
+    },
+    {
+      "id": "T052",
+      "task_name": "新手引导",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "低",
+      "main_flow": [
+        "首次注册后进入引导流",
+        "选择学习目标（职场/旅行/生活）",
+        "选择英语水平",
+        "推荐首个学习场景",
+        "完成引导进入首页"
+      ],
+      "category": "core",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "仅首次登录触发",
+        "引导完成后标记 onboarding_completed"
+      ],
+      "exceptions": [
+        "用户跳过引导 → 进入首页，后续可重新引导"
+      ],
+      "acceptance_criteria": [
+        "首次登录自动触发",
+        "引导数据影响推荐"
+      ]
+    }
+  ]
+}

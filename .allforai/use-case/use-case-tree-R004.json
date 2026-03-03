@@ -1,0 +1,549 @@
+{
+  "split_by": "role",
+  "split_value": "R004",
+  "split_label": "内容运营",
+  "description": "角色 R004（内容运营）的用例子集",
+  "generated_at": "2026-03-03T16:22:11Z",
+  "count": 1,
+  "items": [
+    {
+      "version": "2.4.0",
+      "generated_at": "2026-03-03T16:21:18Z",
+      "summary": {
+        "role_id": "R004",
+        "role_name": "内容运营",
+        "feature_area_count": 1,
+        "use_case_count": 23,
+        "happy_path_count": 6,
+        "exception_count": 6,
+        "boundary_count": 0,
+        "validation_count": 9,
+        "e2e_count": 0
+      },
+      "feature_areas": [
+        {
+          "id": "FA002",
+          "name": "场景学习",
+          "tasks": [
+            {
+              "id": "T024",
+              "task_name": "创建学习场景草稿",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC031",
+                  "title": "创建学习场景草稿_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备创建学习场景草稿的操作权限"
+                  ],
+                  "when": [
+                    "进入场景管理",
+                    "点击新建",
+                    "填写标题/描述/难度/目标角色",
+                    "编辑对话节点树（dialogue_nodes）",
+                    "保存为 draft 状态"
+                  ],
+                  "then": [
+                    "创建学习场景草稿操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S011",
+                  "action_ref": "创建学习场景草稿",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC032",
+                  "title": "创建学习场景草稿_必填字段缺失",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行创建学习场景草稿"
+                  ],
+                  "when": [
+                    "必填字段缺失"
+                  ],
+                  "then": [
+                    "提示补全"
+                  ],
+                  "screen_ref": "S011",
+                  "action_ref": "创建学习场景草稿",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC033",
+                  "title": "创建学习场景草稿_校验_标题必填",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行创建学习场景草稿"
+                  ],
+                  "when": [
+                    "违反校验规则: 标题必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 标题必填"
+                  ],
+                  "screen_ref": "S012",
+                  "action_ref": "保存草稿",
+                  "validation_rule": "标题必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC034",
+                  "title": "创建学习场景草稿_校验_描述必填",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行创建学习场景草稿"
+                  ],
+                  "when": [
+                    "违反校验规则: 描述必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 描述必填"
+                  ],
+                  "screen_ref": "S012",
+                  "action_ref": "保存草稿",
+                  "validation_rule": "描述必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC035",
+                  "title": "创建学习场景草稿_校验_难度必选",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行创建学习场景草稿"
+                  ],
+                  "when": [
+                    "违反校验规则: 难度必选"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 难度必选"
+                  ],
+                  "screen_ref": "S012",
+                  "action_ref": "保存草稿",
+                  "validation_rule": "难度必选",
+                  "flags": []
+                },
+                {
+                  "id": "UC036",
+                  "title": "创建学习场景草稿_校验_至少一个对话节点",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行创建学习场景草稿"
+                  ],
+                  "when": [
+                    "违反校验规则: 至少一个对话节点"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 至少一个对话节点"
+                  ],
+                  "screen_ref": "S012",
+                  "action_ref": "保存草稿",
+                  "validation_rule": "至少一个对话节点",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T025",
+              "task_name": "编辑学习场景",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC037",
+                  "title": "编辑学习场景_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备编辑学习场景的操作权限"
+                  ],
+                  "when": [
+                    "打开场景列表",
+                    "选择草稿场景",
+                    "修改内容",
+                    "保存"
+                  ],
+                  "then": [
+                    "编辑学习场景操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S011",
+                  "action_ref": "编辑学习场景",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "未校验修改内容是否正确保存及版本状态变化，仅提示成功。: 增加断言：数据库内容更新、更新时间变化、版本号递增。"
+                  ]
+                },
+                {
+                  "id": "UC038",
+                  "title": "编辑学习场景_非 draft 状态",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行编辑学习场景"
+                  ],
+                  "when": [
+                    "非 draft 状态"
+                  ],
+                  "then": [
+                    "提示不可编辑"
+                  ],
+                  "screen_ref": "S011",
+                  "action_ref": "编辑学习场景",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC039",
+                  "title": "编辑学习场景_校验_标题必填",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行编辑学习场景"
+                  ],
+                  "when": [
+                    "违反校验规则: 标题必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 标题必填"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "保存修改",
+                  "validation_rule": "标题必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC040",
+                  "title": "编辑学习场景_校验_描述必填",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行编辑学习场景"
+                  ],
+                  "when": [
+                    "违反校验规则: 描述必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 描述必填"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "保存修改",
+                  "validation_rule": "描述必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC148",
+                  "title": "[XV] 编辑学习场景_并发编辑冲突",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "编辑学习场景_并发编辑冲突"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "编辑学习场景",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T026",
+              "task_name": "提交场景审核",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC041",
+                  "title": "提交场景审核_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备提交场景审核的操作权限"
+                  ],
+                  "when": [
+                    "完成场景编辑",
+                    "点击提交审核",
+                    "状态从 draft 变为 review",
+                    "进入审核队列"
+                  ],
+                  "then": [
+                    "提交场景审核操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "提交场景审核",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC042",
+                  "title": "提交场景审核_非 draft 状态",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行提交场景审核"
+                  ],
+                  "when": [
+                    "非 draft 状态"
+                  ],
+                  "then": [
+                    "不可提交"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "提交场景审核",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC043",
+                  "title": "提交场景审核_校验_标题必填",
+                  "type": "validation",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行提交场景审核"
+                  ],
+                  "when": [
+                    "违反校验规则: 标题必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 标题必填"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "保存修改",
+                  "validation_rule": "标题必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC044",
+                  "title": "提交场景审核_校验_描述必填",
+                  "type": "validation",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行提交场景审核"
+                  ],
+                  "when": [
+                    "违反校验规则: 描述必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 描述必填"
+                  ],
+                  "screen_ref": "S013",
+                  "action_ref": "保存修改",
+                  "validation_rule": "描述必填",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T027",
+              "task_name": "审核学习场景",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC045",
+                  "title": "审核学习场景_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备审核学习场景的操作权限"
+                  ],
+                  "when": [
+                    "查看审核队列",
+                    "选择待审场景",
+                    "审查内容质量",
+                    "批准（published）或驳回（rejected + 填写原因）"
+                  ],
+                  "then": [
+                    "审核学习场景操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S014",
+                  "action_ref": "审核学习场景",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC046",
+                  "title": "审核学习场景_非 review 状态",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行审核学习场景"
+                  ],
+                  "when": [
+                    "非 review 状态"
+                  ],
+                  "then": [
+                    "不可审核"
+                  ],
+                  "screen_ref": "S014",
+                  "action_ref": "审核学习场景",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC047",
+                  "title": "审核学习场景_校验_驳回原因必填",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行审核学习场景"
+                  ],
+                  "when": [
+                    "违反校验规则: 驳回原因必填"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 驳回原因必填"
+                  ],
+                  "screen_ref": "S015",
+                  "action_ref": "驳回",
+                  "validation_rule": "驳回原因必填",
+                  "flags": []
+                },
+                {
+                  "id": "UC149",
+                  "title": "[XV] 审核学习场景_并发审核冲突",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "审核学习场景_并发审核冲突"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "审核学习场景",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T037",
+              "task_name": "管理场景包",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC048",
+                  "title": "管理场景包_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备管理场景包的操作权限"
+                  ],
+                  "when": [
+                    "查看场景包列表",
+                    "创建/编辑场景包",
+                    "关联场景到包"
+                  ],
+                  "then": [
+                    "管理场景包操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S019",
+                  "action_ref": "管理场景包",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC049",
+                  "title": "管理场景包_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S019",
+                  "action_ref": "管理场景包",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T038",
+              "task_name": "管理场景标签",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC050",
+                  "title": "管理场景标签_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备管理场景标签的操作权限"
+                  ],
+                  "when": [
+                    "查看标签列表",
+                    "创建/编辑/删除标签",
+                    "关联标签到场景"
+                  ],
+                  "then": [
+                    "管理场景标签操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S020",
+                  "action_ref": "管理场景标签",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC051",
+                  "title": "管理场景标签_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S020",
+                  "action_ref": "管理场景标签",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "e2e_cases": []
+    }
+  ]
+}

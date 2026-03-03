@@ -1,0 +1,290 @@
+{
+  "split_by": "role",
+  "split_value": "R005",
+  "split_label": "AI 训练师",
+  "description": "角色 R005（AI 训练师）的用例子集",
+  "generated_at": "2026-03-03T16:22:11Z",
+  "count": 1,
+  "items": [
+    {
+      "version": "2.4.0",
+      "generated_at": "2026-03-03T16:21:18Z",
+      "summary": {
+        "role_id": "R005",
+        "role_name": "AI 训练师",
+        "feature_area_count": 2,
+        "use_case_count": 11,
+        "happy_path_count": 5,
+        "exception_count": 5,
+        "boundary_count": 0,
+        "validation_count": 0,
+        "e2e_count": 0
+      },
+      "feature_areas": [
+        {
+          "id": "FA003",
+          "name": "AI 对话",
+          "tasks": [
+            {
+              "id": "T029",
+              "task_name": "查看低分对话并分析",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC072",
+                  "title": "查看低分对话并分析_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看低分对话并分析的操作权限"
+                  ],
+                  "when": [
+                    "查看低分对话列表（按阈值过滤）",
+                    "点击查看对话详情",
+                    "分析 AI 回复质量问题",
+                    "标记处理意见"
+                  ],
+                  "then": [
+                    "查看低分对话并分析操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S016",
+                  "action_ref": "查看低分对话并分析",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC073",
+                  "title": "查看低分对话并分析_无低分对话",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看低分对话并分析"
+                  ],
+                  "when": [
+                    "无低分对话"
+                  ],
+                  "then": [
+                    "展示空状态"
+                  ],
+                  "screen_ref": "S016",
+                  "action_ref": "查看低分对话并分析",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T039",
+              "task_name": "检测异常对话",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC074",
+                  "title": "检测异常对话_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备检测异常对话的操作权限"
+                  ],
+                  "when": [
+                    "查看异常检测面板",
+                    "查看自动标记的异常对话",
+                    "审查并处理"
+                  ],
+                  "then": [
+                    "检测异常对话操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S021",
+                  "action_ref": "检测异常对话",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC075",
+                  "title": "检测异常对话_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S021",
+                  "action_ref": "检测异常对话",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T041",
+              "task_name": "查看发音分析报告",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC076",
+                  "title": "查看发音分析报告_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看发音分析报告的操作权限"
+                  ],
+                  "when": [
+                    "查看发音分析面板",
+                    "按用户/场景/时间段筛选",
+                    "查看音素级分析统计"
+                  ],
+                  "then": [
+                    "查看发音分析报告操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S023",
+                  "action_ref": "查看发音分析报告",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC077",
+                  "title": "查看发音分析报告_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S023",
+                  "action_ref": "查看发音分析报告",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA008",
+          "name": "AI 质量",
+          "tasks": [
+            {
+              "id": "T028",
+              "task_name": "查看 AI 质量评分概览",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC104",
+                  "title": "查看 AI 质量评分概览_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看 AI 质量评分概览的操作权限"
+                  ],
+                  "when": [
+                    "打开 AI 质量页",
+                    "查看整体评分趋势",
+                    "查看各维度分数"
+                  ],
+                  "then": [
+                    "查看 AI 质量评分概览操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S016",
+                  "action_ref": "查看 AI 质量评分概览",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC105",
+                  "title": "查看 AI 质量评分概览_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S016",
+                  "action_ref": "查看 AI 质量评分概览",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T040",
+              "task_name": "管理 Prompt 模板",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC106",
+                  "title": "管理 Prompt 模板_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备管理 Prompt 模板的操作权限"
+                  ],
+                  "when": [
+                    "查看 Prompt 模板列表",
+                    "创建/编辑模板",
+                    "版本管理",
+                    "关联到场景"
+                  ],
+                  "then": [
+                    "管理 Prompt 模板操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S022",
+                  "action_ref": "管理 Prompt 模板",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC107",
+                  "title": "管理 Prompt 模板_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S022",
+                  "action_ref": "管理 Prompt 模板",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                },
+                {
+                  "id": "UC150",
+                  "title": "[XV] 管理Prompt模板_并发修改模板",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "管理Prompt模板_并发修改模板"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "管理 Prompt 模板",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "e2e_cases": []
+    }
+  ]
+}

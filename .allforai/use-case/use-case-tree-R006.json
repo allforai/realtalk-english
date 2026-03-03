@@ -1,0 +1,374 @@
+{
+  "split_by": "role",
+  "split_value": "R006",
+  "split_label": "数据运营",
+  "description": "角色 R006（数据运营）的用例子集",
+  "generated_at": "2026-03-03T16:22:11Z",
+  "count": 1,
+  "items": [
+    {
+      "version": "2.4.0",
+      "generated_at": "2026-03-03T16:21:18Z",
+      "summary": {
+        "role_id": "R006",
+        "role_name": "数据运营",
+        "feature_area_count": 2,
+        "use_case_count": 14,
+        "happy_path_count": 5,
+        "exception_count": 5,
+        "boundary_count": 1,
+        "validation_count": 2,
+        "e2e_count": 0
+      },
+      "feature_areas": [
+        {
+          "id": "FA003",
+          "name": "AI 对话",
+          "tasks": [
+            {
+              "id": "T049",
+              "task_name": "生成/导出运营报告",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC078",
+                  "title": "生成/导出运营报告_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备生成/导出运营报告的操作权限"
+                  ],
+                  "when": [
+                    "进入报告页",
+                    "选择报告类型（日报/周报/月报）",
+                    "选择时间段",
+                    "生成并导出（PDF/CSV）"
+                  ],
+                  "then": [
+                    "生成/导出运营报告操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S026",
+                  "action_ref": "生成/导出运营报告",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC079",
+                  "title": "生成/导出运营报告_数据范围过大",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行生成/导出运营报告"
+                  ],
+                  "when": [
+                    "数据范围过大"
+                  ],
+                  "then": [
+                    "异步生成"
+                  ],
+                  "screen_ref": "S026",
+                  "action_ref": "生成/导出运营报告",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅写“异步生成”，未说明任务创建、状态追踪或通知机制。: 增加断言：生成异步任务ID、任务状态为处理中、完成后可下载。"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA009",
+          "name": "数据运营",
+          "tasks": [
+            {
+              "id": "T030",
+              "task_name": "查看核心指标仪表盘",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC108",
+                  "title": "查看核心指标仪表盘_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看核心指标仪表盘的操作权限"
+                  ],
+                  "when": [
+                    "打开仪表盘",
+                    "查看 DAU/MAU/留存率/营收等指标",
+                    "查看趋势图表"
+                  ],
+                  "then": [
+                    "查看核心指标仪表盘操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "查看核心指标仪表盘",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC109",
+                  "title": "查看核心指标仪表盘_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S010",
+                  "action_ref": "查看核心指标仪表盘",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                },
+                {
+                  "id": "UC110",
+                  "title": "查看核心指标仪表盘_校验_阈值为正数",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看核心指标仪表盘"
+                  ],
+                  "when": [
+                    "违反校验规则: 阈值为正数"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 阈值为正数"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "设置预警阈值",
+                  "validation_rule": "阈值为正数",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T031",
+              "task_name": "设置指标预警阈值",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC111",
+                  "title": "设置指标预警阈值_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备设置指标预警阈值的操作权限"
+                  ],
+                  "when": [
+                    "进入预警设置",
+                    "选择指标",
+                    "设置阈值和通知方式",
+                    "保存"
+                  ],
+                  "then": [
+                    "设置指标预警阈值操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "设置指标预警阈值",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC112",
+                  "title": "设置指标预警阈值_无效阈值",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行设置指标预警阈值"
+                  ],
+                  "when": [
+                    "无效阈值"
+                  ],
+                  "then": [
+                    "提示修正"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "设置指标预警阈值",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC113",
+                  "title": "设置指标预警阈值_边界_alerts API 设置阈值",
+                  "type": "boundary",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行设置指标预警阈值"
+                  ],
+                  "when": [
+                    "触发边界条件: alerts API 设置阈值"
+                  ],
+                  "then": [
+                    "系统按规则处理: alerts API 设置阈值"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "设置指标预警阈值",
+                  "rule_source": "task.rules[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC114",
+                  "title": "设置指标预警阈值_校验_阈值为正数",
+                  "type": "validation",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行设置指标预警阈值"
+                  ],
+                  "when": [
+                    "违反校验规则: 阈值为正数"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 阈值为正数"
+                  ],
+                  "screen_ref": "S010",
+                  "action_ref": "设置预警阈值",
+                  "validation_rule": "阈值为正数",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T047",
+              "task_name": "查看用户行为分析",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC115",
+                  "title": "查看用户行为分析_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看用户行为分析的操作权限"
+                  ],
+                  "when": [
+                    "进入行为分析页",
+                    "查看用户活跃时段/学习路径/功能使用热力图",
+                    "按时间段/用户群筛选"
+                  ],
+                  "then": [
+                    "查看用户行为分析操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S024",
+                  "action_ref": "查看用户行为分析",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC116",
+                  "title": "查看用户行为分析_数据不足",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看用户行为分析"
+                  ],
+                  "when": [
+                    "数据不足"
+                  ],
+                  "then": [
+                    "展示提示"
+                  ],
+                  "screen_ref": "S024",
+                  "action_ref": "查看用户行为分析",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T048",
+              "task_name": "管理 A/B 测试",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC117",
+                  "title": "管理 A/B 测试_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备管理 A/B 测试的操作权限"
+                  ],
+                  "when": [
+                    "进入 A/B 测试页",
+                    "创建实验（名称/变体/流量分配）",
+                    "查看实验结果",
+                    "结束实验并选择胜出方案"
+                  ],
+                  "then": [
+                    "管理 A/B 测试操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S025",
+                  "action_ref": "管理 A/B 测试",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC118",
+                  "title": "管理 A/B 测试_流量不足",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行管理 A/B 测试"
+                  ],
+                  "when": [
+                    "流量不足"
+                  ],
+                  "then": [
+                    "提示延长实验"
+                  ],
+                  "screen_ref": "S025",
+                  "action_ref": "管理 A/B 测试",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "When/Then 过于抽象，未定义流量阈值或数据判断规则。: 明确流量计算规则与阈值，并断言实验状态与提示内容。"
+                  ]
+                },
+                {
+                  "id": "UC151",
+                  "title": "[XV] 管理A/B测试_并发测试配置冲突",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "管理A/B测试_并发测试配置冲突"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "管理 A/B 测试",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "e2e_cases": []
+    }
+  ]
+}

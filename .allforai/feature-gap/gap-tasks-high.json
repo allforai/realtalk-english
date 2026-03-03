@@ -1,0 +1,452 @@
+{
+  "split_by": "priority",
+  "split_value": "high",
+  "split_label": "高优先级",
+  "description": "高优先级缺口任务（27 条）",
+  "generated_at": "2026-03-03T16:23:51Z",
+  "count": 27,
+  "items": [
+    {
+      "id": "GAP-028",
+      "title": "对话报告页 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T010"
+      ],
+      "affected_screens": [
+        "S006"
+      ],
+      "description": "操作 '再来一次' 无失败反馈定义",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-029",
+      "title": "词汇复习页 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T012",
+        "T013"
+      ],
+      "affected_screens": [
+        "S007"
+      ],
+      "description": "操作 '评分（Again/Hard/Good/Easy）' 无失败反馈定义",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-033",
+      "title": "场景列表（管理端） — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T024",
+        "T025"
+      ],
+      "affected_screens": [
+        "S011"
+      ],
+      "description": "操作 '新建场景' 无失败反馈定义",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-044",
+      "title": "实体「学习场景」— DEAD_END_STATE",
+      "type": "DEAD_END_STATE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T024",
+        "T025",
+        "T026",
+        "T027"
+      ],
+      "affected_screens": [],
+      "description": "实体「学习场景」状态机检测到 DEAD_END_STATE（4 个状态, 4 个转换）",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-025",
+      "title": "(任务 T003 无对应界面) — NO_SCREEN",
+      "type": "NO_SCREEN",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T003"
+      ],
+      "affected_screens": [
+        "N/A"
+      ],
+      "description": "任务 T003 (刷新登录凭证) 在 screen-map 中无对应界面",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-007",
+      "title": "创建学习场景草稿 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "内容运营"
+      ],
+      "affected_tasks": [
+        "T024"
+      ],
+      "affected_screens": [
+        "S011",
+        "S012"
+      ],
+      "description": "任务 T024 (创建学习场景草稿) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "高频任务"
+    },
+    {
+      "id": "GAP-008",
+      "title": "查看 AI 质量评分概览 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "AI 训练师"
+      ],
+      "affected_tasks": [
+        "T028"
+      ],
+      "affected_screens": [
+        "S016"
+      ],
+      "description": "任务 T028 (查看 AI 质量评分概览) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "高频任务"
+    },
+    {
+      "id": "GAP-009",
+      "title": "查看核心指标仪表盘 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "数据运营"
+      ],
+      "affected_tasks": [
+        "T030"
+      ],
+      "affected_screens": [
+        "S010"
+      ],
+      "description": "任务 T030 (查看核心指标仪表盘) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "高频任务"
+    },
+    {
+      "id": "GAP-013",
+      "title": "检测异常对话 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "AI 训练师"
+      ],
+      "affected_tasks": [
+        "T039"
+      ],
+      "affected_screens": [
+        "S021"
+      ],
+      "description": "任务 T039 (检测异常对话) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "高频任务"
+    },
+    {
+      "id": "GAP-045",
+      "title": "实体「学习场景」— NO_REVERSE_TRANSITION",
+      "type": "NO_REVERSE_TRANSITION",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T024",
+        "T025",
+        "T026",
+        "T027"
+      ],
+      "affected_screens": [],
+      "description": "实体「学习场景」状态机检测到 NO_REVERSE_TRANSITION（4 个状态, 4 个转换）",
+      "frequency_impact": "高频相关"
+    },
+    {
+      "id": "GAP-031",
+      "title": "通知中心 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T018",
+        "T019",
+        "T020"
+      ],
+      "affected_screens": [
+        "S009"
+      ],
+      "description": "操作 '点击通知' 无失败反馈定义",
+      "frequency_impact": "中频相关",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-032",
+      "title": "通知中心 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T018",
+        "T019",
+        "T020"
+      ],
+      "affected_screens": [
+        "S009"
+      ],
+      "description": "操作 '管理通知偏好' 无失败反馈定义",
+      "frequency_impact": "中频相关",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-035",
+      "title": "场景审核详情页 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T027"
+      ],
+      "affected_screens": [
+        "S015"
+      ],
+      "description": "操作 '驳回' 无失败反馈定义",
+      "frequency_impact": "中频相关"
+    },
+    {
+      "id": "GAP-027",
+      "title": "(任务 T023 无对应界面) — NO_SCREEN",
+      "type": "NO_SCREEN",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T023"
+      ],
+      "affected_screens": [
+        "N/A"
+      ],
+      "description": "任务 T023 (手动添加词汇到生词本) 在 screen-map 中无对应界面",
+      "frequency_impact": "中频相关"
+    },
+    {
+      "id": "GAP-034",
+      "title": "审核队列页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T027"
+      ],
+      "affected_screens": [
+        "S014"
+      ],
+      "description": "高风险任务 T027 (审核学习场景) 对应操作缺少二次确认",
+      "frequency_impact": "中频相关"
+    },
+    {
+      "id": "GAP-037",
+      "title": "Prompt 模板管理页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T040"
+      ],
+      "affected_screens": [
+        "S022"
+      ],
+      "description": "高风险任务 T040 (管理 Prompt 模板) 对应操作缺少二次确认",
+      "frequency_impact": "中频相关"
+    },
+    {
+      "id": "GAP-002",
+      "title": "查看复习统计摘要 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T013"
+      ],
+      "affected_screens": [
+        "S007"
+      ],
+      "description": "任务 T013 (查看复习统计摘要) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务",
+      "xv_notes": [
+        "priority 中→高: 复习统计摘要缺少异常处理会影响核心学习反馈闭环，直接影响留存与学习效果。"
+      ]
+    },
+    {
+      "id": "GAP-016",
+      "title": "查看发音分析报告 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "core",
+      "priority": "高",
+      "affected_roles": [
+        "AI 训练师"
+      ],
+      "affected_tasks": [
+        "T041"
+      ],
+      "affected_screens": [
+        "S023"
+      ],
+      "description": "任务 T041 (查看发音分析报告) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "中频任务",
+      "xv_notes": [
+        "priority 中→高: 发音分析报告属于核心学习结果页，异常无处理会造成结果不可用或误解，影响核心价值。"
+      ]
+    },
+    {
+      "id": "GAP-042",
+      "title": "重置密码页 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T051"
+      ],
+      "affected_screens": [
+        "S033"
+      ],
+      "description": "操作 '发送重置链接' 无失败反馈定义",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-043",
+      "title": "新手引导页 — SILENT_FAILURE",
+      "type": "SILENT_FAILURE",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T052"
+      ],
+      "affected_screens": [
+        "S034"
+      ],
+      "description": "操作 '选择学习目标' 无失败反馈定义",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-026",
+      "title": "(任务 T004 无对应界面) — NO_SCREEN",
+      "type": "NO_SCREEN",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T004"
+      ],
+      "affected_screens": [
+        "N/A"
+      ],
+      "description": "任务 T004 (退出登录) 在 screen-map 中无对应界面",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-038",
+      "title": "A/B 测试管理页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T048"
+      ],
+      "affected_screens": [
+        "S025"
+      ],
+      "description": "高风险任务 T048 (管理 A/B 测试) 对应操作缺少二次确认",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-039",
+      "title": "订阅管理页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T042"
+      ],
+      "affected_screens": [
+        "S027"
+      ],
+      "description": "高风险任务 T042 (管理订阅方案) 对应操作缺少二次确认",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-040",
+      "title": "系统设置页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T043"
+      ],
+      "affected_screens": [
+        "S028"
+      ],
+      "description": "高风险任务 T043 (管理系统配置) 对应操作缺少二次确认",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-041",
+      "title": "角色权限管理页 — HIGH_RISK_NO_CONFIRM",
+      "type": "HIGH_RISK_NO_CONFIRM",
+      "priority": "高",
+      "affected_roles": [],
+      "affected_tasks": [
+        "T050"
+      ],
+      "affected_screens": [
+        "S029"
+      ],
+      "description": "高风险任务 T050 (管理角色权限) 对应操作缺少二次确认",
+      "frequency_impact": "低频相关"
+    },
+    {
+      "id": "GAP-047",
+      "title": "[XV] 职场人士 — Missing dead-end state handling. When an admin executes T034 (封禁用户), there is no corresponding UI state or forced logout flow defined for the banned user to explain their account status.",
+      "type": "XV_JOURNEY_GAP",
+      "priority": "高",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "被封禁状态展示"
+      ],
+      "affected_screens": [],
+      "description": "Missing dead-end state handling. When an admin executes T034 (封禁用户), there is no corresponding UI state or forced logout flow defined for the banned user to explain their account status.",
+      "frequency_impact": "XV交叉验证发现",
+      "xv_source": "journey_validation"
+    },
+    {
+      "id": "GAP-048",
+      "title": "[XV] 职场人士/系统管理员 — Missing cross-role feedback loop. After the admin processes a complaint, there is no defined notification mechanism or UI for the end-user to see the resolution.",
+      "type": "XV_JOURNEY_GAP",
+      "priority": "高",
+      "affected_roles": [
+        "职场人士/系统管理员"
+      ],
+      "affected_tasks": [
+        "处理用户投诉 (T044)"
+      ],
+      "affected_screens": [],
+      "description": "Missing cross-role feedback loop. After the admin processes a complaint, there is no defined notification mechanism or UI for the end-user to see the resolution.",
+      "frequency_impact": "XV交叉验证发现",
+      "xv_source": "journey_validation"
+    }
+  ]
+}

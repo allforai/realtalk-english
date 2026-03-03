@@ -1,0 +1,872 @@
+{
+  "split_by": "role",
+  "split_value": "R001",
+  "split_label": "职场人士",
+  "description": "角色 R001（职场人士）关联的界面子集",
+  "generated_at": "2026-03-03T16:13:29Z",
+  "count": 15,
+  "items": [
+    {
+      "id": "S001",
+      "name": "登录页",
+      "description": "用户输入邮箱密码登录，支持跳转注册和忘记密码",
+      "primary_purpose": "用户身份验证",
+      "primary_action": "登录",
+      "entry_point": "App 启动（未认证状态）",
+      "audience_type": "consumer",
+      "tasks": [
+        "T002"
+      ],
+      "states": {
+        "empty": "表单空白，光标聚焦邮箱输入框",
+        "loading": "登录按钮显示 spinner",
+        "error": "密码错误 → 输入框下方红色提示",
+        "permission_denied": "账号被封禁 → 弹窗显示封禁原因"
+      },
+      "actions": [
+        {
+          "label": "登录",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "输入框下方显示错误信息",
+          "on_success": "跳转首页",
+          "validation_rules": [
+            "邮箱格式校验",
+            "密码非空"
+          ],
+          "exception_flows": [
+            "密码错误 → 提示凭证无效",
+            "账号封禁 → 弹窗显示封禁原因"
+          ]
+        },
+        {
+          "label": "注册",
+          "crud": "R",
+          "frequency": "低",
+          "click_depth": 0,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "跳转注册页",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "忘记密码",
+          "crud": "R",
+          "frequency": "低",
+          "click_depth": 0,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "跳转重置密码页",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "登录"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S002",
+      "name": "首页",
+      "description": "用户主页，展示推荐场景、连续天数、快捷入口",
+      "primary_purpose": "引导用户开始学习",
+      "primary_action": "点击推荐场景",
+      "entry_point": "底部 Tab「首页」",
+      "audience_type": "consumer",
+      "tasks": [
+        "T017",
+        "T014",
+        "T046"
+      ],
+      "states": {
+        "empty": "新用户无历史 → 展示入门推荐",
+        "loading": "骨架屏占位",
+        "error": "网络错误 → 重试按钮"
+      },
+      "actions": [
+        {
+          "label": "点击推荐场景",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入场景详情（S004）",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "查看连续天数详情",
+          "crud": "R",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入成就页（S008）",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "点击推荐场景"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S003",
+      "name": "场景列表页",
+      "description": "浏览全部已发布场景，支持按难度/标签/角色筛选和分页",
+      "primary_purpose": "发现和选择学习场景",
+      "primary_action": "浏览和筛选场景",
+      "entry_point": "底部 Tab「学习」或首页入口",
+      "audience_type": "consumer",
+      "tasks": [
+        "T005"
+      ],
+      "states": {
+        "empty": "无匹配场景 → 引导调整筛选条件",
+        "loading": "卡片骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "筛选场景",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "刷新列表",
+          "validation_rules": [],
+          "exception_flows": [
+            "无匹配 → 展示空状态引导"
+          ]
+        },
+        {
+          "label": "点击场景卡片",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入场景详情（S004）",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "筛选场景",
+          "点击场景卡片"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S004",
+      "name": "场景详情页",
+      "description": "展示场景信息（标题/描述/难度/目标角色）和用户历史进度，可发起对话",
+      "primary_purpose": "了解场景内容并开始练习",
+      "primary_action": "开始对话",
+      "entry_point": "场景列表 → 点击卡片",
+      "audience_type": "consumer",
+      "tasks": [
+        "T006",
+        "T007"
+      ],
+      "states": {
+        "empty": "首次访问无进度 → 鼓励开始",
+        "loading": "内容加载中",
+        "error": "场景不存在 → 404 提示返回列表"
+      },
+      "actions": [
+        {
+          "label": "开始对话",
+          "crud": "C",
+          "frequency": "高",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "提示错误原因",
+          "on_success": "进入对话界面（S005）",
+          "validation_rules": [],
+          "exception_flows": [
+            "达到每日限额 → 弹窗提示升级订阅（跳转 S036）",
+            "系统异常 → toast 提示稍后重试"
+          ]
+        },
+        {
+          "label": "返回列表",
+          "crud": "R",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "返回 S003",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "开始对话"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S005",
+      "name": "AI 对话界面",
+      "description": "核心对话界面，支持文本输入和语音录制，SSE 流式接收 AI 回复，发音评分实时展示",
+      "primary_purpose": "与 AI 进行英语口语对话练习",
+      "primary_action": "发送消息",
+      "entry_point": "场景详情 → 开始对话",
+      "audience_type": "consumer",
+      "tasks": [
+        "T008",
+        "T009",
+        "T022"
+      ],
+      "states": {
+        "empty": "对话开始 → AI 先发开场白",
+        "loading": "AI 回复中 → SSE 流式打字效果",
+        "error": "LLM 超时 → 提示重试发送",
+        "recording": "语音录制中 → 波形动画 + 时长计时"
+      },
+      "actions": [
+        {
+          "label": "发送文本消息",
+          "crud": "C",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "toast 提示发送失败，保留草稿",
+          "on_success": "消息气泡 + AI 流式回复",
+          "validation_rules": [
+            "消息非空"
+          ],
+          "exception_flows": [
+            "LLM 超时 → 错误提示 + 重试按钮",
+            "网络断开 → 提示检查网络"
+          ]
+        },
+        {
+          "label": "录制语音",
+          "crud": "C",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "语音识别失败 → 提示重新录制",
+          "on_success": "展示转写文本 + 发音分数 + AI 回复",
+          "validation_rules": [],
+          "exception_flows": [
+            "语音识别失败 → 提示重新录制",
+            "音频过短 → 提示说长一点"
+          ]
+        },
+        {
+          "label": "结束对话",
+          "crud": "U",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": true,
+          "on_failure": "提示不可重复结束",
+          "on_success": "生成报告 → 跳转 S006",
+          "validation_rules": [],
+          "exception_flows": [
+            "对话已结束 → 提示不可重复结束"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "发送文本消息",
+          "录制语音",
+          "结束对话"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S006",
+      "name": "对话报告页",
+      "description": "对话结束后的分析报告，含总分、语法错误、表达建议、时长统计",
+      "primary_purpose": "查看学习成果和改进建议",
+      "primary_action": "查看报告详情",
+      "entry_point": "对话结束后自动跳转",
+      "audience_type": "consumer",
+      "tasks": [
+        "T010"
+      ],
+      "states": {
+        "loading": "报告生成中 → 加载动画",
+        "error": "报告获取失败 → 重试"
+      },
+      "actions": [
+        {
+          "label": "查看详细报告",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展开详细分析",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "再来一次",
+          "crud": "C",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "发起新对话 → S005",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "查看详细报告"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S007",
+      "name": "词汇复习页",
+      "description": "间隔重复复习界面，展示到期卡片，支持评分操作，FSRS 算法自动调度",
+      "primary_purpose": "复习和巩固学过的词汇",
+      "primary_action": "翻卡评分",
+      "entry_point": "底部 Tab「复习」",
+      "audience_type": "consumer",
+      "tasks": [
+        "T012",
+        "T013"
+      ],
+      "states": {
+        "empty": "无到期卡片 → 提示今日已完成，展示统计摘要",
+        "loading": "卡片加载中",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "翻转卡片",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "显示答案面",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "评分（Again/Hard/Good/Easy）",
+          "crud": "U",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "FSRS 重新计算 → 下一张卡片",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "查看复习统计",
+          "crud": "R",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展示本次复习统计摘要",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "翻转卡片",
+          "评分（Again/Hard/Good/Easy）"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S008",
+      "name": "成就与连续天数页",
+      "description": "展示学习连续天数（当前/最长）和成就列表（已获得/未解锁），支持恢复断签",
+      "primary_purpose": "激励持续学习",
+      "primary_action": "查看成就进度",
+      "entry_point": "底部 Tab「我的」",
+      "audience_type": "consumer",
+      "tasks": [
+        "T014",
+        "T015",
+        "T016"
+      ],
+      "states": {
+        "empty": "新用户 → 展示首个成就引导",
+        "loading": "骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "恢复断签",
+          "crud": "U",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": true,
+          "on_failure": "本月已恢复过 → 提示下月再试",
+          "on_success": "连续天数恢复 → 动画反馈",
+          "validation_rules": [],
+          "exception_flows": [
+            "本月已恢复过 → 提示下月再试"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S009",
+      "name": "通知中心",
+      "description": "通知列表（复习提醒/系统通知/成就解锁），支持标记已读和管理推送偏好",
+      "primary_purpose": "接收和管理系统通知",
+      "primary_action": "查看通知",
+      "entry_point": "顶部铃铛图标（Modal）",
+      "audience_type": "consumer",
+      "tasks": [
+        "T018",
+        "T019",
+        "T020"
+      ],
+      "states": {
+        "empty": "无通知 → 空状态",
+        "loading": "列表加载中",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "点击通知",
+          "crud": "U",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "标记已读 + 查看详情",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "管理通知偏好",
+          "crud": "U",
+          "frequency": "低",
+          "click_depth": 2,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "偏好保存成功 → toast 提示",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "点击通知"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S032",
+      "name": "注册页",
+      "description": "新用户注册：邮箱/密码/确认密码",
+      "primary_purpose": "创建新账号",
+      "primary_action": "注册",
+      "entry_point": "登录页 → 注册链接",
+      "audience_type": "consumer",
+      "tasks": [
+        "T001"
+      ],
+      "states": {
+        "loading": "注册中 → spinner",
+        "error": "邮箱已存在 → 提示已注册"
+      },
+      "actions": [
+        {
+          "label": "提交注册",
+          "crud": "C",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "邮箱已存在 → 提示已注册",
+          "on_success": "注册成功 → 自动登录 → 进入引导",
+          "validation_rules": [
+            "邮箱格式",
+            "密码长度 ≥ 8",
+            "两次密码一致"
+          ],
+          "exception_flows": [
+            "邮箱已存在 → 提示已注册"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "提交注册"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S033",
+      "name": "重置密码页",
+      "description": "输入邮箱获取重置链接，设置新密码",
+      "primary_purpose": "恢复账号访问",
+      "primary_action": "重置密码",
+      "entry_point": "登录页 → 忘记密码",
+      "audience_type": "consumer",
+      "tasks": [
+        "T051"
+      ],
+      "states": {
+        "loading": "发送中",
+        "error": "发送失败 → 重试"
+      },
+      "actions": [
+        {
+          "label": "发送重置链接",
+          "crud": "C",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "提示检查邮箱",
+          "validation_rules": [
+            "邮箱格式"
+          ],
+          "exception_flows": [
+            "邮箱未注册 → 不提示（防枚举）",
+            "链接过期 → 提示重新申请"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "发送重置链接"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S034",
+      "name": "新手引导页",
+      "description": "首次登录引导流：选择学习目标 → 选择英语水平 → 推荐首个场景",
+      "primary_purpose": "收集偏好并引导首次学习",
+      "primary_action": "完成引导",
+      "entry_point": "注册成功后自动进入",
+      "audience_type": "consumer",
+      "tasks": [
+        "T052"
+      ],
+      "states": {
+        "loading": "引导内容加载中"
+      },
+      "actions": [
+        {
+          "label": "选择学习目标",
+          "crud": "C",
+          "frequency": "低",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入下一步",
+          "validation_rules": [
+            "至少选择一个目标"
+          ],
+          "exception_flows": []
+        },
+        {
+          "label": "跳过引导",
+          "crud": "R",
+          "frequency": "低",
+          "click_depth": 0,
+          "is_primary": false,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入首页",
+          "validation_rules": [],
+          "exception_flows": [
+            "跳过 → 后续可重新引导"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "选择学习目标"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S035",
+      "name": "付费墙页",
+      "description": "展示订阅方案（免费/月付/年付），引导付费",
+      "primary_purpose": "转化付费用户",
+      "primary_action": "选择方案并支付",
+      "entry_point": "对话限额触达 / 设置页入口",
+      "audience_type": "consumer",
+      "tasks": [
+        "T021"
+      ],
+      "states": {
+        "loading": "方案加载中",
+        "error": "支付失败 → 重试"
+      },
+      "actions": [
+        {
+          "label": "选择方案并支付",
+          "crud": "C",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": true,
+          "on_failure": "支付失败 → 提示重试",
+          "on_success": "订阅成功 → 解锁高级功能",
+          "validation_rules": [],
+          "exception_flows": [
+            "支付失败 → 提示重试",
+            "Webhook 验证失败 → 等待后台同步"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "选择方案并支付"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S036",
+      "name": "历史对话列表页",
+      "description": "查看所有历史对话，按时间倒序，点击查看详情和报告",
+      "primary_purpose": "回顾历史学习对话",
+      "primary_action": "查看历史对话",
+      "entry_point": "学习 Tab → 历史记录",
+      "audience_type": "consumer",
+      "tasks": [
+        "T011"
+      ],
+      "states": {
+        "empty": "无历史 → 引导开始首次对话",
+        "loading": "列表加载中"
+      },
+      "actions": [
+        {
+          "label": "点击查看对话",
+          "crud": "R",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R001"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入对话详情和报告",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "点击查看对话"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S037",
+      "name": "管理后台登录页",
+      "description": "管理员登录入口",
+      "primary_purpose": "管理员身份验证",
+      "primary_action": "登录",
+      "entry_point": "/admin/login",
+      "audience_type": "professional",
+      "tasks": [
+        "T002"
+      ],
+      "states": {
+        "error": "凭证错误 → 提示"
+      },
+      "actions": [
+        {
+          "label": "登录",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004",
+            "R005",
+            "R006",
+            "R007"
+          ],
+          "requires_confirm": false,
+          "on_failure": "凭证错误 → 提示",
+          "on_success": "跳转仪表盘",
+          "validation_rules": [
+            "邮箱格式",
+            "密码非空"
+          ],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "登录"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    }
+  ]
+}

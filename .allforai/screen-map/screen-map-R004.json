@@ -1,0 +1,329 @@
+{
+  "split_by": "role",
+  "split_value": "R004",
+  "split_label": "内容运营",
+  "description": "角色 R004（内容运营）关联的界面子集",
+  "generated_at": "2026-03-03T16:13:29Z",
+  "count": 7,
+  "items": [
+    {
+      "id": "S011",
+      "name": "场景列表（管理端）",
+      "description": "运营后台场景列表，支持搜索/筛选/新建，查看全部场景（含草稿/审核中）",
+      "primary_purpose": "管理全部学习场景",
+      "primary_action": "查看和管理场景",
+      "entry_point": "/admin/scenarios",
+      "audience_type": "professional",
+      "tasks": [
+        "T024",
+        "T025"
+      ],
+      "states": {
+        "empty": "无场景 → 引导创建首个",
+        "loading": "表格骨架屏",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "新建场景",
+          "crud": "C",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "跳转创建页（S012）",
+          "validation_rules": [],
+          "exception_flows": []
+        },
+        {
+          "label": "点击编辑",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "跳转编辑页（S013）",
+          "validation_rules": [],
+          "exception_flows": [
+            "非 draft 状态 → 提示不可编辑"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "新建场景",
+          "点击编辑"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S012",
+      "name": "场景创建页",
+      "description": "新建场景表单：标题/描述/难度/目标角色/对话节点树编辑器",
+      "primary_purpose": "创建新的学习场景草稿",
+      "primary_action": "保存草稿",
+      "entry_point": "/admin/scenarios/new",
+      "audience_type": "professional",
+      "tasks": [
+        "T024"
+      ],
+      "states": {
+        "loading": "表单加载中",
+        "error": "保存失败 → 错误提示"
+      },
+      "actions": [
+        {
+          "label": "保存草稿",
+          "crud": "C",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": false,
+          "on_failure": "高亮必填字段",
+          "on_success": "保存成功 → toast + 返回列表",
+          "validation_rules": [
+            "标题必填",
+            "描述必填",
+            "难度必选",
+            "至少一个对话节点"
+          ],
+          "exception_flows": [
+            "必填字段缺失 → 高亮提示"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "保存草稿"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S013",
+      "name": "场景编辑页",
+      "description": "编辑已有场景，修改内容后保存或提交审核",
+      "primary_purpose": "修改场景内容",
+      "primary_action": "保存修改",
+      "entry_point": "/admin/scenarios/[id]",
+      "audience_type": "professional",
+      "tasks": [
+        "T025",
+        "T026"
+      ],
+      "states": {
+        "loading": "内容加载中",
+        "error": "保存失败 → 错误提示"
+      },
+      "actions": [
+        {
+          "label": "保存修改",
+          "crud": "U",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": false,
+          "on_failure": "高亮修改失败字段",
+          "on_success": "保存成功 → toast",
+          "validation_rules": [
+            "标题必填",
+            "描述必填"
+          ],
+          "exception_flows": [
+            "非 draft 状态 → 提示不可编辑"
+          ]
+        },
+        {
+          "label": "提交审核",
+          "crud": "U",
+          "frequency": "中",
+          "click_depth": 0,
+          "is_primary": false,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": true,
+          "on_failure": "非 draft 状态 → 不可提交",
+          "on_success": "状态变为 review → 返回列表",
+          "validation_rules": [],
+          "exception_flows": [
+            "非 draft 状态 → 不可提交"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "保存修改"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S014",
+      "name": "审核队列页",
+      "description": "待审核场景列表，展示提交人和提交时间",
+      "primary_purpose": "查看和处理待审核场景",
+      "primary_action": "查看待审核场景",
+      "entry_point": "/admin/scenarios/review",
+      "audience_type": "professional",
+      "tasks": [
+        "T027"
+      ],
+      "states": {
+        "empty": "无待审核场景 → 提示",
+        "loading": "表格加载中",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "查看审核详情",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入审核详情（S015）",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "查看审核详情"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S015",
+      "name": "场景审核详情页",
+      "description": "审核场景内容，可批准发布或驳回并填写原因",
+      "primary_purpose": "审核并决定场景发布",
+      "primary_action": "批准或驳回",
+      "entry_point": "/admin/scenarios/review/[id]",
+      "audience_type": "professional",
+      "tasks": [
+        "T027"
+      ],
+      "states": {
+        "loading": "内容加载中",
+        "error": "非 review 状态 → 提示"
+      },
+      "actions": [
+        {
+          "label": "批准发布",
+          "crud": "U",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": true,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": true,
+          "on_failure": "非 review 状态 → 不可审核",
+          "on_success": "状态变为 published → 返回队列",
+          "validation_rules": [],
+          "exception_flows": [
+            "非 review 状态 → 不可审核"
+          ]
+        },
+        {
+          "label": "驳回",
+          "crud": "U",
+          "frequency": "中",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R004"
+          ],
+          "requires_confirm": true,
+          "on_failure": "",
+          "on_success": "状态变为 rejected → 返回队列",
+          "validation_rules": [
+            "驳回原因必填"
+          ],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "批准发布"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S019",
+      "name": "场景包管理页",
+      "description": "管理场景包：创建/编辑/关联场景",
+      "primary_purpose": "管理场景包",
+      "primary_action": "待实现",
+      "entry_point": "/admin/scenario-packs",
+      "audience_type": "professional",
+      "tasks": [
+        "T037"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S020",
+      "name": "场景标签管理页",
+      "description": "管理标签：CRUD + 关联场景",
+      "primary_purpose": "管理标签",
+      "primary_action": "待实现",
+      "entry_point": "/admin/scenario-tags",
+      "audience_type": "professional",
+      "tasks": [
+        "T038"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    }
+  ]
+}

@@ -2,130 +2,114 @@
   {
     "step": "Step 0",
     "item_id": "FA001",
-    "item_name": "场景对话",
+    "item_name": "认证",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA002",
-    "item_name": "发音纠正",
+    "item_name": "场景学习",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA003",
-    "item_name": "记忆曲线",
+    "item_name": "AI 对话",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA004",
-    "item_name": "游戏化与轻社交",
+    "item_name": "词汇复习",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA005",
-    "item_name": "学习档案与进度",
+    "item_name": "成就激励",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA006",
-    "item_name": "角色场景推荐",
+    "item_name": "通知",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA007",
-    "item_name": "订阅与付费",
+    "item_name": "订阅",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA008",
-    "item_name": "运营数据看板",
+    "item_name": "AI 质量",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA009",
-    "item_name": "AI质量监控",
+    "item_name": "数据运营",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA010",
-    "item_name": "用户管理与系统配置",
+    "item_name": "用户管理",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA011",
-    "item_name": "注册登录与个人设置",
+    "item_name": "系统管理",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 0",
     "item_id": "FA012",
-    "item_name": "首次体验",
+    "item_name": "新手引导",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
-  },
-  {
-    "step": "Step 0",
-    "item_id": "FA013",
-    "item_name": "推送与通知",
-    "decision": "auto_confirmed",
-    "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
-  },
-  {
-    "step": "Step 0",
-    "item_id": "FA014",
-    "item_name": "用户反馈",
-    "decision": "auto_confirmed",
-    "reason": "全自动模式 — 功能区分组自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 1",
     "item_id": "all_happy_path",
-    "item_name": "45 条正常流用例",
+    "item_name": "52 条正常流用例",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 正常流用例自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 2",
     "item_id": "all_exception_boundary",
-    "item_name": "49 异常 + 6 边界 + 16 校验用例",
+    "item_name": "58 异常 + 7 边界 + 26 校验用例",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — 异常/边界/校验用例自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 3",
@@ -133,14 +117,14 @@
     "item_name": "JSON + Markdown 双格式输出",
     "decision": "auto_confirmed",
     "reason": "全自动模式",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   },
   {
     "step": "Step 4",
     "item_id": "e2e_cases",
-    "item_name": "9 条 E2E 用例",
+    "item_name": "8 条 E2E 用例",
     "decision": "auto_confirmed",
     "reason": "全自动模式 — E2E用例自动确认",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "decided_at": "2026-03-03T16:21:18Z"
   }
 ]

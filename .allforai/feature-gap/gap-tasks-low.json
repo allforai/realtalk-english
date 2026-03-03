@@ -1,0 +1,124 @@
+{
+  "split_by": "priority",
+  "split_value": "low",
+  "split_label": "低优先级",
+  "description": "低优先级缺口任务（6 条）",
+  "generated_at": "2026-03-03T16:23:51Z",
+  "count": 6,
+  "items": [
+    {
+      "id": "GAP-005",
+      "title": "管理推送通知偏好 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T020"
+      ],
+      "affected_screens": [
+        "S009"
+      ],
+      "description": "任务 T020 (管理推送通知偏好) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-006",
+      "title": "管理推送通知偏好 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "职场人士"
+      ],
+      "affected_tasks": [
+        "T020"
+      ],
+      "affected_screens": [
+        "S009"
+      ],
+      "description": "任务 T020 (管理推送通知偏好) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-017",
+      "title": "管理订阅方案 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T042"
+      ],
+      "affected_screens": [
+        "S027"
+      ],
+      "description": "任务 T042 (管理订阅方案) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-018",
+      "title": "管理订阅方案 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T042"
+      ],
+      "affected_screens": [
+        "S027"
+      ],
+      "description": "任务 T042 (管理订阅方案) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-019",
+      "title": "管理系统配置 — NO_EXCEPTIONS",
+      "type": "NO_EXCEPTIONS",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T043"
+      ],
+      "affected_screens": [
+        "S028"
+      ],
+      "description": "任务 T043 (管理系统配置) 检测到 NO_EXCEPTIONS",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    },
+    {
+      "id": "GAP-020",
+      "title": "管理系统配置 — CRUD_INCOMPLETE",
+      "type": "CRUD_INCOMPLETE",
+      "category": "basic",
+      "priority": "低",
+      "affected_roles": [
+        "系统管理员"
+      ],
+      "affected_tasks": [
+        "T043"
+      ],
+      "affected_screens": [
+        "S028"
+      ],
+      "description": "任务 T043 (管理系统配置) 检测到 CRUD_INCOMPLETE",
+      "frequency_impact": "低频任务",
+      "xv_dedup": true
+    }
+  ]
+}

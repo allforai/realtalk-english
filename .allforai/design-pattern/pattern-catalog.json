@@ -1,0 +1,685 @@
+{
+  "created_at": "2026-03-03T16:46:45Z",
+  "total_patterns_detected": 5,
+  "patterns": [
+    {
+      "pattern_id": "PT-CRUD",
+      "name": "CRUD 管理台",
+      "instances": [
+        {
+          "group_id": "prompt-模板-crud",
+          "entity": "Prompt 模板",
+          "task_ids": [
+            "T040"
+          ],
+          "screen_ids": [
+            "S022"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "推送通知偏好-crud",
+          "entity": "推送通知偏好",
+          "task_ids": [
+            "T020",
+            "T018"
+          ],
+          "screen_ids": [
+            "S009"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "a-b-测试-crud",
+          "entity": "A/B 测试",
+          "task_ids": [
+            "T048"
+          ],
+          "screen_ids": [
+            "S025"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "学习场景-crud",
+          "entity": "学习场景",
+          "task_ids": [
+            "T005",
+            "T024",
+            "T025"
+          ],
+          "screen_ids": [
+            "S003",
+            "S011",
+            "S012",
+            "S013"
+          ],
+          "actions_found": [
+            "create",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "场景标签-crud",
+          "entity": "场景标签",
+          "task_ids": [
+            "T038"
+          ],
+          "screen_ids": [
+            "S020"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "订阅方案-crud",
+          "entity": "订阅方案",
+          "task_ids": [
+            "T042"
+          ],
+          "screen_ids": [
+            "S027"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "系统配置-crud",
+          "entity": "系统配置",
+          "task_ids": [
+            "T043"
+          ],
+          "screen_ids": [
+            "S028"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "角色权限-crud",
+          "entity": "角色权限",
+          "task_ids": [
+            "T050"
+          ],
+          "screen_ids": [
+            "S029"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "场景包-crud",
+          "entity": "场景包",
+          "task_ids": [
+            "T037"
+          ],
+          "screen_ids": [
+            "S019"
+          ],
+          "actions_found": [
+            "create",
+            "delete",
+            "read",
+            "update"
+          ],
+          "template": "顶部操作栏+数据表格+弹窗表单",
+          "user_decision": "auto"
+        }
+      ],
+      "total_instances": 9
+    },
+    {
+      "pattern_id": "PT-LIST-DETAIL",
+      "name": "列表+详情对",
+      "instances": [
+        {
+          "group_id": "场景-list-detail",
+          "entity": "场景",
+          "task_ids": [
+            "T005",
+            "T006",
+            "T007"
+          ],
+          "screen_ids": [
+            "S003",
+            "S004"
+          ],
+          "template": "主列表+右侧详情面板",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "场景-list-detail",
+          "entity": "场景",
+          "task_ids": [
+            "T005",
+            "T027"
+          ],
+          "screen_ids": [
+            "S003",
+            "S015"
+          ],
+          "template": "主列表+右侧详情面板",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "场景-list-detail",
+          "entity": "场景",
+          "task_ids": [
+            "T006",
+            "T007",
+            "T024",
+            "T025"
+          ],
+          "screen_ids": [
+            "S011",
+            "S004"
+          ],
+          "template": "主列表+右侧详情面板",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "场景-list-detail",
+          "entity": "场景",
+          "task_ids": [
+            "T024",
+            "T025",
+            "T027"
+          ],
+          "screen_ids": [
+            "S011",
+            "S015"
+          ],
+          "template": "主列表+右侧详情面板",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "用户-list-detail",
+          "entity": "用户",
+          "task_ids": [
+            "T032",
+            "T033",
+            "T034",
+            "T035"
+          ],
+          "screen_ids": [
+            "S017",
+            "S018"
+          ],
+          "template": "主列表+右侧详情面板",
+          "user_decision": "auto"
+        }
+      ],
+      "total_instances": 5
+    },
+    {
+      "pattern_id": "PT-APPROVAL",
+      "name": "审批流",
+      "instances": [
+        {
+          "group_id": "F003-approval",
+          "entity": "场景内容生命周期",
+          "task_ids": [
+            "T024",
+            "T025",
+            "T026",
+            "T027"
+          ],
+          "screen_ids": [],
+          "template": "流程时间轴+审批意见区",
+          "user_decision": "auto"
+        }
+      ],
+      "total_instances": 1
+    },
+    {
+      "pattern_id": "PT-SEARCH",
+      "name": "搜索+筛选+分页",
+      "instances": [
+        {
+          "group_id": "S003-search",
+          "entity": "场景列表页",
+          "task_ids": [
+            "T005"
+          ],
+          "screen_ids": [
+            "S003"
+          ],
+          "template": "顶部筛选栏+分页器",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "S016-search",
+          "entity": "AI 质量监控页",
+          "task_ids": [
+            "T028",
+            "T029"
+          ],
+          "screen_ids": [
+            "S016"
+          ],
+          "template": "顶部筛选栏+分页器",
+          "user_decision": "auto"
+        },
+        {
+          "group_id": "S017-search",
+          "entity": "用户管理列表页",
+          "task_ids": [
+            "T032"
+          ],
+          "screen_ids": [
+            "S017"
+          ],
+          "template": "顶部筛选栏+分页器",
+          "user_decision": "auto"
+        }
+      ],
+      "total_instances": 3
+    },
+    {
+      "pattern_id": "PT-STATE",
+      "name": "状态机",
+      "instances": [
+        {
+          "group_id": "state-machine",
+          "entity": "状态管理",
+          "task_ids": [
+            "T014",
+            "T015",
+            "T016",
+            "T027",
+            "T033",
+            "T034",
+            "T035",
+            "T036"
+          ],
+          "screen_ids": [
+            "S002",
+            "S008",
+            "S014",
+            "S015",
+            "S018",
+            "S038"
+          ],
+          "template": "状态标签+动态操作按钮",
+          "user_decision": "auto"
+        }
+      ],
+      "total_instances": 1
+    }
+  ],
+  "task_tags": {
+    "T040": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T020": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T018": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T048": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T005": {
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格+主列表+右侧详情面板+主列表+右侧详情面板+顶部筛选栏+分页器"
+    },
+    "T024": {
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格+主列表+右侧详情面板+主列表+右侧详情面板+流程时间轴+审批意见区"
+    },
+    "T025": {
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格+主列表+右侧详情面板+主列表+右侧详情面板+流程时间轴+审批意见区"
+    },
+    "T038": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T042": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T043": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T050": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T037": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格"
+    },
+    "T006": {
+      "_pattern": [
+        "PT-LIST-DETAIL"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+主列表+右侧详情面板"
+    },
+    "T007": {
+      "_pattern": [
+        "PT-LIST-DETAIL"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+主列表+右侧详情面板"
+    },
+    "T027": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-APPROVAL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+主列表+右侧详情面板+流程时间轴+审批意见区+状态标签+动态操作按钮"
+    },
+    "T032": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+顶部筛选栏+分页器"
+    },
+    "T033": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+状态标签+动态操作按钮"
+    },
+    "T034": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+状态标签+动态操作按钮"
+    },
+    "T035": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+状态标签+动态操作按钮"
+    },
+    "T026": {
+      "_pattern": [
+        "PT-APPROVAL"
+      ],
+      "_pattern_template": "流程时间轴+审批意见区"
+    },
+    "T028": {
+      "_pattern": [
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "顶部筛选栏+分页器"
+    },
+    "T029": {
+      "_pattern": [
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "顶部筛选栏+分页器"
+    },
+    "T014": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮"
+    },
+    "T015": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮"
+    },
+    "T016": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮"
+    },
+    "T036": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮"
+    }
+  },
+  "screen_tags": {
+    "S022": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "prompt-模板-crud"
+    },
+    "S009": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "推送通知偏好-crud"
+    },
+    "S025": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "a-b-测试-crud"
+    },
+    "S003": {
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格+主列表+右侧详情面板+主列表+右侧详情面板+顶部筛选栏+分页器",
+      "_pattern_group": "S003-search"
+    },
+    "S011": {
+      "_pattern": [
+        "PT-CRUD",
+        "PT-LIST-DETAIL"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格+主列表+右侧详情面板+主列表+右侧详情面板",
+      "_pattern_group": "场景-list-detail"
+    },
+    "S012": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "学习场景-crud"
+    },
+    "S013": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "学习场景-crud"
+    },
+    "S020": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "场景标签-crud"
+    },
+    "S027": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "订阅方案-crud"
+    },
+    "S028": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "系统配置-crud"
+    },
+    "S029": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "角色权限-crud"
+    },
+    "S019": {
+      "_pattern": [
+        "PT-CRUD"
+      ],
+      "_pattern_template": "顶部操作栏+数据表格",
+      "_pattern_group": "场景包-crud"
+    },
+    "S004": {
+      "_pattern": [
+        "PT-LIST-DETAIL"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+主列表+右侧详情面板",
+      "_pattern_group": "场景-list-detail"
+    },
+    "S015": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+主列表+右侧详情面板+状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    },
+    "S017": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+顶部筛选栏+分页器",
+      "_pattern_group": "S017-search"
+    },
+    "S018": {
+      "_pattern": [
+        "PT-LIST-DETAIL",
+        "PT-STATE"
+      ],
+      "_pattern_template": "主列表+右侧详情面板+状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    },
+    "S016": {
+      "_pattern": [
+        "PT-SEARCH"
+      ],
+      "_pattern_template": "顶部筛选栏+分页器",
+      "_pattern_group": "S016-search"
+    },
+    "S002": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    },
+    "S008": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    },
+    "S014": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    },
+    "S038": {
+      "_pattern": [
+        "PT-STATE"
+      ],
+      "_pattern_template": "状态标签+动态操作按钮",
+      "_pattern_group": "state-machine"
+    }
+  },
+  "tasks_tagged": 26,
+  "screens_tagged": 21
+}

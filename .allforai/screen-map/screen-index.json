@@ -1,252 +1,509 @@
 {
-  "generated_at": "2026-02-27T19:16:30Z",
-  "screen_count": 42,
+  "generated_at": "2026-03-03T16:13:22Z",
+  "source": "screen-map.json",
+  "screen_count": 38,
+  "concept_eliminated_count": 0,
+  "innovation_count": 0,
   "modules": [
     {
-      "name": "场景对话",
+      "name": "认证",
       "screens": [
         {
           "id": "S001",
-          "name": "场景列表页"
+          "name": "登录页",
+          "task_refs": [
+            "T002"
+          ],
+          "action_count": 3,
+          "audience_type": "consumer",
+          "has_gaps": false
         },
         {
           "id": "S002",
-          "name": "场景详情页"
-        },
-        {
-          "id": "S003",
-          "name": "AI对话页"
-        },
-        {
-          "id": "S004",
-          "name": "对话报告页"
-        },
-        {
-          "id": "S005",
-          "name": "自由对话页"
-        }
-      ]
-    },
-    {
-      "name": "发音纠正",
-      "screens": [
-        {
-          "id": "S006",
-          "name": "发音详细报告页"
-        }
-      ]
-    },
-    {
-      "name": "记忆曲线",
-      "screens": [
-        {
-          "id": "S007",
-          "name": "记忆曲线复习页"
-        },
-        {
-          "id": "S008",
-          "name": "词汇本页"
-        }
-      ]
-    },
-    {
-      "name": "场景库管理",
-      "screens": [
-        {
-          "id": "S009",
-          "name": "场景脚本编辑器"
-        },
-        {
-          "id": "S010",
-          "name": "审核队列页"
-        },
-        {
-          "id": "S011",
-          "name": "场景包管理页"
-        }
-      ]
-    },
-    {
-      "name": "游戏化与轻社交",
-      "screens": [
-        {
-          "id": "S012",
-          "name": "学习连胜与成就页"
-        },
-        {
-          "id": "S013",
-          "name": "排行榜页"
-        },
-        {
-          "id": "S014",
-          "name": "积分商城页"
-        },
-        {
-          "id": "S015",
-          "name": "分享成果页"
-        }
-      ]
-    },
-    {
-      "name": "学习档案与进度",
-      "screens": [
-        {
-          "id": "S016",
-          "name": "个人学习档案页"
-        },
-        {
-          "id": "S017",
-          "name": "学习统计报告页"
-        }
-      ]
-    },
-    {
-      "name": "角色场景推荐",
-      "screens": [
-        {
-          "id": "S018",
-          "name": "角色偏好设置页"
-        }
-      ]
-    },
-    {
-      "name": "紧急场景速学",
-      "screens": [
-        {
-          "id": "S019",
-          "name": "紧急场景速学页"
-        }
-      ]
-    },
-    {
-      "name": "订阅与付费",
-      "screens": [
-        {
-          "id": "S020",
-          "name": "订阅方案页"
-        },
-        {
-          "id": "S021",
-          "name": "订阅管理页"
-        },
-        {
-          "id": "S022",
-          "name": "场景包购买页"
-        }
-      ]
-    },
-    {
-      "name": "运营数据看板",
-      "screens": [
-        {
-          "id": "S023",
-          "name": "关键指标看板"
-        },
-        {
-          "id": "S024",
-          "name": "用户行为分析页"
-        },
-        {
-          "id": "S025",
-          "name": "A/B测试管理页"
-        },
-        {
-          "id": "S026",
-          "name": "运营报告生成页"
-        }
-      ]
-    },
-    {
-      "name": "AI质量监控",
-      "screens": [
-        {
-          "id": "S027",
-          "name": "AI对话质量评分页"
-        },
-        {
-          "id": "S028",
-          "name": "异常对话标注页"
-        },
-        {
-          "id": "S029",
-          "name": "Prompt模板管理页"
-        },
-        {
-          "id": "S030",
-          "name": "发音评估参数页"
-        }
-      ]
-    },
-    {
-      "name": "用户管理与系统配置",
-      "screens": [
-        {
-          "id": "S031",
-          "name": "用户管理页"
+          "name": "首页",
+          "task_refs": [
+            "T017",
+            "T014",
+            "T046"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
         },
         {
           "id": "S032",
-          "name": "订阅与退款管理页"
+          "name": "注册页",
+          "task_refs": [
+            "T001"
+          ],
+          "action_count": 1,
+          "audience_type": "consumer",
+          "has_gaps": false
         },
         {
           "id": "S033",
-          "name": "系统配置页"
-        },
-        {
-          "id": "S034",
-          "name": "权限角色管理页"
-        },
-        {
-          "id": "S035",
-          "name": "投诉处理页"
-        }
-      ]
-    },
-    {
-      "name": "注册登录与个人设置",
-      "screens": [
-        {
-          "id": "S036",
-          "name": "注册页"
+          "name": "重置密码页",
+          "task_refs": [
+            "T051"
+          ],
+          "action_count": 1,
+          "audience_type": "consumer",
+          "has_gaps": false
         },
         {
           "id": "S037",
-          "name": "登录页"
+          "name": "管理后台登录页",
+          "task_refs": [
+            "T002"
+          ],
+          "action_count": 1,
+          "audience_type": "professional",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "成就激励",
+      "screens": [
+        {
+          "id": "S002",
+          "name": "首页",
+          "task_refs": [
+            "T017",
+            "T014",
+            "T046"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S008",
+          "name": "成就与连续天数页",
+          "task_refs": [
+            "T014",
+            "T015",
+            "T016"
+          ],
+          "action_count": 1,
+          "audience_type": "consumer",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "场景学习",
+      "screens": [
+        {
+          "id": "S002",
+          "name": "首页",
+          "task_refs": [
+            "T017",
+            "T014",
+            "T046"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S003",
+          "name": "场景列表页",
+          "task_refs": [
+            "T005"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S004",
+          "name": "场景详情页",
+          "task_refs": [
+            "T006",
+            "T007"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S011",
+          "name": "场景列表（管理端）",
+          "task_refs": [
+            "T024",
+            "T025"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S012",
+          "name": "场景创建页",
+          "task_refs": [
+            "T024"
+          ],
+          "action_count": 1,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S013",
+          "name": "场景编辑页",
+          "task_refs": [
+            "T025",
+            "T026"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S014",
+          "name": "审核队列页",
+          "task_refs": [
+            "T027"
+          ],
+          "action_count": 1,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S015",
+          "name": "场景审核详情页",
+          "task_refs": [
+            "T027"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S019",
+          "name": "场景包管理页",
+          "task_refs": [
+            "T037"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S020",
+          "name": "场景标签管理页",
+          "task_refs": [
+            "T038"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "AI 对话",
+      "screens": [
+        {
+          "id": "S004",
+          "name": "场景详情页",
+          "task_refs": [
+            "T006",
+            "T007"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S005",
+          "name": "AI 对话界面",
+          "task_refs": [
+            "T008",
+            "T009",
+            "T022"
+          ],
+          "action_count": 3,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S006",
+          "name": "对话报告页",
+          "task_refs": [
+            "T010"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        },
+        {
+          "id": "S016",
+          "name": "AI 质量监控页",
+          "task_refs": [
+            "T028",
+            "T029"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S021",
+          "name": "异常对话检测页",
+          "task_refs": [
+            "T039"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S023",
+          "name": "发音分析页",
+          "task_refs": [
+            "T041"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S026",
+          "name": "报告导出页",
+          "task_refs": [
+            "T049"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S036",
+          "name": "历史对话列表页",
+          "task_refs": [
+            "T011"
+          ],
+          "action_count": 1,
+          "audience_type": "consumer",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "词汇复习",
+      "screens": [
+        {
+          "id": "S007",
+          "name": "词汇复习页",
+          "task_refs": [
+            "T012",
+            "T013"
+          ],
+          "action_count": 3,
+          "audience_type": "consumer",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "通知",
+      "screens": [
+        {
+          "id": "S009",
+          "name": "通知中心",
+          "task_refs": [
+            "T018",
+            "T019",
+            "T020"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "数据运营",
+      "screens": [
+        {
+          "id": "S010",
+          "name": "管理后台仪表盘",
+          "task_refs": [
+            "T030",
+            "T031"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S024",
+          "name": "用户行为分析页",
+          "task_refs": [
+            "T047"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S025",
+          "name": "A/B 测试管理页",
+          "task_refs": [
+            "T048"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "AI 质量",
+      "screens": [
+        {
+          "id": "S016",
+          "name": "AI 质量监控页",
+          "task_refs": [
+            "T028",
+            "T029"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S022",
+          "name": "Prompt 模板管理页",
+          "task_refs": [
+            "T040"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "用户管理",
+      "screens": [
+        {
+          "id": "S017",
+          "name": "用户管理列表页",
+          "task_refs": [
+            "T032"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S018",
+          "name": "用户详情页",
+          "task_refs": [
+            "T033",
+            "T034",
+            "T035"
+          ],
+          "action_count": 2,
+          "audience_type": "professional",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "订阅",
+      "screens": [
+        {
+          "id": "S027",
+          "name": "订阅管理页",
+          "task_refs": [
+            "T042"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S035",
+          "name": "付费墙页",
+          "task_refs": [
+            "T021"
+          ],
+          "action_count": 1,
+          "audience_type": "consumer",
+          "has_gaps": false
+        }
+      ]
+    },
+    {
+      "name": "系统管理",
+      "screens": [
+        {
+          "id": "S028",
+          "name": "系统设置页",
+          "task_refs": [
+            "T043"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S029",
+          "name": "角色权限管理页",
+          "task_refs": [
+            "T050"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S030",
+          "name": "投诉处理页",
+          "task_refs": [
+            "T044"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
+        },
+        {
+          "id": "S031",
+          "name": "用户反馈页",
+          "task_refs": [
+            "T045"
+          ],
+          "action_count": 0,
+          "audience_type": "professional",
+          "has_gaps": false
         },
         {
           "id": "S038",
-          "name": "个人设置页"
-        },
-        {
-          "id": "S039",
-          "name": "重置密码页"
+          "name": "系统健康状态页",
+          "task_refs": [
+            "T036"
+          ],
+          "action_count": 1,
+          "audience_type": "professional",
+          "has_gaps": false
         }
       ]
     },
     {
-      "name": "首次体验",
+      "name": "新手引导",
       "screens": [
         {
-          "id": "S040",
-          "name": "新手引导页"
-        }
-      ]
-    },
-    {
-      "name": "推送与通知",
-      "screens": [
-        {
-          "id": "S041",
-          "name": "通知中心页"
-        }
-      ]
-    },
-    {
-      "name": "用户反馈",
-      "screens": [
-        {
-          "id": "S042",
-          "name": "意见反馈页"
+          "id": "S034",
+          "name": "新手引导页",
+          "task_refs": [
+            "T052"
+          ],
+          "action_count": 2,
+          "audience_type": "consumer",
+          "has_gaps": false
         }
       ]
     }

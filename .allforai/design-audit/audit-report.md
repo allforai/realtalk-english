@@ -4,20 +4,16 @@
 
 - 执行模式: full
 - 可用层: product-map, screen-map, use-case, feature-gap, feature-prune, ui-design
-- 逆向追溯: 252 项检查, 252 PASS, 0 ORPHAN
-- 覆盖洪泛: 180 项检查, 180 COVERED, 0 GAP, 覆盖率 100%
-- 横向一致性: 49 项检查, 46 OK, 2 CONFLICT, 1 WARNING
-- 信息保真: 追溯完整率 100% (PASS) · 视角覆盖率 100% (PASS)
+- 逆向追溯: 295 项检查, 295 PASS, 0 ORPHAN
+- 覆盖洪泛: 208 项检查, 205 COVERED, 3 GAP, 覆盖率 99%
+- 横向一致性: 36 项检查, 36 OK, 0 CONFLICT, 0 WARNING
+- 信息保真: 追溯完整率 100% (PASS) · 视角覆盖率 94% (PASS)
 
-## CONFLICT（跨层矛盾）
 
-| # | 检查项 | 任务 | 说明 |
-|---|--------|------|------|
-| 1 | X1 | 设置角色偏好 | feature-gap 报 T019 有缺口，但 feature-prune 标为 CUT — 矛盾 |
-| 2 | X1 | 分享学习成果 | feature-gap 报 T016 有缺口，但 feature-prune 标为 CUT — 矛盾 |
+## GAP（未覆盖）
 
-## WARNING（风险）
-
-| # | 检查项 | 任务 | 说明 |
-|---|--------|------|------|
-| 1 | X3 | 创建场景对话脚本 | 高频任务 T009 的操作 '预览场景对话' click_depth=3 ≥ 3（被埋深） |
+| # | 检查项 | 任务 | 缺失层 | 说明 |
+|---|--------|------|--------|------|
+| 1 | C1 | 退出登录 | screen-map | 任务 T004 (退出登录) 在 screen-map 中无对应界面 |
+| 2 | C1 | 刷新登录凭证 | screen-map | 任务 T003 (刷新登录凭证) 在 screen-map 中无对应界面 |
+| 3 | C1 | 手动添加词汇到生词本 | screen-map | 任务 T023 (手动添加词汇到生词本) 在 screen-map 中无对应界面 |

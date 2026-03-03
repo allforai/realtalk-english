@@ -1,83 +1,82 @@
 {
-  "generated_at": "2026-02-28T12:00:00Z",
-  "mode": "concept_guided",
+  "generated_at": "2026-03-04T00:50:00Z",
   "roles": [
     {
       "id": "R001",
       "name": "职场人士",
-      "description": "需要英语开会、写邮件、面试的上班族",
-      "permission_boundary": ["场景对话", "学习档案", "订阅管理", "个人设置"],
+      "description": "企业员工、外贸从业者，需英语开会、写邮件、面试。碎片时间学习，追求短期可见提升",
+      "permission_boundary": ["浏览场景", "发起对话", "复习词汇", "查看成就", "管理个人设置", "订阅付费"],
       "kpi": ["日均开口时长 > 10分钟", "7天留存率 > 40%"],
       "audience_type": "consumer",
-      "role_type": "consumer",
-      "impl_group": "end_user",
-      "status": "concept_guided"
+      "impl_roles": ["R001"],
+      "concept_ref": "R1",
+      "status": "confirmed"
     },
     {
       "id": "R002",
       "name": "英语爱好者/旅行者",
-      "description": "旅行交流、看美剧脱字幕的兴趣学习者",
-      "permission_boundary": ["场景对话", "学习档案", "订阅管理", "个人设置"],
-      "kpi": ["首场景通关率 > 70%", "词汇复现率 > 30%"],
+      "description": "兴趣驱动学习者、准备出境旅行者，偏好日常和旅行场景对话，追求流利度而非精准度",
+      "permission_boundary": ["浏览场景", "发起对话", "复习词汇", "查看成就", "管理个人设置", "订阅付费"],
+      "kpi": ["首场景通关率 > 70%", "周活跃天数 ≥ 3"],
       "audience_type": "consumer",
-      "role_type": "consumer",
-      "impl_group": "end_user",
-      "status": "concept_guided"
+      "impl_roles": ["R001"],
+      "concept_ref": "R2",
+      "status": "confirmed"
     },
     {
       "id": "R003",
       "name": "新移民",
-      "description": "需要在生活场景（看病/银行/家长会）独立沟通的移民群体",
-      "permission_boundary": ["场景对话", "紧急场景速学", "学习档案", "订阅管理", "个人设置"],
-      "kpi": ["紧急场景完成率 > 80%", "生活词汇掌握率 > 50%"],
+      "description": "技术移民/留学新到者，需快速掌握生活英语（租房、就医、办证），对口音和文化差异敏感",
+      "permission_boundary": ["浏览场景", "发起对话", "复习词汇", "查看成就", "管理个人设置", "订阅付费"],
+      "kpi": ["生活场景通关率 > 60%", "词汇复现率 > 30%"],
       "audience_type": "consumer",
-      "role_type": "consumer",
-      "impl_group": "end_user",
-      "status": "concept_guided"
+      "impl_roles": ["R001"],
+      "concept_ref": "R3",
+      "status": "confirmed"
     },
     {
       "id": "R004",
       "name": "内容运营",
-      "description": "创建、编辑、审核场景对话脚本，管理场景包上下架",
-      "permission_boundary": ["场景脚本编辑", "审核队列", "场景包管理", "标签管理"],
-      "kpi": ["场景审核通过率", "新场景上线周期"],
+      "description": "负责场景内容的创建、编辑、提交审核和发布管理，维护场景包和标签体系",
+      "permission_boundary": ["创建/编辑场景", "提交审核", "审核场景", "管理场景包", "管理标签"],
+      "kpi": ["月新增场景数 ≥ 10", "场景审核通过率 > 80%"],
       "audience_type": "professional",
-      "role_type": "producer",
-      "impl_group": "operator",
-      "status": "concept_guided"
+      "impl_roles": ["R004"],
+      "concept_ref": "R4",
+      "status": "confirmed"
     },
     {
       "id": "R005",
       "name": "AI 训练师",
-      "description": "监控AI对话质量、调优发音评估参数、优化Prompt模板",
-      "permission_boundary": ["AI质量评分", "异常对话标注", "Prompt模板管理", "发音评估参数"],
-      "kpi": ["AI对话质量评分 > 4.0/5.0", "异常对话率 < 2%"],
+      "description": "监控 AI 对话质量评分、检测异常对话、调优 Prompt 模板，确保 AI 输出符合教学标准",
+      "permission_boundary": ["查看 AI 质量评分", "查看低分对话", "管理 Prompt 模板", "查看发音分析"],
+      "kpi": ["AI 质量评分均值 > 4.0/5", "低分对话处理率 > 90%"],
       "audience_type": "professional",
-      "role_type": "producer",
-      "impl_group": "operator",
-      "status": "concept_guided"
+      "impl_roles": ["R005"],
+      "concept_ref": "R5",
+      "status": "confirmed"
     },
     {
       "id": "R006",
       "name": "数据运营",
-      "description": "监控关键指标、分析用户行为、设计A/B测试、生成运营报告",
-      "permission_boundary": ["运营数据看板", "行为分析", "A/B测试", "运营报告"],
-      "kpi": ["DAU/MAU增长率", "留存率提升幅度"],
+      "description": "通过数据仪表盘监控 DAU/MAU/留存/营收等核心指标，设置预警阈值，分析用户行为",
+      "permission_boundary": ["查看仪表盘", "设置指标预警", "查看行为分析", "管理 A/B 测试", "生成报告"],
+      "kpi": ["DAU/MAU ratio > 20%", "关键指标预警响应 < 4h"],
       "audience_type": "professional",
-      "role_type": "producer",
-      "impl_group": "operator",
-      "status": "concept_guided"
+      "impl_roles": ["R006"],
+      "concept_ref": "R6",
+      "status": "confirmed"
     },
     {
       "id": "R007",
       "name": "系统管理员",
-      "description": "管理用户账户、配置系统参数、处理投诉与退款、权限管理",
-      "permission_boundary": ["用户管理", "订阅退款", "系统配置", "权限角色", "投诉处理"],
-      "kpi": ["投诉处理时效 < 24h", "系统可用性 > 99.9%"],
+      "description": "管理用户账号（搜索/封禁/解封）、系统配置、角色权限、订阅管理、处理用户投诉和反馈",
+      "permission_boundary": ["搜索用户", "封禁/解封用户", "系统设置", "角色管理", "订阅管理", "投诉处理", "反馈管理"],
+      "kpi": ["封禁误操作率 < 1%", "投诉处理时效 < 24h"],
       "audience_type": "professional",
-      "role_type": "admin",
-      "impl_group": "super_admin",
-      "status": "concept_guided"
+      "impl_roles": ["R007"],
+      "concept_ref": "R7",
+      "status": "confirmed"
     }
   ]
 }

@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-03-04T01:25:00Z",
+  "orphan_states": [
+    {
+      "state": "rejected",
+      "producers": ["T027"],
+      "consumers": [],
+      "severity": "高",
+      "business_impact": "学习场景被驳回后进入 rejected 状态，但无后续流转定义（无重新编辑→重新提交路径），形成死端"
+    }
+  ],
+  "ghost_states": [],
+  "semantic_gaps": [
+    {
+      "state_a": "relearning",
+      "state_b": "learning",
+      "similarity": 0.85,
+      "suggestion": "词汇卡的 relearning 和 learning 语义相近，建议确认是否为同一阶段的不同命名，或明确两者区别（FSRS 算法定义 learning 为首次学习、relearning 为遗忘后重学）"
+    }
+  ],
+  "innovation_state_gaps": [],
+  "flow_path_analysis": {
+    "学习场景": {
+      "complete_paths": [
+        "draft → review → published (正常发布路径)",
+        "draft → review → rejected (驳回路径)"
+      ],
+      "broken_paths": [
+        {
+          "path": "rejected → ? (无后续)",
+          "issue": "驳回后无 rejected → draft 的回退转换，作者无法修改后重新提交",
+          "severity": "高"
+        }
+      ],
+      "missing_branches": [
+        "published → draft (已发布场景需修改时缺少回退机制)"
+      ]
+    },
+    "对话会话": {
+      "complete_paths": [
+        "active → completed (正常结束)"
+      ],
+      "broken_paths": [],
+      "missing_branches": [
+        "active → error/timeout (网络异常或超时场景缺少错误状态)"
+      ]
+    },
+    "投诉": {
+      "complete_paths": [
+        "pending → in_progress → resolved",
+        "pending → in_progress → closed"
+      ],
+      "broken_paths": [],
+      "missing_branches": [
+        "resolved → reopened (用户对解决方案不满意时缺少重开机制)"
+      ]
+    }
+  }
+}

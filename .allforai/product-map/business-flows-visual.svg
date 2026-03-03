@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2280" height="1300" viewBox="0 0 2280 1300">
+<defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748B"/></marker></defs>
+<style>text { font-family: -apple-system, "Segoe UI", sans-serif; }</style>
+<rect width="2280" height="1300" fill="#FFFFFF"/>
+<rect x="20" y="60" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="82.5" font-size="13" font-weight="bold" fill="white">F001 用户认证与入门</text>
+<circle cx="74" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="74" y="129.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="129.0" font-size="11" fill="#1E3A8A">注册账号</text>
+<text x="98" y="141" font-size="9" fill="#64748B">T001</text>
+<line x1="260" y1="125.0" x2="300" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="314" y="129.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="129.0" font-size="11" fill="#1E3A8A">登录账号（老用户入口）</text>
+<text x="338" y="141" font-size="9" fill="#64748B">T002</text>
+<line x1="500" y1="125.0" x2="540" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="554" y="129.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="129.0" font-size="11" fill="#1E3A8A">刷新登录凭证（系统自动）</text>
+<text x="578" y="141" font-size="9" fill="#64748B">T003</text>
+<line x1="740" y1="125.0" x2="780" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="794" y="129.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="129.0" font-size="11" fill="#1E3A8A">新手引导</text>
+<text x="818" y="141" font-size="9" fill="#64748B">T052</text>
+<line x1="980" y1="125.0" x2="1020" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1034" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="1034" y="129.0" text-anchor="middle" font-size="10" fill="white">5</text>
+<rect x="1050" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1058" y="129.0" font-size="11" fill="#1E3A8A">查看个性化推荐</text>
+<text x="1058" y="141" font-size="9" fill="#64748B">T017</text>
+<line x1="1220" y1="125.0" x2="1260" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1274" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="1274" y="129.0" text-anchor="middle" font-size="10" fill="white">6</text>
+<rect x="1290" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1298" y="129.0" font-size="11" fill="#1E3A8A">查看场景详情</text>
+<text x="1298" y="141" font-size="9" fill="#64748B">T006</text>
+<line x1="1460" y1="125.0" x2="1500" y2="125.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1514" cy="125.0" r="12" fill="#3B82F6"/>
+<text x="1514" y="129.0" text-anchor="middle" font-size="10" fill="white">7</text>
+<rect x="1530" y="105" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1538" y="129.0" font-size="11" fill="#1E3A8A">发起 AI 对话</text>
+<text x="1538" y="141" font-size="9" fill="#64748B">T007</text>
+<rect x="20" y="205" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="227.5" font-size="13" font-weight="bold" fill="white">F002 核心学习循环</text>
+<circle cx="74" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="74" y="274.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="274.0" font-size="11" fill="#1E3A8A">浏览学习场景列表</text>
+<text x="98" y="286" font-size="9" fill="#64748B">T005</text>
+<line x1="260" y1="270.0" x2="300" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="314" y="274.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="274.0" font-size="11" fill="#1E3A8A">查看场景详情</text>
+<text x="338" y="286" font-size="9" fill="#64748B">T006</text>
+<line x1="500" y1="270.0" x2="540" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="554" y="274.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="274.0" font-size="11" fill="#1E3A8A">发起 AI 对话</text>
+<text x="578" y="286" font-size="9" fill="#64748B">T007</text>
+<line x1="740" y1="270.0" x2="780" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="794" y="274.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="274.0" font-size="11" fill="#1E3A8A">发送文本/语音消息</text>
+<text x="818" y="286" font-size="9" fill="#64748B">T008</text>
+<line x1="980" y1="270.0" x2="1020" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1034" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="1034" y="274.0" text-anchor="middle" font-size="10" fill="white">5</text>
+<rect x="1050" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1058" y="274.0" font-size="11" fill="#1E3A8A">结束对话并查看报告</text>
+<text x="1058" y="286" font-size="9" fill="#64748B">T010</text>
+<line x1="1220" y1="270.0" x2="1260" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1274" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="1274" y="274.0" text-anchor="middle" font-size="10" fill="white">6</text>
+<rect x="1290" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1298" y="274.0" font-size="11" fill="#1E3A8A">对话中自动收集生词</text>
+<text x="1298" y="286" font-size="9" fill="#64748B">T022</text>
+<line x1="1460" y1="270.0" x2="1500" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1514" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="1514" y="274.0" text-anchor="middle" font-size="10" fill="white">7</text>
+<rect x="1530" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1538" y="274.0" font-size="11" fill="#1E3A8A">复习今日到期词汇卡</text>
+<text x="1538" y="286" font-size="9" fill="#64748B">T012</text>
+<line x1="1700" y1="270.0" x2="1740" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1754" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="1754" y="274.0" text-anchor="middle" font-size="10" fill="white">8</text>
+<rect x="1770" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1778" y="274.0" font-size="11" fill="#1E3A8A">查看复习统计摘要</text>
+<text x="1778" y="286" font-size="9" fill="#64748B">T013</text>
+<line x1="1940" y1="270.0" x2="1980" y2="270.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1994" cy="270.0" r="12" fill="#3B82F6"/>
+<text x="1994" y="274.0" text-anchor="middle" font-size="10" fill="white">9</text>
+<rect x="2010" y="250" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="2018" y="274.0" font-size="11" fill="#1E3A8A">手动添加词汇到生词本</text>
+<text x="2018" y="286" font-size="9" fill="#64748B">T023</text>
+<rect x="20" y="350" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="372.5" font-size="13" font-weight="bold" fill="white">F003 场景内容生命周期</text>
+<circle cx="74" cy="415.0" r="12" fill="#3B82F6"/>
+<text x="74" y="419.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="395" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="419.0" font-size="11" fill="#1E3A8A">创建学习场景草稿</text>
+<text x="98" y="431" font-size="9" fill="#64748B">T024</text>
+<line x1="260" y1="415.0" x2="300" y2="415.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="415.0" r="12" fill="#3B82F6"/>
+<text x="314" y="419.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="395" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="419.0" font-size="11" fill="#1E3A8A">编辑学习场景</text>
+<text x="338" y="431" font-size="9" fill="#64748B">T025</text>
+<line x1="500" y1="415.0" x2="540" y2="415.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="415.0" r="12" fill="#3B82F6"/>
+<text x="554" y="419.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="395" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="419.0" font-size="11" fill="#1E3A8A">提交场景审核</text>
+<text x="578" y="431" font-size="9" fill="#64748B">T026</text>
+<line x1="740" y1="415.0" x2="780" y2="415.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="415.0" r="12" fill="#3B82F6"/>
+<text x="794" y="419.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="395" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="419.0" font-size="11" fill="#1E3A8A">审核学习场景</text>
+<text x="818" y="431" font-size="9" fill="#64748B">T027</text>
+<rect x="20" y="495" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="517.5" font-size="13" font-weight="bold" fill="white">F004 AI 质量保障循环</text>
+<circle cx="74" cy="560.0" r="12" fill="#3B82F6"/>
+<text x="74" y="564.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="540" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="564.0" font-size="11" fill="#1E3A8A">查看 AI 质量评分概览</text>
+<text x="98" y="576" font-size="9" fill="#64748B">T028</text>
+<line x1="260" y1="560.0" x2="300" y2="560.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="560.0" r="12" fill="#3B82F6"/>
+<text x="314" y="564.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="540" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="564.0" font-size="11" fill="#1E3A8A">查看低分对话并分析</text>
+<text x="338" y="576" font-size="9" fill="#64748B">T029</text>
+<line x1="500" y1="560.0" x2="540" y2="560.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="560.0" r="12" fill="#3B82F6"/>
+<text x="554" y="564.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="540" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="564.0" font-size="11" fill="#1E3A8A">检测异常对话</text>
+<text x="578" y="576" font-size="9" fill="#64748B">T039</text>
+<line x1="740" y1="560.0" x2="780" y2="560.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="560.0" r="12" fill="#3B82F6"/>
+<text x="794" y="564.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="540" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="564.0" font-size="11" fill="#1E3A8A">管理 Prompt 模板</text>
+<text x="818" y="576" font-size="9" fill="#64748B">T040</text>
+<line x1="980" y1="560.0" x2="1020" y2="560.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1034" cy="560.0" r="12" fill="#3B82F6"/>
+<text x="1034" y="564.0" text-anchor="middle" font-size="10" fill="white">5</text>
+<rect x="1050" y="540" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1058" y="564.0" font-size="11" fill="#1E3A8A">查看发音分析报告</text>
+<text x="1058" y="576" font-size="9" fill="#64748B">T041</text>
+<rect x="20" y="640" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="662.5" font-size="13" font-weight="bold" fill="white">F005 订阅付费链路</text>
+<circle cx="74" cy="705.0" r="12" fill="#3B82F6"/>
+<text x="74" y="709.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="685" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="709.0" font-size="11" fill="#1E3A8A">触达每日对话限额</text>
+<text x="98" y="721" font-size="9" fill="#64748B">T007</text>
+<line x1="260" y1="705.0" x2="300" y2="705.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="705.0" r="12" fill="#3B82F6"/>
+<text x="314" y="709.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="685" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="709.0" font-size="11" fill="#1E3A8A">订阅付费方案</text>
+<text x="338" y="721" font-size="9" fill="#64748B">T021</text>
+<line x1="500" y1="705.0" x2="540" y2="705.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="705.0" r="12" fill="#3B82F6"/>
+<text x="554" y="709.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="685" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="709.0" font-size="11" fill="#1E3A8A">RevenueCat Webho…</text>
+<text x="578" y="721" font-size="9" fill="#64748B">T021</text>
+<rect x="20" y="785" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="807.5" font-size="13" font-weight="bold" fill="white">F006 用户管理与合规</text>
+<circle cx="74" cy="850.0" r="12" fill="#3B82F6"/>
+<text x="74" y="854.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="830" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="854.0" font-size="11" fill="#1E3A8A">搜索用户</text>
+<text x="98" y="866" font-size="9" fill="#64748B">T032</text>
+<line x1="260" y1="850.0" x2="300" y2="850.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="850.0" r="12" fill="#3B82F6"/>
+<text x="314" y="854.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="830" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="854.0" font-size="11" fill="#1E3A8A">查看用户详情</text>
+<text x="338" y="866" font-size="9" fill="#64748B">T033</text>
+<line x1="500" y1="850.0" x2="540" y2="850.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="850.0" r="12" fill="#3B82F6"/>
+<text x="554" y="854.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="830" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="854.0" font-size="11" fill="#1E3A8A">封禁用户</text>
+<text x="578" y="866" font-size="9" fill="#64748B">T034</text>
+<line x1="740" y1="850.0" x2="780" y2="850.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="850.0" r="12" fill="#3B82F6"/>
+<text x="794" y="854.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="830" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="854.0" font-size="11" fill="#1E3A8A">解封用户</text>
+<text x="818" y="866" font-size="9" fill="#64748B">T035</text>
+<rect x="20" y="930" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="952.5" font-size="13" font-weight="bold" fill="white">F007 数据驱动运营循环</text>
+<circle cx="74" cy="995.0" r="12" fill="#3B82F6"/>
+<text x="74" y="999.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="975" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="999.0" font-size="11" fill="#1E3A8A">查看核心指标仪表盘</text>
+<text x="98" y="1011" font-size="9" fill="#64748B">T030</text>
+<line x1="260" y1="995.0" x2="300" y2="995.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="995.0" r="12" fill="#3B82F6"/>
+<text x="314" y="999.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="975" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="999.0" font-size="11" fill="#1E3A8A">设置指标预警阈值</text>
+<text x="338" y="1011" font-size="9" fill="#64748B">T031</text>
+<line x1="500" y1="995.0" x2="540" y2="995.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="554" cy="995.0" r="12" fill="#3B82F6"/>
+<text x="554" y="999.0" text-anchor="middle" font-size="10" fill="white">3</text>
+<rect x="570" y="975" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="578" y="999.0" font-size="11" fill="#1E3A8A">查看用户行为分析</text>
+<text x="578" y="1011" font-size="9" fill="#64748B">T047</text>
+<line x1="740" y1="995.0" x2="780" y2="995.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="794" cy="995.0" r="12" fill="#3B82F6"/>
+<text x="794" y="999.0" text-anchor="middle" font-size="10" fill="white">4</text>
+<rect x="810" y="975" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="818" y="999.0" font-size="11" fill="#1E3A8A">管理 A/B 测试</text>
+<text x="818" y="1011" font-size="9" fill="#64748B">T048</text>
+<line x1="980" y1="995.0" x2="1020" y2="995.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="1034" cy="995.0" r="12" fill="#3B82F6"/>
+<text x="1034" y="999.0" text-anchor="middle" font-size="10" fill="white">5</text>
+<rect x="1050" y="975" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="1058" y="999.0" font-size="11" fill="#1E3A8A">生成/导出运营报告</text>
+<text x="1058" y="1011" font-size="9" fill="#64748B">T049</text>
+<rect x="20" y="1075" width="2240" height="35" rx="6" fill="#1E293B"/>
+<text x="40" y="1097.5" font-size="13" font-weight="bold" fill="white">F008 用户投诉处理</text>
+<circle cx="74" cy="1140.0" r="12" fill="#3B82F6"/>
+<text x="74" y="1144.0" text-anchor="middle" font-size="10" fill="white">1</text>
+<rect x="90" y="1120" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="98" y="1144.0" font-size="11" fill="#1E3A8A">处理用户投诉</text>
+<text x="98" y="1156" font-size="9" fill="#64748B">T044</text>
+<line x1="260" y1="1140.0" x2="300" y2="1140.0" stroke="#64748B" stroke-width="1.5" marker-end="url(#arrow)"/>
+<circle cx="314" cy="1140.0" r="12" fill="#3B82F6"/>
+<text x="314" y="1144.0" text-anchor="middle" font-size="10" fill="white">2</text>
+<rect x="330" y="1120" width="170" height="40" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+<text x="338" y="1144.0" font-size="11" fill="#1E3A8A">查看用户反馈</text>
+<text x="338" y="1156" font-size="9" fill="#64748B">T045</text>
+</svg>

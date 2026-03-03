@@ -1,0 +1,2948 @@
+{
+  "split_by": "role",
+  "split_value": "R001",
+  "split_label": "职场人士",
+  "description": "角色 R001（职场人士）的用例子集",
+  "generated_at": "2026-03-03T16:22:11Z",
+  "count": 1,
+  "items": [
+    {
+      "version": "2.4.0",
+      "generated_at": "2026-03-03T16:21:18Z",
+      "summary": {
+        "role_id": "R001",
+        "role_name": "职场人士",
+        "feature_area_count": 8,
+        "use_case_count": 88,
+        "happy_path_count": 26,
+        "exception_count": 32,
+        "boundary_count": 6,
+        "validation_count": 12,
+        "e2e_count": 8
+      },
+      "feature_areas": [
+        {
+          "id": "FA001",
+          "name": "认证",
+          "tasks": [
+            {
+              "id": "T001",
+              "task_name": "注册账号",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC001",
+                  "title": "注册账号_正常流",
+                  "type": "happy_path",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "具备注册账号的操作权限"
+                  ],
+                  "when": [
+                    "选择注册方式（邮箱）",
+                    "填写邮箱和密码",
+                    "提交注册",
+                    "系统创建账号并返回 JWT"
+                  ],
+                  "then": [
+                    "注册账号操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S032",
+                  "action_ref": "注册账号",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC002",
+                  "title": "注册账号_邮箱已存在",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "正在执行注册账号"
+                  ],
+                  "when": [
+                    "邮箱已存在"
+                  ],
+                  "then": [
+                    "提示已注册"
+                  ],
+                  "screen_ref": "S032",
+                  "action_ref": "注册账号",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC003",
+                  "title": "注册账号_校验_邮箱格式",
+                  "type": "validation",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "正在执行注册账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 邮箱格式"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 邮箱格式"
+                  ],
+                  "screen_ref": "S032",
+                  "action_ref": "提交注册",
+                  "validation_rule": "邮箱格式",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Given 为“用户已登录”不符合注册场景，且未校验不创建用户数据。: 改为“用户未登录”，并断言数据库未创建新用户记录。"
+                  ]
+                },
+                {
+                  "id": "UC004",
+                  "title": "注册账号_校验_密码长度 ≥ 8",
+                  "type": "validation",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "正在执行注册账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 密码长度 ≥ 8"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 密码长度 ≥ 8"
+                  ],
+                  "screen_ref": "S032",
+                  "action_ref": "提交注册",
+                  "validation_rule": "密码长度 ≥ 8",
+                  "flags": []
+                },
+                {
+                  "id": "UC005",
+                  "title": "注册账号_校验_两次密码一致",
+                  "type": "validation",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "正在执行注册账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 两次密码一致"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 两次密码一致"
+                  ],
+                  "screen_ref": "S032",
+                  "action_ref": "提交注册",
+                  "validation_rule": "两次密码一致",
+                  "flags": []
+                },
+                {
+                  "id": "UC144",
+                  "title": "[XV] 注册账号_并发注册相同邮箱",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "注册账号_并发注册相同邮箱"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "注册账号",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T002",
+              "task_name": "登录账号",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC006",
+                  "title": "登录账号_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备登录账号的操作权限"
+                  ],
+                  "when": [
+                    "输入邮箱和密码",
+                    "提交登录",
+                    "系统验证并返回 access_token + refresh_token"
+                  ],
+                  "then": [
+                    "登录账号操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S001",
+                  "action_ref": "登录账号",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC007",
+                  "title": "登录账号_密码错误",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "密码错误"
+                  ],
+                  "then": [
+                    "提示凭证无效"
+                  ],
+                  "screen_ref": "S001",
+                  "action_ref": "登录账号",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Given 写“用户已登录”与“正在执行登录账号”逻辑冲突，且未校验账户锁定、失败次数等数据状态。: 将 Given 改为“用户未登录且存在有效账号”，并在 Then 中增加失败次数记录及账户状态不变的断言。"
+                  ]
+                },
+                {
+                  "id": "UC008",
+                  "title": "登录账号_账号被封禁",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "账号被封禁"
+                  ],
+                  "then": [
+                    "提示已封禁"
+                  ],
+                  "screen_ref": "S001",
+                  "action_ref": "登录账号",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": []
+                },
+                {
+                  "id": "UC009",
+                  "title": "登录账号_校验_邮箱格式校验",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 邮箱格式校验"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 邮箱格式校验"
+                  ],
+                  "screen_ref": "S001",
+                  "action_ref": "登录",
+                  "validation_rule": "邮箱格式校验",
+                  "flags": []
+                },
+                {
+                  "id": "UC010",
+                  "title": "登录账号_校验_密码非空",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 密码非空"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 密码非空"
+                  ],
+                  "screen_ref": "S001",
+                  "action_ref": "登录",
+                  "validation_rule": "密码非空",
+                  "flags": []
+                },
+                {
+                  "id": "UC011",
+                  "title": "登录账号_校验_邮箱格式",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 邮箱格式"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 邮箱格式"
+                  ],
+                  "screen_ref": "S037",
+                  "action_ref": "登录",
+                  "validation_rule": "邮箱格式",
+                  "flags": []
+                },
+                {
+                  "id": "UC012",
+                  "title": "登录账号_校验_密码非空",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行登录账号"
+                  ],
+                  "when": [
+                    "违反校验规则: 密码非空"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 密码非空"
+                  ],
+                  "screen_ref": "S037",
+                  "action_ref": "登录",
+                  "validation_rule": "密码非空",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T003",
+              "task_name": "刷新登录凭证",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC013",
+                  "title": "刷新登录凭证_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备刷新登录凭证的操作权限"
+                  ],
+                  "when": [
+                    "客户端检测 access_token 过期",
+                    "用 refresh_token 请求新 token",
+                    "服务端验证并签发新 access_token"
+                  ],
+                  "then": [
+                    "刷新登录凭证操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": null,
+                  "action_ref": "刷新登录凭证",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 未校验旧 access_token 失效、新 token 生效及签发字段正确性。: 增加断言：返回新 access_token、过期时间刷新、旧 token 不再可用。"
+                  ]
+                },
+                {
+                  "id": "UC014",
+                  "title": "刷新登录凭证_refresh_token 过期",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行刷新登录凭证"
+                  ],
+                  "when": [
+                    "refresh_token 过期"
+                  ],
+                  "then": [
+                    "引导重新登录"
+                  ],
+                  "screen_ref": null,
+                  "action_ref": "刷新登录凭证",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC145",
+                  "title": "[XV] 刷新登录凭证_刷新后旧token立即失效",
+                  "type": "timing",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "刷新登录凭证_刷新后旧token立即失效"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "刷新登录凭证",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T004",
+              "task_name": "退出登录",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC015",
+                  "title": "退出登录_正常流",
+                  "type": "happy_path",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "具备退出登录的操作权限"
+                  ],
+                  "when": [
+                    "用户点击退出",
+                    "客户端调用 logout API",
+                    "服务端注销 refresh_token"
+                  ],
+                  "then": [
+                    "退出登录操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": null,
+                  "action_ref": "退出登录",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 未验证 refresh_token 实际失效及后续访问受限，仅提示成功。: 增加断言：refresh_token 被标记失效，使用旧 token 请求接口返回 401。"
+                  ]
+                },
+                {
+                  "id": "UC016",
+                  "title": "退出登录_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "退出登录",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                },
+                {
+                  "id": "UC146",
+                  "title": "[XV] 退出登录_退出后token立即失效",
+                  "type": "timing",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "退出登录_退出后token立即失效"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "退出登录",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T046",
+              "task_name": "获取当前用户信息",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC017",
+                  "title": "获取当前用户信息_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备获取当前用户信息的操作权限"
+                  ],
+                  "when": [
+                    "App 启动或页面刷新",
+                    "携带 JWT 请求 /auth/me",
+                    "返回当前用户信息（ID/昵称/头像/订阅等级）"
+                  ],
+                  "then": [
+                    "获取当前用户信息操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "获取当前用户信息",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅提示成功，未校验返回字段完整性与 JWT 有效性。: 增加断言：返回字段完整且与数据库一致，JWT 校验通过。"
+                  ]
+                },
+                {
+                  "id": "UC018",
+                  "title": "获取当前用户信息_token 无效",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行获取当前用户信息"
+                  ],
+                  "when": [
+                    "token 无效"
+                  ],
+                  "then": [
+                    "401 引导登录"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "获取当前用户信息",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC019",
+                  "title": "获取当前用户信息_边界_JWT 必须有效",
+                  "type": "boundary",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行获取当前用户信息"
+                  ],
+                  "when": [
+                    "触发边界条件: JWT 必须有效"
+                  ],
+                  "then": [
+                    "系统按规则处理: JWT 必须有效"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "获取当前用户信息",
+                  "rule_source": "task.rules[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T051",
+              "task_name": "重置密码",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC020",
+                  "title": "重置密码_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备重置密码的操作权限"
+                  ],
+                  "when": [
+                    "点击忘记密码",
+                    "输入注册邮箱",
+                    "收到重置链接/验证码",
+                    "设置新密码"
+                  ],
+                  "then": [
+                    "重置密码操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S033",
+                  "action_ref": "重置密码",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC021",
+                  "title": "重置密码_邮箱未注册",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行重置密码"
+                  ],
+                  "when": [
+                    "邮箱未注册"
+                  ],
+                  "then": [
+                    "不提示（防枚举）"
+                  ],
+                  "screen_ref": "S033",
+                  "action_ref": "重置密码",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC022",
+                  "title": "重置密码_链接过期",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行重置密码"
+                  ],
+                  "when": [
+                    "链接过期"
+                  ],
+                  "then": [
+                    "提示重新申请"
+                  ],
+                  "screen_ref": "S033",
+                  "action_ref": "重置密码",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Given 为“用户已登录”与重置密码场景不符，且未校验 token 失效状态。: 改为“用户通过重置链接访问且未登录”，并断言重置 token 标记为过期。"
+                  ]
+                },
+                {
+                  "id": "UC023",
+                  "title": "重置密码_边界_重置链接有效期限制",
+                  "type": "boundary",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行重置密码"
+                  ],
+                  "when": [
+                    "触发边界条件: 重置链接有效期限制"
+                  ],
+                  "then": [
+                    "系统按规则处理: 重置链接有效期限制"
+                  ],
+                  "screen_ref": "S033",
+                  "action_ref": "重置密码",
+                  "rule_source": "task.rules[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC024",
+                  "title": "重置密码_校验_邮箱格式",
+                  "type": "validation",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行重置密码"
+                  ],
+                  "when": [
+                    "违反校验规则: 邮箱格式"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 邮箱格式"
+                  ],
+                  "screen_ref": "S033",
+                  "action_ref": "发送重置链接",
+                  "validation_rule": "邮箱格式",
+                  "flags": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA002",
+          "name": "场景学习",
+          "tasks": [
+            {
+              "id": "T005",
+              "task_name": "浏览学习场景列表",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC025",
+                  "title": "浏览学习场景列表_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备浏览学习场景列表的操作权限"
+                  ],
+                  "when": [
+                    "打开学习页",
+                    "查看已发布场景列表（按难度/标签/角色筛选）",
+                    "翻页浏览"
+                  ],
+                  "then": [
+                    "浏览学习场景列表操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S003",
+                  "action_ref": "浏览学习场景列表",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅验证成功提示，未校验列表数据正确性、筛选结果、分页数据一致性。: 增加列表返回数据条数、筛选条件生效、分页边界及排序正确性的断言。"
+                  ]
+                },
+                {
+                  "id": "UC026",
+                  "title": "浏览学习场景列表_无匹配场景",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行浏览学习场景列表"
+                  ],
+                  "when": [
+                    "无匹配场景"
+                  ],
+                  "then": [
+                    "展示空状态引导"
+                  ],
+                  "screen_ref": "S003",
+                  "action_ref": "浏览学习场景列表",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T006",
+              "task_name": "查看场景详情",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC027",
+                  "title": "查看场景详情_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看场景详情的操作权限"
+                  ],
+                  "when": [
+                    "点击场景卡片",
+                    "查看标题/描述/难度/目标角色",
+                    "查看个人进度（若有历史对话）",
+                    "决定是否开始对话"
+                  ],
+                  "then": [
+                    "查看场景详情操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "查看场景详情",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC028",
+                  "title": "查看场景详情_场景不存在",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看场景详情"
+                  ],
+                  "when": [
+                    "场景不存在"
+                  ],
+                  "then": [
+                    "404"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "查看场景详情",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T017",
+              "task_name": "查看个性化场景推荐",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC029",
+                  "title": "查看个性化场景推荐_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看个性化场景推荐的操作权限"
+                  ],
+                  "when": [
+                    "打开首页",
+                    "查看推荐场景列表",
+                    "点击感兴趣的场景进入详情"
+                  ],
+                  "then": [
+                    "查看个性化场景推荐操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "查看个性化场景推荐",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC030",
+                  "title": "查看个性化场景推荐_新用户无历史",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看个性化场景推荐"
+                  ],
+                  "when": [
+                    "新用户无历史"
+                  ],
+                  "then": [
+                    "推荐入门场景"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "查看个性化场景推荐",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA003",
+          "name": "AI 对话",
+          "tasks": [
+            {
+              "id": "T007",
+              "task_name": "发起 AI 对话",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC052",
+                  "title": "发起 AI 对话_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备发起 AI 对话的操作权限"
+                  ],
+                  "when": [
+                    "选择场景（或自由对话）",
+                    "创建新对话会话",
+                    "系统检查每日对话限额（CN001）",
+                    "进入对话界面"
+                  ],
+                  "then": [
+                    "发起 AI 对话操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "发起 AI 对话",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "未校验每日限额逻辑结果、会话创建成功及数据落库。: 增加断言：生成会话ID、写入数据库、当超限时返回限制提示。"
+                  ]
+                },
+                {
+                  "id": "UC053",
+                  "title": "发起 AI 对话_达到每日限额",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发起 AI 对话"
+                  ],
+                  "when": [
+                    "达到每日限额"
+                  ],
+                  "then": [
+                    "提示升级订阅"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "发起 AI 对话",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC054",
+                  "title": "发起 AI 对话_系统异常",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发起 AI 对话"
+                  ],
+                  "when": [
+                    "系统异常"
+                  ],
+                  "then": [
+                    "提示稍后重试"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "发起 AI 对话",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": []
+                },
+                {
+                  "id": "UC055",
+                  "title": "发起 AI 对话_边界_免费用户每日 3 轮对话限制（CN001",
+                  "type": "boundary",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发起 AI 对话"
+                  ],
+                  "when": [
+                    "触发边界条件: 免费用户每日 3 轮对话限制（CN001）"
+                  ],
+                  "then": [
+                    "系统按规则处理: 免费用户每日 3 轮对话限制（CN001）"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "发起 AI 对话",
+                  "rule_source": "task.rules[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC056",
+                  "title": "发起 AI 对话_边界_付费用户无限制",
+                  "type": "boundary",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发起 AI 对话"
+                  ],
+                  "when": [
+                    "触发边界条件: 付费用户无限制"
+                  ],
+                  "then": [
+                    "系统按规则处理: 付费用户无限制"
+                  ],
+                  "screen_ref": "S004",
+                  "action_ref": "发起 AI 对话",
+                  "rule_source": "task.rules[1]",
+                  "flags": []
+                },
+                {
+                  "id": "UC147",
+                  "title": "[XV] 发起AI对话_并发达到限额边界",
+                  "type": "concurrency",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "发起AI对话_并发达到限额边界"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "发起 AI 对话",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                },
+                {
+                  "id": "UC154",
+                  "title": "[XV] 发起AI对话_免费用户边界_第3轮对话后限额",
+                  "type": "boundary",
+                  "priority": "高",
+                  "given": [],
+                  "when": [
+                    "发起AI对话_免费用户边界_第3轮对话后限额"
+                  ],
+                  "then": [],
+                  "screen_ref": null,
+                  "action_ref": "发起 AI 对话",
+                  "exception_source": null,
+                  "flags": [
+                    "XV_EDGE_CASE"
+                  ],
+                  "xv_source": "edge_case_generation"
+                }
+              ]
+            },
+            {
+              "id": "T008",
+              "task_name": "发送文本消息并接收 AI 回复",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC057",
+                  "title": "发送文本消息并接收 AI 回复_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备发送文本消息并接收 AI 回复的操作权限"
+                  ],
+                  "when": [
+                    "输入文本消息",
+                    "提交到后端",
+                    "后端调用 LLM 生成回复（SSE 流式）",
+                    "实时展示 AI 回复"
+                  ],
+                  "then": [
+                    "发送文本消息并接收 AI 回复操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息并接收 AI 回复",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC058",
+                  "title": "发送文本消息并接收 AI 回复_LLM 调用超时",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送文本消息并接收 AI 回复"
+                  ],
+                  "when": [
+                    "LLM 调用超时"
+                  ],
+                  "then": [
+                    "返回错误提示"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息并接收 AI 回复",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC059",
+                  "title": "发送文本消息并接收 AI 回复_网络断开",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送文本消息并接收 AI 回复"
+                  ],
+                  "when": [
+                    "网络断开"
+                  ],
+                  "then": [
+                    "提示重试"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息并接收 AI 回复",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": []
+                },
+                {
+                  "id": "UC060",
+                  "title": "发送文本消息并接收 AI 回复_校验_消息非空",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送文本消息并接收 AI 回复"
+                  ],
+                  "when": [
+                    "违反校验规则: 消息非空"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 消息非空"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息",
+                  "validation_rule": "消息非空",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T009",
+              "task_name": "发送语音消息并获取发音评估",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC061",
+                  "title": "发送语音消息并获取发音评估_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备发送语音消息并获取发音评估的操作权限"
+                  ],
+                  "when": [
+                    "录制语音",
+                    "上传音频到后端",
+                    "Azure STT 转文字",
+                    "Azure 发音评估（音素级）",
+                    "LLM 生成 AI 回复（SSE）",
+                    "展示转写文本 + 发音分数 + AI 回复"
+                  ],
+                  "then": [
+                    "发送语音消息并获取发音评估操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送语音消息并获取发音评估",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC062",
+                  "title": "发送语音消息并获取发音评估_语音识别失败",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送语音消息并获取发音评估"
+                  ],
+                  "when": [
+                    "语音识别失败"
+                  ],
+                  "then": [
+                    "提示重新录制"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送语音消息并获取发音评估",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC063",
+                  "title": "发送语音消息并获取发音评估_音频过短",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送语音消息并获取发音评估"
+                  ],
+                  "when": [
+                    "音频过短"
+                  ],
+                  "then": [
+                    "提示说长一点"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送语音消息并获取发音评估",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": []
+                },
+                {
+                  "id": "UC064",
+                  "title": "发送语音消息并获取发音评估_校验_消息非空",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行发送语音消息并获取发音评估"
+                  ],
+                  "when": [
+                    "违反校验规则: 消息非空"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 消息非空"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息",
+                  "validation_rule": "消息非空",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T010",
+              "task_name": "结束对话并查看报告",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC065",
+                  "title": "结束对话并查看报告_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备结束对话并查看报告的操作权限"
+                  ],
+                  "when": [
+                    "点击结束对话",
+                    "系统生成对话报告（总分/语法错误/表达建议）",
+                    "查看报告详情"
+                  ],
+                  "then": [
+                    "结束对话并查看报告操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S006",
+                  "action_ref": "结束对话并查看报告",
+                  "exception_source": null,
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅描述“操作成功”和“提示成功”，未校验报告内容（总分/语法错误/表达建议）是否正确生成与持久化，也缺少失败或数据完整性断言。: 在 Then 中增加报告字段完整性校验（包含总分、错误列表、建议列表）、数据持久化校验，以及对话状态已变更为“已结束”的断言。"
+                  ]
+                },
+                {
+                  "id": "UC066",
+                  "title": "结束对话并查看报告_对话已结束",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行结束对话并查看报告"
+                  ],
+                  "when": [
+                    "对话已结束"
+                  ],
+                  "then": [
+                    "提示不可重复结束"
+                  ],
+                  "screen_ref": "S006",
+                  "action_ref": "结束对话并查看报告",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T011",
+              "task_name": "查看历史对话列表",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC067",
+                  "title": "查看历史对话列表_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看历史对话列表的操作权限"
+                  ],
+                  "when": [
+                    "打开对话历史页",
+                    "查看所有历史对话（分页）",
+                    "点击查看某次对话详情和报告"
+                  ],
+                  "then": [
+                    "查看历史对话列表操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S036",
+                  "action_ref": "查看历史对话列表",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC068",
+                  "title": "查看历史对话列表_无历史",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看历史对话列表"
+                  ],
+                  "when": [
+                    "无历史"
+                  ],
+                  "then": [
+                    "空状态引导"
+                  ],
+                  "screen_ref": "S036",
+                  "action_ref": "查看历史对话列表",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅写“空状态引导”，未验证返回数据为空及不报错。: 增加断言：接口返回空数组、页面展示空状态组件且无异常日志。"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T022",
+              "task_name": "对话中自动收集生词",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC069",
+                  "title": "对话中自动收集生词_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备对话中自动收集生词的操作权限"
+                  ],
+                  "when": [
+                    "对话进行中",
+                    "系统自动识别新词汇",
+                    "写入 vocabulary_items（source_type=auto_collected）",
+                    "自动创建 review_card"
+                  ],
+                  "then": [
+                    "对话中自动收集生词操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "对话中自动收集生词",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC070",
+                  "title": "对话中自动收集生词_已存在词汇",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行对话中自动收集生词"
+                  ],
+                  "when": [
+                    "已存在词汇"
+                  ],
+                  "then": [
+                    "跳过"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "对话中自动收集生词",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC071",
+                  "title": "对话中自动收集生词_校验_消息非空",
+                  "type": "validation",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行对话中自动收集生词"
+                  ],
+                  "when": [
+                    "违反校验规则: 消息非空"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 消息非空"
+                  ],
+                  "screen_ref": "S005",
+                  "action_ref": "发送文本消息",
+                  "validation_rule": "消息非空",
+                  "flags": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA004",
+          "name": "词汇复习",
+          "tasks": [
+            {
+              "id": "T012",
+              "task_name": "复习今日到期词汇卡",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC080",
+                  "title": "复习今日到期词汇卡_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备复习今日到期词汇卡的操作权限"
+                  ],
+                  "when": [
+                    "打开复习页",
+                    "查看今日到期卡片",
+                    "逐张复习（看词→回忆→评分）",
+                    "FSRS 算法重新计算下次复习时间"
+                  ],
+                  "then": [
+                    "复习今日到期词汇卡操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S007",
+                  "action_ref": "复习今日到期词汇卡",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC081",
+                  "title": "复习今日到期词汇卡_无到期卡片",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行复习今日到期词汇卡"
+                  ],
+                  "when": [
+                    "无到期卡片"
+                  ],
+                  "then": [
+                    "提示今日已完成"
+                  ],
+                  "screen_ref": "S007",
+                  "action_ref": "复习今日到期词汇卡",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T013",
+              "task_name": "查看复习统计摘要",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC082",
+                  "title": "查看复习统计摘要_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看复习统计摘要的操作权限"
+                  ],
+                  "when": [
+                    "完成复习后",
+                    "查看本次复习统计（复习数/正确率/掌握进度）"
+                  ],
+                  "then": [
+                    "查看复习统计摘要操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S007",
+                  "action_ref": "查看复习统计摘要",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC083",
+                  "title": "查看复习统计摘要_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S007",
+                  "action_ref": "查看复习统计摘要",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T023",
+              "task_name": "手动添加词汇到生词本",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC084",
+                  "title": "手动添加词汇到生词本_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备手动添加词汇到生词本的操作权限"
+                  ],
+                  "when": [
+                    "进入生词本",
+                    "点击添加",
+                    "输入单词/释义/例句",
+                    "保存并创建 review_card"
+                  ],
+                  "then": [
+                    "手动添加词汇到生词本操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": null,
+                  "action_ref": "手动添加词汇到生词本",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC085",
+                  "title": "手动添加词汇到生词本_已存在",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行手动添加词汇到生词本"
+                  ],
+                  "when": [
+                    "已存在"
+                  ],
+                  "then": [
+                    "提示重复"
+                  ],
+                  "screen_ref": null,
+                  "action_ref": "手动添加词汇到生词本",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA005",
+          "name": "成就激励",
+          "tasks": [
+            {
+              "id": "T014",
+              "task_name": "查看学习连续天数",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC086",
+                  "title": "查看学习连续天数_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备查看学习连续天数的操作权限"
+                  ],
+                  "when": [
+                    "打开首页或个人页",
+                    "查看当前连续天数和历史最长连续天数",
+                    "查看上次活跃日期"
+                  ],
+                  "then": [
+                    "查看学习连续天数操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "查看学习连续天数",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC087",
+                  "title": "查看学习连续天数_断签",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看学习连续天数"
+                  ],
+                  "when": [
+                    "断签"
+                  ],
+                  "then": [
+                    "连续天数归零"
+                  ],
+                  "screen_ref": "S002",
+                  "action_ref": "查看学习连续天数",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T015",
+              "task_name": "恢复断签连续天数",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC088",
+                  "title": "恢复断签连续天数_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备恢复断签连续天数的操作权限"
+                  ],
+                  "when": [
+                    "断签后查看恢复选项",
+                    "点击恢复",
+                    "系统检查本月恢复次数",
+                    "恢复连续天数"
+                  ],
+                  "then": [
+                    "恢复断签连续天数操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S008",
+                  "action_ref": "恢复断签连续天数",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC089",
+                  "title": "恢复断签连续天数_本月已恢复过",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行恢复断签连续天数"
+                  ],
+                  "when": [
+                    "本月已恢复过"
+                  ],
+                  "then": [
+                    "提示下月再试"
+                  ],
+                  "screen_ref": "S008",
+                  "action_ref": "恢复断签连续天数",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC090",
+                  "title": "恢复断签连续天数_边界_每月最多恢复 1 次",
+                  "type": "boundary",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行恢复断签连续天数"
+                  ],
+                  "when": [
+                    "触发边界条件: 每月最多恢复 1 次"
+                  ],
+                  "then": [
+                    "系统按规则处理: 每月最多恢复 1 次"
+                  ],
+                  "screen_ref": "S008",
+                  "action_ref": "恢复断签连续天数",
+                  "rule_source": "task.rules[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T016",
+              "task_name": "查看成就列表",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC091",
+                  "title": "查看成就列表_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看成就列表的操作权限"
+                  ],
+                  "when": [
+                    "打开成就页",
+                    "查看所有成就（已获得/未解锁）",
+                    "查看获取条件和获取时间"
+                  ],
+                  "then": [
+                    "查看成就列表操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S008",
+                  "action_ref": "查看成就列表",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC092",
+                  "title": "查看成就列表_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S008",
+                  "action_ref": "查看成就列表",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA006",
+          "name": "通知",
+          "tasks": [
+            {
+              "id": "T018",
+              "task_name": "查看通知列表",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC093",
+                  "title": "查看通知列表_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备查看通知列表的操作权限"
+                  ],
+                  "when": [
+                    "打开通知中心",
+                    "查看通知列表（分页）",
+                    "点击查看详情"
+                  ],
+                  "then": [
+                    "查看通知列表操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S009",
+                  "action_ref": "查看通知列表",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC094",
+                  "title": "查看通知列表_无通知",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行查看通知列表"
+                  ],
+                  "when": [
+                    "无通知"
+                  ],
+                  "then": [
+                    "空状态"
+                  ],
+                  "screen_ref": "S009",
+                  "action_ref": "查看通知列表",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                }
+              ]
+            },
+            {
+              "id": "T019",
+              "task_name": "标记通知已读",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC095",
+                  "title": "标记通知已读_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备标记通知已读的操作权限"
+                  ],
+                  "when": [
+                    "点击通知",
+                    "系统标记为已读"
+                  ],
+                  "then": [
+                    "标记通知已读操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S009",
+                  "action_ref": "标记通知已读",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC096",
+                  "title": "标记通知已读_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S009",
+                  "action_ref": "标记通知已读",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T020",
+              "task_name": "管理推送通知偏好",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC097",
+                  "title": "管理推送通知偏好_正常流",
+                  "type": "happy_path",
+                  "priority": "低",
+                  "given": [
+                    "用户已登录",
+                    "具备管理推送通知偏好的操作权限"
+                  ],
+                  "when": [
+                    "打开设置",
+                    "调整推送/邮件通知开关",
+                    "保存偏好"
+                  ],
+                  "then": [
+                    "管理推送通知偏好操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S009",
+                  "action_ref": "管理推送通知偏好",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC098",
+                  "title": "管理推送通知偏好_无异常定义",
+                  "type": "exception",
+                  "priority": "低",
+                  "given": [],
+                  "when": [],
+                  "then": [],
+                  "screen_ref": "S009",
+                  "action_ref": "管理推送通知偏好",
+                  "exception_source": null,
+                  "flags": [
+                    "NO_EXCEPTION_CASES"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA007",
+          "name": "订阅",
+          "tasks": [
+            {
+              "id": "T021",
+              "task_name": "订阅付费方案",
+              "category": "basic",
+              "use_cases": [
+                {
+                  "id": "UC099",
+                  "title": "订阅付费方案_正常流",
+                  "type": "happy_path",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "具备订阅付费方案的操作权限"
+                  ],
+                  "when": [
+                    "查看订阅方案（免费/月付/年付）",
+                    "选择方案",
+                    "通过 RevenueCat 完成支付",
+                    "系统更新 subscription_tier"
+                  ],
+                  "then": [
+                    "订阅付费方案操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S035",
+                  "action_ref": "订阅付费方案",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC100",
+                  "title": "订阅付费方案_支付失败",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行订阅付费方案"
+                  ],
+                  "when": [
+                    "支付失败"
+                  ],
+                  "then": [
+                    "提示重试"
+                  ],
+                  "screen_ref": "S035",
+                  "action_ref": "订阅付费方案",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC101",
+                  "title": "订阅付费方案_Webhook 验证失败",
+                  "type": "exception",
+                  "priority": "高",
+                  "given": [
+                    "用户已登录",
+                    "正在执行订阅付费方案"
+                  ],
+                  "when": [
+                    "Webhook 验证失败"
+                  ],
+                  "then": [
+                    "忽略请求"
+                  ],
+                  "screen_ref": "S035",
+                  "action_ref": "订阅付费方案",
+                  "exception_source": "task.exceptions[1]",
+                  "flags": [],
+                  "xv_flag": "weak_criteria",
+                  "xv_notes": [
+                    "Then 仅写“忽略请求”，未验证不产生订单变更或日志记录。: 增加断言：订单状态不变、无订阅变更、记录安全日志。"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FA012",
+          "name": "新手引导",
+          "tasks": [
+            {
+              "id": "T052",
+              "task_name": "新手引导",
+              "category": "core",
+              "use_cases": [
+                {
+                  "id": "UC141",
+                  "title": "新手引导_正常流",
+                  "type": "happy_path",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "具备新手引导的操作权限"
+                  ],
+                  "when": [
+                    "首次注册后进入引导流",
+                    "选择学习目标（职场/旅行/生活）",
+                    "选择英语水平",
+                    "推荐首个学习场景",
+                    "完成引导进入首页"
+                  ],
+                  "then": [
+                    "新手引导操作成功",
+                    "页面展示操作成功提示"
+                  ],
+                  "screen_ref": "S034",
+                  "action_ref": "新手引导",
+                  "exception_source": null,
+                  "flags": []
+                },
+                {
+                  "id": "UC142",
+                  "title": "新手引导_用户跳过引导",
+                  "type": "exception",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行新手引导"
+                  ],
+                  "when": [
+                    "用户跳过引导"
+                  ],
+                  "then": [
+                    "进入首页，后续可重新引导"
+                  ],
+                  "screen_ref": "S034",
+                  "action_ref": "新手引导",
+                  "exception_source": "task.exceptions[0]",
+                  "flags": []
+                },
+                {
+                  "id": "UC143",
+                  "title": "新手引导_校验_至少选择一个目标",
+                  "type": "validation",
+                  "priority": "中",
+                  "given": [
+                    "用户已登录",
+                    "正在执行新手引导"
+                  ],
+                  "when": [
+                    "违反校验规则: 至少选择一个目标"
+                  ],
+                  "then": [
+                    "系统提示校验失败: 至少选择一个目标"
+                  ],
+                  "screen_ref": "S034",
+                  "action_ref": "选择学习目标",
+                  "validation_rule": "至少选择一个目标",
+                  "flags": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "e2e_cases": [
+        {
+          "id": "E2E-F001-01",
+          "type": "e2e",
+          "flow_ref": "F001",
+          "title": "用户认证与入门_正常流",
+          "given": [
+            "用户已登录",
+            "具备用户认证与入门相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T001",
+              "action": "注册账号"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T002",
+              "action": "登录账号"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T003",
+              "action": "刷新登录凭证"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T052",
+              "action": "新手引导"
+            },
+            {
+              "seq": 5,
+              "task_ref": "T017",
+              "action": "查看个性化场景推荐"
+            },
+            {
+              "seq": 6,
+              "task_ref": "T006",
+              "action": "查看场景详情"
+            },
+            {
+              "seq": 7,
+              "task_ref": "T007",
+              "action": "发起 AI 对话"
+            }
+          ],
+          "then": [
+            "用户认证与入门全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T001 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T002 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T003 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T052 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                5
+              ],
+              "description": "seq 5 task T017 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                6
+              ],
+              "description": "seq 6 task T006 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                7
+              ],
+              "description": "seq 7 task T007 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「user_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「user_level」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「learning_goal」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "WEAK_TERMINAL",
+              "seq_pair": [
+                7
+              ],
+              "description": "最后节点 task T007 无 outputs.messages/states 且 main_flow 末步无感知语义",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F002-01",
+          "type": "e2e",
+          "flow_ref": "F002",
+          "title": "核心学习循环_正常流",
+          "given": [
+            "用户已登录",
+            "具备核心学习循环相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T005",
+              "action": "浏览学习场景列表"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T006",
+              "action": "查看场景详情"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T007",
+              "action": "发起 AI 对话"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T008",
+              "action": "发送文本消息并接收 AI 回复"
+            },
+            {
+              "seq": 5,
+              "task_ref": "T010",
+              "action": "结束对话并查看报告"
+            },
+            {
+              "seq": 6,
+              "task_ref": "T022",
+              "action": "对话中自动收集生词"
+            },
+            {
+              "seq": 7,
+              "task_ref": "T012",
+              "action": "复习今日到期词汇卡"
+            },
+            {
+              "seq": 8,
+              "task_ref": "T013",
+              "action": "查看复习统计摘要"
+            },
+            {
+              "seq": 9,
+              "task_ref": "T023",
+              "action": "手动添加词汇到生词本"
+            }
+          ],
+          "then": [
+            "核心学习循环全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T005 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T006 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T007 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T008 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                5
+              ],
+              "description": "seq 5 task T010 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                6
+              ],
+              "description": "seq 6 task T022 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                7
+              ],
+              "description": "seq 7 task T012 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                8
+              ],
+              "description": "seq 8 task T013 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                9
+              ],
+              "description": "seq 9 task T023 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「scenario_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「scenario_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「conversation_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「text_content」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「conversation_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                5,
+                6
+              ],
+              "description": "交接数据「conversation_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                5,
+                6
+              ],
+              "description": "交接数据「new_words」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "WEAK_TERMINAL",
+              "seq_pair": [
+                9
+              ],
+              "description": "最后节点 task T023 无 outputs.messages/states 且 main_flow 末步无感知语义",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F003-01",
+          "type": "e2e",
+          "flow_ref": "F003",
+          "title": "场景内容生命周期_正常流",
+          "given": [
+            "用户已登录",
+            "具备场景内容生命周期相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T024",
+              "action": "创建学习场景草稿"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T025",
+              "action": "编辑学习场景"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T026",
+              "action": "提交场景审核"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T027",
+              "action": "审核学习场景"
+            }
+          ],
+          "then": [
+            "场景内容生命周期全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T024 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T025 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T026 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T027 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「scenario_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「content」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「scenario_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「scenario_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "WEAK_TERMINAL",
+              "seq_pair": [
+                4
+              ],
+              "description": "最后节点 task T027 无 outputs.messages/states 且 main_flow 末步无感知语义",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F004-01",
+          "type": "e2e",
+          "flow_ref": "F004",
+          "title": "AI 质量保障循环_正常流",
+          "given": [
+            "用户已登录",
+            "具备AI 质量保障循环相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T028",
+              "action": "查看 AI 质量评分概览"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T029",
+              "action": "查看低分对话并分析"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T039",
+              "action": "检测异常对话"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T040",
+              "action": "管理 Prompt 模板"
+            },
+            {
+              "seq": 5,
+              "task_ref": "T041",
+              "action": "查看发音分析报告"
+            }
+          ],
+          "then": [
+            "AI 质量保障循环全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T028 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T029 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T039 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T040 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                5
+              ],
+              "description": "seq 5 task T041 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「threshold」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「date_range」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「anomaly_flags」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「problem_patterns」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「improvement_plan」在上游 task 中无语义匹配",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F005-01",
+          "type": "e2e",
+          "flow_ref": "F005",
+          "title": "订阅付费链路_正常流",
+          "given": [
+            "用户已登录",
+            "具备订阅付费链路相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T007",
+              "action": "发起 AI 对话"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T021",
+              "action": "订阅付费方案"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T021",
+              "action": "订阅付费方案"
+            }
+          ],
+          "then": [
+            "订阅付费链路全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T007 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T021 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T021 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「subscription_plans」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「user_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "WEAK_TERMINAL",
+              "seq_pair": [
+                3
+              ],
+              "description": "最后节点 task T021 无 outputs.messages/states 且 main_flow 末步无感知语义",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F006-01",
+          "type": "e2e",
+          "flow_ref": "F006",
+          "title": "用户管理与合规_正常流",
+          "given": [
+            "用户已登录",
+            "具备用户管理与合规相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T032",
+              "action": "搜索用户"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T033",
+              "action": "查看用户详情"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T034",
+              "action": "封禁用户"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T035",
+              "action": "解封用户"
+            }
+          ],
+          "then": [
+            "用户管理与合规全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T032 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T033 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T034 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T035 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「user_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「user_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「ban_reason」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「user_id」在上游 task 中无语义匹配",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F007-01",
+          "type": "e2e",
+          "flow_ref": "F007",
+          "title": "数据驱动运营循环_正常流",
+          "given": [
+            "用户已登录",
+            "具备数据驱动运营循环相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T030",
+              "action": "查看核心指标仪表盘"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T031",
+              "action": "设置指标预警阈值"
+            },
+            {
+              "seq": 3,
+              "task_ref": "T047",
+              "action": "查看用户行为分析"
+            },
+            {
+              "seq": 4,
+              "task_ref": "T048",
+              "action": "管理 A/B 测试"
+            },
+            {
+              "seq": 5,
+              "task_ref": "T049",
+              "action": "生成/导出运营报告"
+            }
+          ],
+          "then": [
+            "数据驱动运营循环全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T030 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T031 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                3
+              ],
+              "description": "seq 3 task T047 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                4
+              ],
+              "description": "seq 4 task T048 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                5
+              ],
+              "description": "seq 5 task T049 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「metric_type」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「threshold」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「date_range」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                2,
+                3
+              ],
+              "description": "交接数据「user_segment」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                3,
+                4
+              ],
+              "description": "交接数据「experiment_config」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「report_type」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「date_range」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                4,
+                5
+              ],
+              "description": "交接数据「format」在上游 task 中无语义匹配",
+              "severity": "中"
+            },
+            {
+              "flag": "WEAK_TERMINAL",
+              "seq_pair": [
+                5
+              ],
+              "description": "最后节点 task T049 无 outputs.messages/states 且 main_flow 末步无感知语义",
+              "severity": "中"
+            }
+          ]
+        },
+        {
+          "id": "E2E-F008-01",
+          "type": "e2e",
+          "flow_ref": "F008",
+          "title": "用户投诉处理_正常流",
+          "given": [
+            "用户已登录",
+            "具备用户投诉处理相关操作权限"
+          ],
+          "steps": [
+            {
+              "seq": 1,
+              "task_ref": "T044",
+              "action": "处理用户投诉"
+            },
+            {
+              "seq": 2,
+              "task_ref": "T045",
+              "action": "查看用户反馈"
+            }
+          ],
+          "then": [
+            "用户投诉处理全链路执行成功"
+          ],
+          "ordering_issues": [
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                1
+              ],
+              "description": "seq 1 task T044 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "UNVERIFIABLE_PRECONDITION",
+              "seq_pair": [
+                2
+              ],
+              "description": "seq 2 task T045 缺少 prerequisites",
+              "severity": "低"
+            },
+            {
+              "flag": "MISSING_HANDOFF_DATA",
+              "seq_pair": [
+                1,
+                2
+              ],
+              "description": "交接数据「feedback_type」在上游 task 中无语义匹配",
+              "severity": "中"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

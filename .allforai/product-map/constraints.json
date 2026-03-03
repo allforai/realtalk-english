@@ -1,88 +1,212 @@
 {
-  "generated_at": "2026-02-27T19:12:18Z",
+  "generated_at": "2026-03-03T16:06:47Z",
   "constraints": [
     {
       "id": "CN001",
       "type": "business",
-      "description": "免费版每天3轮对话限制",
+      "description": "免费用户每日对话上限 3 轮",
       "affected_tasks": [
-        "T002"
+        "T007"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "handlers/conversation.py — rate limit check before conversation creation",
+      "confirmed": true
     },
     {
       "id": "CN002",
       "type": "business",
-      "description": "退款金额不可超过原订单金额",
+      "description": "每月连续签到恢复次数上限 1 次",
       "affected_tasks": [
-        "T034"
+        "T015"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "handlers/streak.py — restorations_this_month check",
+      "confirmed": true
     },
     {
       "id": "CN003",
-      "type": "compliance",
-      "description": "用户注销后数据保留30天",
+      "type": "business",
+      "description": "场景发布需经审核流程（draft → review → published/rejected）",
       "affected_tasks": [
-        "T042"
+        "T024",
+        "T025",
+        "T026",
+        "T027"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "handlers/scenario.py — status state machine",
+      "confirmed": true
     },
     {
       "id": "CN004",
       "type": "business",
-      "description": "连胜中断恢复限每月1次",
+      "description": "封禁用户操作需二次确认（confirmation body required）",
       "affected_tasks": [
-        "T013"
-      ],
-      "enforcement": "soft",
-      "code_status": "missing"
-    },
-    {
-      "id": "CN005",
-      "type": "compliance",
-      "description": "支付操作必须留存审计日志",
-      "affected_tasks": [
-        "T022",
-        "T024",
         "T034"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "handlers/user_mgmt.py — requires confirmation body",
+      "confirmed": true
+    },
+    {
+      "id": "CN005",
+      "type": "business",
+      "description": "RevenueCat Webhook 必须验证 HMAC 签名",
+      "affected_tasks": [
+        "T021"
+      ],
+      "enforcement": "hard",
+      "code_status": "implemented",
+      "code_ref": "handlers/webhook.py — HMAC signature validation",
+      "confirmed": true
     },
     {
       "id": "CN006",
       "type": "business",
-      "description": "场景审核通过后方可上架",
+      "description": "用户词汇表 (user_id, word) 唯一约束",
       "affected_tasks": [
-        "T010",
-        "T011"
+        "T022",
+        "T023"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "models — unique constraint on vocabulary_items(user_id, word)",
+      "confirmed": true
     },
     {
       "id": "CN007",
       "type": "business",
-      "description": "发音评估阈值范围0.0-1.0",
+      "description": "FSRS 间隔重复算法参数（stability/difficulty/due）自动计算",
       "affected_tasks": [
-        "T032"
+        "T012"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "services/review — FSRS algorithm implementation",
+      "confirmed": true
     },
     {
       "id": "CN008",
       "type": "compliance",
-      "description": "用户封禁操作需二次确认+日志",
+      "description": "密码必须 bcrypt 哈希存储，不可明文",
       "affected_tasks": [
-        "T033"
+        "T001",
+        "T051"
       ],
       "enforcement": "hard",
-      "code_status": "missing"
+      "code_status": "implemented",
+      "code_ref": "models/user — bcrypt password hashing",
+      "confirmed": true
+    },
+    {
+      "id": "CN009",
+      "type": "compliance",
+      "description": "JWT access_token 短期有效（15-30min），refresh_token 长期有效",
+      "affected_tasks": [
+        "T002",
+        "T003"
+      ],
+      "enforcement": "hard",
+      "code_status": "implemented",
+      "code_ref": "auth module — HS256 JWT with expiration",
+      "confirmed": true
+    },
+    {
+      "id": "CN010",
+      "type": "compliance",
+      "description": "管理端操作需角色权限验证（role-based access control）",
+      "affected_tasks": [
+        "T024",
+        "T025",
+        "T026",
+        "T027",
+        "T028",
+        "T029",
+        "T030",
+        "T031",
+        "T032",
+        "T033",
+        "T034",
+        "T035"
+      ],
+      "enforcement": "hard",
+      "code_status": "implemented",
+      "code_ref": "middleware/auth — role check decorator on admin endpoints",
+      "confirmed": true
+    },
+    {
+      "id": "CN011",
+      "type": "business",
+      "description": "对话消息按 sequence 递增排序，不可乱序",
+      "affected_tasks": [
+        "T008",
+        "T009"
+      ],
+      "enforcement": "hard",
+      "code_status": "implemented",
+      "code_ref": "handlers/conversation.py — sequence auto-increment",
+      "confirmed": true
+    },
+    {
+      "id": "CN012",
+      "type": "business",
+      "description": "AI 质量低分阈值可配置（默认 3.0/5.0）",
+      "affected_tasks": [
+        "T029"
+      ],
+      "enforcement": "soft",
+      "code_status": "implemented",
+      "code_ref": "handlers/ai_quality.py — threshold query parameter",
+      "confirmed": true
+    },
+    {
+      "id": "CN013",
+      "type": "compliance",
+      "description": "封禁/解封操作审计日志（操作人、时间、原因）",
+      "affected_tasks": [
+        "T034",
+        "T035"
+      ],
+      "enforcement": "hard",
+      "code_status": "partial",
+      "code_ref": "ban_reason recorded but no dedicated audit_log table",
+      "confirmed": true
+    },
+    {
+      "id": "CN014",
+      "type": "business",
+      "description": "语音文件大小/时长上限限制",
+      "affected_tasks": [
+        "T009"
+      ],
+      "enforcement": "soft",
+      "code_status": "missing",
+      "code_ref": "handlers/conversation.py — audio upload has no explicit size limit",
+      "confirmed": true
+    },
+    {
+      "id": "CN015",
+      "type": "business",
+      "description": "Prompt 模板版本管理和回滚机制",
+      "affected_tasks": [
+        "T040"
+      ],
+      "enforcement": "soft",
+      "code_status": "missing",
+      "code_ref": "prompt_templates table schema defined but no version tracking column",
+      "confirmed": true
     }
-  ]
+  ],
+  "summary": {
+    "total": 15,
+    "implemented": 12,
+    "partial": 1,
+    "missing": 2,
+    "hard": 12,
+    "soft": 3
+  }
 }

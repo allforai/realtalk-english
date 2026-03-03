@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-03-04T01:25:00Z",
+  "entities": {
+    "学习场景": {
+      "name": "学习场景",
+      "source_tasks": ["T024", "T025", "T026", "T027"],
+      "states": ["draft", "review", "published", "rejected"],
+      "transitions": [
+        {"from": "draft", "to": "review", "trigger": "提交审核", "source_task": "T026"},
+        {"from": "review", "to": "published", "trigger": "审核通过", "source_task": "T027"},
+        {"from": "review", "to": "rejected", "trigger": "审核驳回", "source_task": "T027"},
+        {"from": "draft", "to": "draft", "trigger": "编辑保存", "source_task": "T025"}
+      ],
+      "initial_state": "draft",
+      "terminal_states": ["published"]
+    },
+    "对话会话": {
+      "name": "对话会话",
+      "source_tasks": ["T007", "T008", "T009", "T010"],
+      "states": ["active", "completed"],
+      "transitions": [
+        {"from": "active", "to": "completed", "trigger": "结束对话", "source_task": "T010"}
+      ],
+      "initial_state": "active",
+      "terminal_states": ["completed"]
+    },
+    "用户账号": {
+      "name": "用户账号",
+      "source_tasks": ["T001", "T034", "T035"],
+      "states": ["active", "banned"],
+      "transitions": [
+        {"from": "active", "to": "banned", "trigger": "封禁用户", "source_task": "T034"},
+        {"from": "banned", "to": "active", "trigger": "解封用户", "source_task": "T035"}
+      ],
+      "initial_state": "active",
+      "terminal_states": []
+    },
+    "词汇卡": {
+      "name": "词汇卡",
+      "source_tasks": ["T012", "T022", "T023"],
+      "states": ["new", "learning", "review", "relearning"],
+      "transitions": [
+        {"from": "new", "to": "learning", "trigger": "首次复习", "source_task": "T012"},
+        {"from": "learning", "to": "review", "trigger": "学习阶段完成", "source_task": "T012"},
+        {"from": "review", "to": "relearning", "trigger": "复习遗忘", "source_task": "T012"},
+        {"from": "relearning", "to": "review", "trigger": "重新学习完成", "source_task": "T012"}
+      ],
+      "initial_state": "new",
+      "terminal_states": []
+    },
+    "通知": {
+      "name": "通知",
+      "source_tasks": ["T018", "T019"],
+      "states": ["unread", "read"],
+      "transitions": [
+        {"from": "unread", "to": "read", "trigger": "标记已读", "source_task": "T019"}
+      ],
+      "initial_state": "unread",
+      "terminal_states": ["read"]
+    },
+    "投诉": {
+      "name": "投诉",
+      "source_tasks": ["T044"],
+      "states": ["pending", "in_progress", "resolved", "closed"],
+      "transitions": [
+        {"from": "pending", "to": "in_progress", "trigger": "开始处理", "source_task": "T044"},
+        {"from": "in_progress", "to": "resolved", "trigger": "解决投诉", "source_task": "T044"},
+        {"from": "in_progress", "to": "closed", "trigger": "关闭投诉", "source_task": "T044"}
+      ],
+      "initial_state": "pending",
+      "terminal_states": ["resolved", "closed"]
+    },
+    "A/B测试": {
+      "name": "A/B测试",
+      "source_tasks": ["T048"],
+      "states": ["created", "running", "completed"],
+      "transitions": [
+        {"from": "created", "to": "running", "trigger": "启动实验", "source_task": "T048"},
+        {"from": "running", "to": "completed", "trigger": "结束实验", "source_task": "T048"}
+      ],
+      "initial_state": "created",
+      "terminal_states": ["completed"]
+    },
+    "连续天数": {
+      "name": "连续天数",
+      "source_tasks": ["T014", "T015"],
+      "states": ["active", "broken", "restored"],
+      "transitions": [
+        {"from": "active", "to": "broken", "trigger": "断签", "source_task": "T014"},
+        {"from": "broken", "to": "restored", "trigger": "恢复连续天数", "source_task": "T015"},
+        {"from": "restored", "to": "active", "trigger": "继续学习", "source_task": "T014"},
+        {"from": "active", "to": "active", "trigger": "每日活跃", "source_task": "T014"}
+      ],
+      "initial_state": "active",
+      "terminal_states": []
+    },
+    "订阅": {
+      "name": "订阅",
+      "source_tasks": ["T021", "T042"],
+      "states": ["free", "premium", "expired"],
+      "transitions": [
+        {"from": "free", "to": "premium", "trigger": "订阅付费方案", "source_task": "T021"},
+        {"from": "premium", "to": "expired", "trigger": "订阅到期未续费", "source_task": "T021"},
+        {"from": "expired", "to": "premium", "trigger": "重新订阅", "source_task": "T021"},
+        {"from": "expired", "to": "free", "trigger": "降级为免费", "source_task": "T021"}
+      ],
+      "initial_state": "free",
+      "terminal_states": []
+    }
+  }
+}

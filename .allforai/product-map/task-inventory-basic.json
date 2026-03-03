@@ -1,0 +1,499 @@
+{
+  "generated_at": "2026-03-04T01:00:00Z",
+  "version": "2.6.0",
+  "category": "basic",
+  "task_count": 20,
+  "tasks": [
+    {
+      "id": "T001",
+      "task_name": "注册账号",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "低",
+      "main_flow": [
+        "选择注册方式（邮箱）",
+        "填写邮箱和密码",
+        "提交注册",
+        "系统创建账号并返回 JWT"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "邮箱唯一性校验",
+        "密码 bcrypt 哈希存储"
+      ],
+      "exceptions": [
+        "邮箱已存在 → 提示已注册"
+      ],
+      "acceptance_criteria": [
+        "注册成功后自动登录",
+        "重复邮箱注册返回明确错误"
+      ]
+    },
+    {
+      "id": "T002",
+      "task_name": "登录账号",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "输入邮箱和密码",
+        "提交登录",
+        "系统验证并返回 access_token + refresh_token"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "JWT HS256 签名",
+        "access_token 短期有效",
+        "refresh_token 长期有效"
+      ],
+      "exceptions": [
+        "密码错误 → 提示凭证无效",
+        "账号被封禁 → 提示已封禁"
+      ],
+      "acceptance_criteria": [
+        "登录成功返回双 token",
+        "封禁用户无法登录"
+      ]
+    },
+    {
+      "id": "T003",
+      "task_name": "刷新登录凭证",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "中",
+      "main_flow": [
+        "客户端检测 access_token 过期",
+        "用 refresh_token 请求新 token",
+        "服务端验证并签发新 access_token"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "refresh_token 验证有效性",
+        "无效 token 返回 401"
+      ],
+      "exceptions": [
+        "refresh_token 过期 → 引导重新登录"
+      ],
+      "acceptance_criteria": [
+        "刷新成功返回新 access_token",
+        "无效 refresh_token 返回 401"
+      ]
+    },
+    {
+      "id": "T004",
+      "task_name": "退出登录",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "低",
+      "main_flow": [
+        "用户点击退出",
+        "客户端调用 logout API",
+        "服务端注销 refresh_token"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "注销后 refresh_token 失效"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "退出后旧 token 不可用"
+      ]
+    },
+    {
+      "id": "T018",
+      "task_name": "查看通知列表",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "打开通知中心",
+        "查看通知列表（分页）",
+        "点击查看详情"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "类型: review_reminder/system/achievement/escalation",
+        "分页返回"
+      ],
+      "exceptions": [
+        "无通知 → 空状态"
+      ],
+      "acceptance_criteria": [
+        "通知按时间倒序",
+        "分页正常"
+      ]
+    },
+    {
+      "id": "T019",
+      "task_name": "标记通知已读",
+      "owner_role": "R001",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "点击通知",
+        "系统标记为已读"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "is_read=true, 记录 read_at"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "已读状态正确更新"
+      ]
+    },
+    {
+      "id": "T020",
+      "task_name": "管理推送通知偏好",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "低",
+      "main_flow": [
+        "打开设置",
+        "调整推送/邮件通知开关",
+        "保存偏好"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "push/email 通知分别控制"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "偏好保存后生效"
+      ]
+    },
+    {
+      "id": "T021",
+      "task_name": "订阅付费方案",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "查看订阅方案（免费/月付/年付）",
+        "选择方案",
+        "通过 RevenueCat 完成支付",
+        "系统更新 subscription_tier"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "RevenueCat 处理支付",
+        "Webhook 回调更新订阅状态",
+        "HMAC 验证 webhook"
+      ],
+      "config_items": [
+        {
+          "param": "月付定价",
+          "current": "$9.99-14.99",
+          "config_level": "dedicated_config"
+        }
+      ],
+      "exceptions": [
+        "支付失败 → 提示重试",
+        "Webhook 验证失败 → 忽略请求"
+      ],
+      "acceptance_criteria": [
+        "支付成功后 tier 更新",
+        "Webhook HMAC 验证通过"
+      ]
+    },
+    {
+      "id": "T032",
+      "task_name": "搜索用户",
+      "owner_role": "R007",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "进入用户管理",
+        "输入姓名/邮箱/手机搜索",
+        "查看搜索结果列表（分页）"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "支持 name/email/phone 搜索",
+        "分页返回"
+      ],
+      "exceptions": [
+        "无匹配 → 空结果"
+      ],
+      "acceptance_criteria": [
+        "搜索结果准确",
+        "分页正常"
+      ]
+    },
+    {
+      "id": "T033",
+      "task_name": "查看用户详情",
+      "owner_role": "R007",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "点击用户",
+        "查看基本信息 + 学习摘要"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "返回用户信息和学习统计"
+      ],
+      "exceptions": [
+        "用户不存在 → 404"
+      ],
+      "acceptance_criteria": [
+        "用户信息和学习数据正确显示"
+      ]
+    },
+    {
+      "id": "T034",
+      "task_name": "封禁用户",
+      "owner_role": "R007",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "选择用户",
+        "点击封禁",
+        "填写封禁原因",
+        "确认封禁",
+        "系统标记 is_banned=true + ban_reason"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "需确认操作",
+        "记录 ban_reason",
+        "封禁后用户无法登录",
+        "审计日志记录"
+      ],
+      "exceptions": [
+        "已封禁用户 → 提示已封禁"
+      ],
+      "acceptance_criteria": [
+        "封禁后用户无法登录",
+        "审计日志记录操作"
+      ]
+    },
+    {
+      "id": "T035",
+      "task_name": "解封用户",
+      "owner_role": "R007",
+      "frequency": "低",
+      "risk_level": "中",
+      "main_flow": [
+        "选择已封禁用户",
+        "点击解封",
+        "确认解封",
+        "系统清除封禁状态"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "is_banned=false, 清除 ban_reason",
+        "审计日志记录"
+      ],
+      "exceptions": [
+        "未封禁用户 → 提示无需解封"
+      ],
+      "acceptance_criteria": [
+        "解封后用户可正常登录",
+        "审计日志记录"
+      ]
+    },
+    {
+      "id": "T036",
+      "task_name": "查看系统健康状态",
+      "owner_role": "R007",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "访问 /health 端点",
+        "查看服务存活状态和数据库连接状态"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "rules": [
+        "返回 DB 连接状态"
+      ],
+      "exceptions": [
+        "DB 不可达 → 返回 unhealthy"
+      ],
+      "acceptance_criteria": [
+        "健康检查反映真实状态"
+      ]
+    },
+    {
+      "id": "T042",
+      "task_name": "管理订阅方案",
+      "owner_role": "R007",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "查看订阅方案列表",
+        "修改定价/权益",
+        "保存"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "rules": [
+        "与 RevenueCat 同步"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "方案修改同步到支付渠道"
+      ]
+    },
+    {
+      "id": "T043",
+      "task_name": "管理系统配置",
+      "owner_role": "R007",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "进入系统设置",
+        "修改配置参数（key-value）",
+        "保存"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "rules": [
+        "system_config 表 key-value 存储"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "配置保存后热生效"
+      ]
+    },
+    {
+      "id": "T044",
+      "task_name": "处理用户投诉",
+      "owner_role": "R007",
+      "frequency": "中",
+      "risk_level": "中",
+      "main_flow": [
+        "查看投诉列表",
+        "查看投诉详情",
+        "更新处理状态",
+        "回复用户"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "rules": [
+        "feedback 表 type=complaint",
+        "status: pending→in_progress→resolved/closed"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "投诉状态流转正确"
+      ]
+    },
+    {
+      "id": "T045",
+      "task_name": "查看用户反馈",
+      "owner_role": "R007",
+      "frequency": "中",
+      "risk_level": "低",
+      "main_flow": [
+        "查看反馈列表（bug/feature/other）",
+        "查看详情",
+        "更新状态"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "rules": [
+        "feedback 表多类型"
+      ],
+      "exceptions": [],
+      "acceptance_criteria": [
+        "反馈列表分类正确"
+      ]
+    },
+    {
+      "id": "T046",
+      "task_name": "获取当前用户信息",
+      "owner_role": "R001",
+      "frequency": "高",
+      "risk_level": "低",
+      "main_flow": [
+        "App 启动或页面刷新",
+        "携带 JWT 请求 /auth/me",
+        "返回当前用户信息（ID/昵称/头像/订阅等级）"
+      ],
+      "category": "basic",
+      "status": "confirmed",
+      "source": "code_audit",
+      "rules": [
+        "JWT 必须有效",
+        "返回用户公开信息"
+      ],
+      "exceptions": [
+        "token 无效 → 401 引导登录"
+      ],
+      "acceptance_criteria": [
+        "正确返回当前用户信息",
+        "无效 token 返回 401"
+      ]
+    },
+    {
+      "id": "T050",
+      "task_name": "管理角色权限",
+      "owner_role": "R007",
+      "frequency": "低",
+      "risk_level": "高",
+      "main_flow": [
+        "进入角色管理页",
+        "查看角色列表和权限矩阵",
+        "编辑角色权限",
+        "保存"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "角色类型: consumer/operator/trainer/analyst/admin",
+        "权限变更审计日志"
+      ],
+      "exceptions": [
+        "不可删除内置角色"
+      ],
+      "acceptance_criteria": [
+        "权限修改即时生效",
+        "审计日志记录"
+      ]
+    },
+    {
+      "id": "T051",
+      "task_name": "重置密码",
+      "owner_role": "R001",
+      "frequency": "低",
+      "risk_level": "中",
+      "main_flow": [
+        "点击忘记密码",
+        "输入注册邮箱",
+        "收到重置链接/验证码",
+        "设置新密码"
+      ],
+      "category": "basic",
+      "status": "user_added",
+      "source": "code_audit",
+      "rules": [
+        "重置链接有效期限制",
+        "新密码不得与旧密码相同"
+      ],
+      "exceptions": [
+        "邮箱未注册 → 不提示（防枚举）",
+        "链接过期 → 提示重新申请"
+      ],
+      "acceptance_criteria": [
+        "重置成功后可用新密码登录",
+        "旧密码失效"
+      ]
+    }
+  ]
+}

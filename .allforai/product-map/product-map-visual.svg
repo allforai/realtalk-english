@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="2716" viewBox="0 0 600 2716">
+<style>text { font-family: -apple-system, "Segoe UI", sans-serif; }</style>
+<rect width="600" height="2716" fill="#FFFFFF"/>
+<rect x="40" y="20" width="14" height="14" rx="3" fill="#22C55E"/>
+<text x="60" y="31" font-size="11" fill="#475569">高频</text>
+<rect x="120" y="20" width="14" height="14" rx="3" fill="#F59E0B"/>
+<text x="140" y="31" font-size="11" fill="#475569">中频</text>
+<rect x="200" y="20" width="14" height="14" rx="3" fill="#9CA3AF"/>
+<text x="220" y="31" font-size="11" fill="#475569">低频</text>
+<rect x="280" y="20" width="14" height="14" rx="3" fill="#EF4444"/>
+<text x="300" y="31" font-size="11" fill="#475569">高风险</text>
+<rect x="40" y="627.0" width="160" height="50" rx="8" fill="#3B82F6"/>
+<text x="120.0" y="657.0" text-anchor="middle" font-size="13" font-weight="bold" fill="white">职场人士</text>
+<line x1="200" y1="652.0" x2="260" y2="98.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="80" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="102.0" font-size="11" fill="#FFFFFF">T001 注册账号</text>
+<line x1="200" y1="652.0" x2="260" y2="142.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="124" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="146.0" font-size="11" fill="#FFFFFF">T002 登录账号</text>
+<line x1="200" y1="652.0" x2="260" y2="186.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="168" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="190.0" font-size="11" fill="#FFFFFF">T003 刷新登录凭证</text>
+<line x1="200" y1="652.0" x2="260" y2="230.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="212" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="234.0" font-size="11" fill="#FFFFFF">T004 退出登录</text>
+<line x1="200" y1="652.0" x2="260" y2="274.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="256" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="278.0" font-size="11" fill="#FFFFFF">T005 浏览学习场景列表</text>
+<line x1="200" y1="652.0" x2="260" y2="318.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="300" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="322.0" font-size="11" fill="#FFFFFF">T006 查看场景详情</text>
+<line x1="200" y1="652.0" x2="260" y2="362.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="344" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="366.0" font-size="11" fill="#FFFFFF">T007 发起 AI 对话</text>
+<line x1="200" y1="652.0" x2="260" y2="406.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="388" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="410.0" font-size="11" fill="#FFFFFF">T008 发送文本消息并接收 AI 回复</text>
+<line x1="200" y1="652.0" x2="260" y2="450.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="432" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="454.0" font-size="11" fill="#FFFFFF">T009 发送语音消息并获取发音评估</text>
+<line x1="200" y1="652.0" x2="260" y2="494.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="476" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="498.0" font-size="11" fill="#FFFFFF">T010 结束对话并查看报告</text>
+<line x1="200" y1="652.0" x2="260" y2="538.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="520" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="542.0" font-size="11" fill="#FFFFFF">T011 查看历史对话列表</text>
+<line x1="200" y1="652.0" x2="260" y2="582.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="564" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="586.0" font-size="11" fill="#FFFFFF">T012 复习今日到期词汇卡</text>
+<line x1="200" y1="652.0" x2="260" y2="626.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="608" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="630.0" font-size="11" fill="#FFFFFF">T013 查看复习统计摘要</text>
+<line x1="200" y1="652.0" x2="260" y2="670.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="652" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="674.0" font-size="11" fill="#FFFFFF">T014 查看学习连续天数</text>
+<line x1="200" y1="652.0" x2="260" y2="714.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="696" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="718.0" font-size="11" fill="#FFFFFF">T015 恢复断签连续天数</text>
+<line x1="200" y1="652.0" x2="260" y2="758.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="740" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="762.0" font-size="11" fill="#FFFFFF">T016 查看成就列表</text>
+<line x1="200" y1="652.0" x2="260" y2="802.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="784" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="806.0" font-size="11" fill="#FFFFFF">T017 查看个性化场景推荐</text>
+<line x1="200" y1="652.0" x2="260" y2="846.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="828" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="850.0" font-size="11" fill="#FFFFFF">T018 查看通知列表</text>
+<line x1="200" y1="652.0" x2="260" y2="890.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="872" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="894.0" font-size="11" fill="#FFFFFF">T019 标记通知已读</text>
+<line x1="200" y1="652.0" x2="260" y2="934.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="916" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="938.0" font-size="11" fill="#FFFFFF">T020 管理推送通知偏好</text>
+<line x1="200" y1="652.0" x2="260" y2="978.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="960" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="982.0" font-size="11" fill="#FFFFFF">T021 订阅付费方案</text>
+<circle cx="506" cy="978.0" r="8" fill="#EF4444"/>
+<text x="506" y="982.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="652.0" x2="260" y2="1022.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1004" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1026.0" font-size="11" fill="#FFFFFF">T022 对话中自动收集生词</text>
+<line x1="200" y1="652.0" x2="260" y2="1066.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1048" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1070.0" font-size="11" fill="#FFFFFF">T023 手动添加词汇到生词本</text>
+<line x1="200" y1="652.0" x2="260" y2="1110.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1092" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1114.0" font-size="11" fill="#FFFFFF">T046 获取当前用户信息</text>
+<line x1="200" y1="652.0" x2="260" y2="1154.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1136" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="1158.0" font-size="11" fill="#FFFFFF">T051 重置密码</text>
+<line x1="200" y1="652.0" x2="260" y2="1198.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1180" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="1202.0" font-size="11" fill="#FFFFFF">T052 新手引导</text>
+<rect x="40" y="1361.0" width="160" height="50" rx="8" fill="#3B82F6"/>
+<text x="120.0" y="1391.0" text-anchor="middle" font-size="13" font-weight="bold" fill="white">内容运营</text>
+<line x1="200" y1="1386.0" x2="260" y2="1272.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1254" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1276.0" font-size="11" fill="#FFFFFF">T024 创建学习场景草稿</text>
+<line x1="200" y1="1386.0" x2="260" y2="1316.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1298" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1320.0" font-size="11" fill="#FFFFFF">T025 编辑学习场景</text>
+<line x1="200" y1="1386.0" x2="260" y2="1360.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1342" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1364.0" font-size="11" fill="#FFFFFF">T026 提交场景审核</text>
+<line x1="200" y1="1386.0" x2="260" y2="1404.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1386" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1408.0" font-size="11" fill="#FFFFFF">T027 审核学习场景</text>
+<circle cx="506" cy="1404.0" r="8" fill="#EF4444"/>
+<text x="506" y="1408.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="1386.0" x2="260" y2="1448.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1430" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1452.0" font-size="11" fill="#FFFFFF">T037 管理场景包</text>
+<line x1="200" y1="1386.0" x2="260" y2="1492.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1474" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1496.0" font-size="11" fill="#FFFFFF">T038 管理场景标签</text>
+<rect x="40" y="1633.0" width="160" height="50" rx="8" fill="#3B82F6"/>
+<text x="120.0" y="1663.0" text-anchor="middle" font-size="13" font-weight="bold" fill="white">AI 训练师</text>
+<line x1="200" y1="1658.0" x2="260" y2="1566.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1548" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1570.0" font-size="11" fill="#FFFFFF">T028 查看 AI 质量评分概览</text>
+<line x1="200" y1="1658.0" x2="260" y2="1610.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1592" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1614.0" font-size="11" fill="#FFFFFF">T029 查看低分对话并分析</text>
+<line x1="200" y1="1658.0" x2="260" y2="1654.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1636" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1658.0" font-size="11" fill="#FFFFFF">T039 检测异常对话</text>
+<line x1="200" y1="1658.0" x2="260" y2="1698.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1680" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1702.0" font-size="11" fill="#FFFFFF">T040 管理 Prompt 模板</text>
+<circle cx="506" cy="1698.0" r="8" fill="#EF4444"/>
+<text x="506" y="1702.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="1658.0" x2="260" y2="1742.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1724" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1746.0" font-size="11" fill="#FFFFFF">T041 查看发音分析报告</text>
+<rect x="40" y="1883.0" width="160" height="50" rx="8" fill="#3B82F6"/>
+<text x="120.0" y="1913.0" text-anchor="middle" font-size="13" font-weight="bold" fill="white">数据运营</text>
+<line x1="200" y1="1908.0" x2="260" y2="1816.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1798" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="1820.0" font-size="11" fill="#FFFFFF">T030 查看核心指标仪表盘</text>
+<line x1="200" y1="1908.0" x2="260" y2="1860.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1842" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="1864.0" font-size="11" fill="#FFFFFF">T031 设置指标预警阈值</text>
+<line x1="200" y1="1908.0" x2="260" y2="1904.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1886" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="1908.0" font-size="11" fill="#FFFFFF">T047 查看用户行为分析</text>
+<line x1="200" y1="1908.0" x2="260" y2="1948.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1930" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="1952.0" font-size="11" fill="#FFFFFF">T048 管理 A/B 测试</text>
+<circle cx="506" cy="1948.0" r="8" fill="#EF4444"/>
+<text x="506" y="1952.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="1908.0" x2="260" y2="1992.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="1974" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="1996.0" font-size="11" fill="#FFFFFF">T049 生成/导出运营报告</text>
+<rect x="40" y="2243.0" width="160" height="50" rx="8" fill="#3B82F6"/>
+<text x="120.0" y="2273.0" text-anchor="middle" font-size="13" font-weight="bold" fill="white">系统管理员</text>
+<line x1="200" y1="2268.0" x2="260" y2="2066.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2048" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="2070.0" font-size="11" fill="#FFFFFF">T032 搜索用户</text>
+<line x1="200" y1="2268.0" x2="260" y2="2110.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2092" width="260" height="36" rx="6" fill="#22C55E"/>
+<text x="270" y="2114.0" font-size="11" fill="#FFFFFF">T033 查看用户详情</text>
+<line x1="200" y1="2268.0" x2="260" y2="2154.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2136" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="2158.0" font-size="11" fill="#FFFFFF">T034 封禁用户</text>
+<circle cx="506" cy="2154.0" r="8" fill="#EF4444"/>
+<text x="506" y="2158.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="2268.0" x2="260" y2="2198.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2180" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="2202.0" font-size="11" fill="#FFFFFF">T035 解封用户</text>
+<line x1="200" y1="2268.0" x2="260" y2="2242.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2224" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="2246.0" font-size="11" fill="#FFFFFF">T036 查看系统健康状态</text>
+<line x1="200" y1="2268.0" x2="260" y2="2286.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2268" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="2290.0" font-size="11" fill="#FFFFFF">T042 管理订阅方案</text>
+<circle cx="506" cy="2286.0" r="8" fill="#EF4444"/>
+<text x="506" y="2290.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="2268.0" x2="260" y2="2330.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2312" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="2334.0" font-size="11" fill="#FFFFFF">T043 管理系统配置</text>
+<circle cx="506" cy="2330.0" r="8" fill="#EF4444"/>
+<text x="506" y="2334.0" text-anchor="middle" font-size="9" fill="white">!</text>
+<line x1="200" y1="2268.0" x2="260" y2="2374.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2356" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="2378.0" font-size="11" fill="#FFFFFF">T044 处理用户投诉</text>
+<line x1="200" y1="2268.0" x2="260" y2="2418.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2400" width="260" height="36" rx="6" fill="#F59E0B"/>
+<text x="270" y="2422.0" font-size="11" fill="#FFFFFF">T045 查看用户反馈</text>
+<line x1="200" y1="2268.0" x2="260" y2="2462.0" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="260" y="2444" width="260" height="36" rx="6" fill="#9CA3AF"/>
+<text x="270" y="2466.0" font-size="11" fill="#FFFFFF">T050 管理角色权限</text>
+<circle cx="506" cy="2462.0" r="8" fill="#EF4444"/>
+<text x="506" y="2466.0" text-anchor="middle" font-size="9" fill="white">!</text>
+</svg>

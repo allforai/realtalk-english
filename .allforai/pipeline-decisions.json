@@ -1,32 +1,63 @@
 [
   {
+    "phase": "Phase 1 — concept",
+    "decision": "auto_confirmed",
+    "severity": "PASS",
+    "detail": "concept 已存在（跳过，full skip:concept 模式）",
+    "decided_at": "2026-03-04T00:50:00Z"
+  },
+  {
+    "phase": "Phase 2 — product-map",
+    "decision": "auto_confirmed",
+    "severity": "PASS",
+    "detail": "tasks=52, roles=7, flows=8, constraints=15, validation: 0 ERROR / 23 WARNING",
+    "decided_at": "2026-03-04T01:25:00Z"
+  },
+  {
+    "phase": "Phase 3 — screen-map",
+    "decision": "auto_confirmed",
+    "severity": "WARNING",
+    "detail": "screens=38 (14 consumer + 24 professional), actions=44, issues=35 (15高/11中/9低). 主要: 13 NO_EMPTY_STATE (Soon 页面未定义), 10 MISSING_VALIDATION, 8 SILENT_FAILURE, 4 HIGH_RISK_NO_CONFIRM",
+    "decided_at": "2026-03-04T01:30:00Z"
+  },
+  {
     "phase": "Phase 4 — use-case",
     "decision": "auto_confirmed",
-    "detail": "use_cases=125, happy=45, exception=49, boundary=6, validation=16, e2e=9",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "severity": "PASS",
+    "detail": "use_cases=162, happy=52, exception=58, boundary=7, validation=26, e2e=8, ordering_issues=78, xv_edge_cases_added=11, xv_weak_flagged=16",
+    "decided_at": "2026-03-04T01:40:00Z"
   },
   {
     "phase": "Phase 5 — feature-gap",
     "decision": "auto_confirmed",
-    "detail": "task_gaps=37, screen_gaps=42, journey_gaps=45, flow_gaps=1, total_gap_tasks=167",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "severity": "PASS",
+    "detail": "task_gaps=19, screen_gaps=18, journey_gaps=21, flow_gaps=1, state_gaps=2, total_gap_tasks=48, xv: journey_validation 2 gaps added, gap_prioritization 4 adjusted",
+    "decided_at": "2026-03-04T01:42:00Z"
   },
   {
     "phase": "Phase 6 — feature-prune",
     "decision": "auto_confirmed",
-    "detail": "strategy=aggressive, CORE=14, DEFER=29, CUT=2",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "severity": "PASS",
+    "detail": "strategy=aggressive, CORE=21, DEFER=31, CUT=0. Guardrails prevented all CUT (basic category + risk + flow refs + revenue). XV: 0 promoted, 1 competitive flag on T021",
+    "decided_at": "2026-03-04T01:42:00Z"
   },
   {
     "phase": "Phase 7 — ui-design",
     "decision": "auto_confirmed",
-    "detail": "style=Material Design 3, roles=7, screens=42, html_files=8",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "severity": "PASS",
+    "detail": "style=Material Design 3, roles=7, screens=38, html_files=8, pattern_alignments=2, xv_design_review=2_high_issues, xv_visual_consistency=12_findings",
+    "decided_at": "2026-03-04T01:43:00Z"
   },
   {
     "phase": "Phase 8 — design-audit",
     "decision": "auto_confirmed",
-    "detail": "layers=6, trace=252(0 orphan), coverage=100%(0 gap), cross=49(2 conflict, 1 warning), fidelity=100%/100%",
-    "decided_at": "2026-02-27T20:27:55Z"
+    "detail": "layers=6, trace=295(0 orphan), coverage=99%(3 gap), cross=36(0 conflict, 0 warning), fidelity=100%/94%",
+    "decided_at": "2026-03-03T16:27:29Z"
+  },
+  {
+    "phase": "Phase 3.5 — design-pattern",
+    "decision": "auto_confirmed",
+    "detail": "5 patterns detected (19 instances), 26 tasks tagged, 21 screens tagged. Detected: PT-CRUD(9), PT-LIST-DETAIL(5), PT-APPROVAL(1), PT-SEARCH(3), PT-STATE(1). Skipped: PT-EXPORT, PT-NOTIFY, PT-PERMISSION",
+    "decided_at": "2026-03-03T16:46:27Z"
   }
 ]

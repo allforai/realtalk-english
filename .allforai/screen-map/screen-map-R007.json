@@ -1,0 +1,284 @@
+{
+  "split_by": "role",
+  "split_value": "R007",
+  "split_label": "系统管理员",
+  "description": "角色 R007（系统管理员）关联的界面子集",
+  "generated_at": "2026-03-03T16:13:29Z",
+  "count": 8,
+  "items": [
+    {
+      "id": "S017",
+      "name": "用户管理列表页",
+      "description": "搜索和管理用户，支持按名称/邮箱/手机搜索，分页展示",
+      "primary_purpose": "搜索和管理用户账号",
+      "primary_action": "搜索用户",
+      "entry_point": "/admin/users",
+      "audience_type": "professional",
+      "tasks": [
+        "T032"
+      ],
+      "states": {
+        "empty": "无匹配用户 → 空结果提示",
+        "loading": "表格加载中",
+        "error": "网络错误 → 重试"
+      },
+      "actions": [
+        {
+          "label": "搜索用户",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R007"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展示搜索结果",
+          "validation_rules": [],
+          "exception_flows": [
+            "无匹配 → 空结果"
+          ]
+        },
+        {
+          "label": "查看用户详情",
+          "crud": "R",
+          "frequency": "高",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R007"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "进入用户详情（S018）",
+          "validation_rules": [],
+          "exception_flows": []
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "搜索用户",
+          "查看用户详情"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S018",
+      "name": "用户详情页",
+      "description": "用户基本信息、学习统计摘要、封禁/解封操作",
+      "primary_purpose": "查看用户详情和执行管理操作",
+      "primary_action": "查看用户信息",
+      "entry_point": "/admin/users/[id]",
+      "audience_type": "professional",
+      "tasks": [
+        "T033",
+        "T034",
+        "T035"
+      ],
+      "states": {
+        "loading": "内容加载中",
+        "error": "用户不存在 → 404"
+      },
+      "actions": [
+        {
+          "label": "封禁用户",
+          "crud": "U",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R007"
+          ],
+          "requires_confirm": true,
+          "on_failure": "已封禁 → 提示已封禁",
+          "on_success": "封禁成功 → 状态更新",
+          "validation_rules": [
+            "封禁原因必填"
+          ],
+          "exception_flows": [
+            "已封禁用户 → 提示已封禁"
+          ]
+        },
+        {
+          "label": "解封用户",
+          "crud": "U",
+          "frequency": "低",
+          "click_depth": 1,
+          "is_primary": false,
+          "roles": [
+            "R007"
+          ],
+          "requires_confirm": true,
+          "on_failure": "未封禁用户 → 提示无需解封",
+          "on_success": "解封成功 → 状态更新",
+          "validation_rules": [],
+          "exception_flows": [
+            "未封禁用户 → 提示无需解封"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S027",
+      "name": "订阅管理页",
+      "description": "查看和管理订阅方案定价",
+      "primary_purpose": "查看和管理订阅方案定价",
+      "primary_action": "待实现",
+      "entry_point": "/admin/subscriptions",
+      "audience_type": "professional",
+      "tasks": [
+        "T042"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S028",
+      "name": "系统设置页",
+      "description": "系统配置参数 key-value 管理",
+      "primary_purpose": "系统配置参数 key-value 管理",
+      "primary_action": "待实现",
+      "entry_point": "/admin/settings",
+      "audience_type": "professional",
+      "tasks": [
+        "T043"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S029",
+      "name": "角色权限管理页",
+      "description": "角色列表/权限矩阵/编辑",
+      "primary_purpose": "角色列表/权限矩阵/编辑",
+      "primary_action": "待实现",
+      "entry_point": "/admin/roles",
+      "audience_type": "professional",
+      "tasks": [
+        "T050"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S030",
+      "name": "投诉处理页",
+      "description": "投诉队列：查看/处理/回复",
+      "primary_purpose": "投诉队列",
+      "primary_action": "待实现",
+      "entry_point": "/admin/complaints",
+      "audience_type": "professional",
+      "tasks": [
+        "T044"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S031",
+      "name": "用户反馈页",
+      "description": "反馈列表：bug/feature/other 分类管理",
+      "primary_purpose": "反馈列表",
+      "primary_action": "待实现",
+      "entry_point": "/admin/feedback",
+      "audience_type": "professional",
+      "tasks": [
+        "T045"
+      ],
+      "states": {
+        "empty": "功能待实现 → 展示 Coming Soon"
+      },
+      "actions": [],
+      "pareto": {
+        "high_freq_actions": [],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    },
+    {
+      "id": "S038",
+      "name": "系统健康状态页",
+      "description": "系统健康检查端点 /health，展示服务和数据库连接状态",
+      "primary_purpose": "监控系统可用性",
+      "primary_action": "查看健康状态",
+      "entry_point": "直接访问 /health",
+      "audience_type": "professional",
+      "tasks": [
+        "T036"
+      ],
+      "states": {
+        "error": "DB 不可达 → unhealthy"
+      },
+      "actions": [
+        {
+          "label": "查看状态",
+          "crud": "R",
+          "frequency": "中",
+          "click_depth": 0,
+          "is_primary": true,
+          "roles": [
+            "R007"
+          ],
+          "requires_confirm": false,
+          "on_failure": "",
+          "on_success": "展示健康状态",
+          "validation_rules": [],
+          "exception_flows": [
+            "DB 不可达 → 返回 unhealthy"
+          ]
+        }
+      ],
+      "pareto": {
+        "high_freq_actions": [
+          "查看状态"
+        ],
+        "low_freq_buried": [],
+        "high_freq_buried": []
+      },
+      "flags": []
+    }
+  ]
+}
